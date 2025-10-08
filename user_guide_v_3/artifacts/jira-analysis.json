@@ -1,0 +1,348 @@
+{
+  "generated_at": "2025-09-21T00:00:00Z",
+  "source": "jira-only",
+  "vendors": {
+    "d365_bc": [
+      {
+        "limitation": "Batch writing restrictions - specific batch names required",
+        "evidence_keys": ["TSSD-3216"],
+        "impact": "Sync failures when wrong batch configuration",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Mandatory dimensions enablement blocks transactions",
+        "evidence_keys": ["TSSD-3216"],
+        "impact": "Must disable mandatory dimensions for Bayzat integration",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Cost centers not supported in current integration",
+        "evidence_keys": ["TSSD-3194", "TSSD-3188"],
+        "impact": "Clients requiring cost centers cannot use integration",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Employer GOSI contribution not automatically included",
+        "evidence_keys": ["TSSD-3194"],
+        "impact": "Manual addition required for complete GOSI accounting",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Connection establishment can show 'unknown error' after authorization",
+        "evidence_keys": ["TSSD-3187"],
+        "impact": "Requires following specific Codat support articles",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Multiple journal entry posting errors with cost center requirements",
+        "evidence_keys": ["TSSD-3188"],
+        "impact": "Integration unusable for companies requiring cost centers",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Connection progress can take excessive time (3+ hours)",
+        "evidence_keys": ["TSSD-2441"],
+        "impact": "Poor user experience during setup",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Direct bank account posting restrictions",
+        "evidence_keys": ["TSSD-2392"],
+        "impact": "Requires separate ledger accounts for bank transactions",
+        "confidence": "Medium"
+      }
+    ],
+    "netsuite": [
+      {
+        "limitation": "Specific permissions required for tracking categories",
+        "evidence_keys": ["TSSD-3558"],
+        "impact": "Multiple permission types needed for full functionality",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Required permissions include Custom Record Types, Custom Segments, Classes, Departments",
+        "evidence_keys": ["TSSD-3558"],
+        "impact": "Complex permission setup blocking integration",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Additional permissions needed for Cost Centers and Business Units",
+        "evidence_keys": ["TSSD-3558"],
+        "impact": "Integration incomplete without proper permissions",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Session management issues during sync causing duplicate errors",
+        "evidence_keys": ["OS-1696", "TSSD-2990"],
+        "impact": "Sync failures with 'accounting confirmation already exists' errors",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Long sync duration vulnerability to session interruption",
+        "evidence_keys": ["TSSD-2990"],
+        "impact": "Failed syncs requiring engineering intervention",
+        "confidence": "Medium"
+      }
+    ],
+    "qbo": [
+      {
+        "limitation": "Split amounts validation failing - sum must equal zero",
+        "evidence_keys": ["TSSD-344"],
+        "impact": "Journal entries rejected by QuickBooks",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Arrear deduction processing issues",
+        "evidence_keys": ["OS-220"],
+        "impact": "Sync failures with 'Something went wrong' errors",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Regular cycle sync data issues affecting multiple clients",
+        "evidence_keys": ["GS-5662"],
+        "impact": "Widespread sync failures",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Account grouping issues causing sync failures",
+        "evidence_keys": ["GS-6112"],
+        "impact": "Persistent sync failures even with retries",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Unable to close payroll due to sync failures",
+        "evidence_keys": ["TSSD-1416"],
+        "impact": "Prevents month-end closing",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Invoice number related issues",
+        "evidence_keys": ["TSSD-1416"],
+        "impact": "Sync failures requiring dev team fixes",
+        "confidence": "Medium"
+      }
+    ],
+    "xero": [
+      {
+        "limitation": "Uncertified app connection limits blocking new connections",
+        "evidence_keys": ["TSSD-4017", "TSSD-3981"],
+        "impact": "Cannot establish new integrations when limit reached",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Multiple organization limitation - can only connect to one",
+        "evidence_keys": ["TSSD-3662", "TSSD-1443"],
+        "impact": "Cannot sync to multiple books from one payroll system",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Bank account restrictions - cannot use bank accounts for certain transaction types",
+        "evidence_keys": ["TSSD-4453", "TSSD-4421", "TSSD-263"],
+        "impact": "Must use different account types for payroll entries",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Archived account status causing sync failures",
+        "evidence_keys": ["TSSD-1155"],
+        "impact": "Accounts must be set to 'Active' status in Xero",
+        "confidence": "High"
+      },
+      {
+        "limitation": "VAT amounts not included in expense pulls",
+        "evidence_keys": ["TSSD-3804"],
+        "impact": "Incomplete financial data sync",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Cost center mapping limited to single account per department",
+        "evidence_keys": ["TSSD-3701"],
+        "impact": "Cannot map different accounts per department",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Missing bank category accounts in mapping dropdowns",
+        "evidence_keys": ["TSSD-1218"],
+        "impact": "Placeholder accounts must be created in Xero first",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Account code validation errors for specific account types",
+        "evidence_keys": ["TSSD-4421", "TSSD-263"],
+        "impact": "Cannot map same account for different purposes",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Missing cost centers in sync reports",
+        "evidence_keys": ["TSSD-1591"],
+        "impact": "Incomplete cost center data transfer",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Global Pay Run discontinuation impact",
+        "evidence_keys": ["TSSD-4017"],
+        "impact": "Uncertainty about future Xero payroll module compatibility",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Month display errors in journal entries",
+        "evidence_keys": ["OS-283", "TSSD-1228"],
+        "impact": "Incorrect period labeling in accounting entries",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Leaves accrual not automatically integrated",
+        "evidence_keys": ["TSSD-3701"],
+        "impact": "Manual entry required for monthly leave accruals",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Air ticket accrual not automatically integrated",
+        "evidence_keys": ["TSSD-3701"],
+        "impact": "Manual entry required for air ticket allowance accruals",
+        "confidence": "High"
+      }
+    ],
+    "codat": [
+      {
+        "limitation": "Account deactivation by Codat blocking integrations",
+        "evidence_keys": ["TSSD-2993"],
+        "impact": "Integration access lost until reactivation",
+        "confidence": "High"
+      },
+      {
+        "limitation": "Entity already exists issues when pushing GL entries",
+        "evidence_keys": ["GS-5897"],
+        "impact": "Duplicate entity errors requiring wait time between requests",
+        "confidence": "Medium"
+      },
+      {
+        "limitation": "Connection update alerts and monitoring issues",
+        "evidence_keys": ["GS-5771"],
+        "impact": "Integration health monitoring problems",
+        "confidence": "Medium"
+      }
+    ]
+  },
+  "cross_cutting": [
+    {
+      "theme": "mapping_configuration_complexity",
+      "evidence_keys": ["TSSD-2802", "OS-2065", "TSSD-1050", "TSSD-1162"],
+      "note": "Next button disabled despite proper mapping, requiring all cost centers mapped"
+    },
+    {
+      "theme": "wizard_ui_bugs",
+      "evidence_keys": ["OS-2065"],
+      "note": "Submit button not enabled after adding columns, mandatory data types unavailable"
+    },
+    {
+      "theme": "pagination_limitations",
+      "evidence_keys": ["OS-2451"],
+      "note": "Pre-sync reports limited to first 500 records, missing employees due to pagination"
+    },
+    {
+      "theme": "approval_flow_transaction_issues",
+      "evidence_keys": ["OS-970"],
+      "note": "Approval flow enabled/disabled causing transactions to stay pending"
+    },
+    {
+      "theme": "sync_status_discrepancies",
+      "evidence_keys": ["TSSD-4491", "TSSD-2160"],
+      "note": "Status showing rejected/in process despite successful transfers"
+    },
+    {
+      "theme": "error_message_clarity",
+      "evidence_keys": ["TSSD-2552"],
+      "note": "Backend IDs used in error messages instead of recognizable employee identifiers"
+    }
+  ],
+  "ux_usability": [
+    {
+      "pattern": "wizard disabled buttons",
+      "evidence_keys": ["OS-2065", "TSSD-2802", "TSSD-1050"],
+      "impact": "setup blocked",
+      "recurrence": "High"
+    },
+    {
+      "pattern": "unclear error messages",
+      "evidence_keys": ["TSSD-2552", "OS-220"],
+      "impact": "difficult troubleshooting",
+      "recurrence": "High"
+    },
+    {
+      "pattern": "long loading states",
+      "evidence_keys": ["GS-5269", "TSSD-2441"],
+      "impact": "poor user experience",
+      "recurrence": "Medium"
+    },
+    {
+      "pattern": "sync button not updating after modal completion",
+      "evidence_keys": ["GS-5373"],
+      "impact": "requires page refresh",
+      "recurrence": "Medium"
+    },
+    {
+      "pattern": "mapping wizard navigation issues",
+      "evidence_keys": ["GS-5374"],
+      "impact": "white screen, unable to navigate back",
+      "recurrence": "Medium"
+    },
+    {
+      "pattern": "transaction page loading issues",
+      "evidence_keys": ["GS-5116"],
+      "impact": "page keeps loading due to accounting endpoints",
+      "recurrence": "Medium"
+    }
+  ],
+  "whats_working_well": [
+    {
+      "pattern": "permissions fix resolves NetSuite sync",
+      "evidence_keys": ["TSSD-3558"]
+    },
+    {
+      "pattern": "account status changes resolve Xero issues",
+      "evidence_keys": ["TSSD-1155"]
+    },
+    {
+      "pattern": "proper batch configuration enables D365 BC sync",
+      "evidence_keys": ["TSSD-3216"]
+    },
+    {
+      "pattern": "error message improvements deployed successfully",
+      "evidence_keys": ["TSSD-2552"]
+    }
+  ],
+  "workarounds_in_use": [
+    {
+      "workaround": "toggle mandatory dimensions in BC",
+      "risk": "posting without dimensions",
+      "evidence_keys": ["TSSD-3216"]
+    },
+    {
+      "workaround": "use different account types instead of bank accounts in Xero",
+      "risk": "accounting structure changes",
+      "evidence_keys": ["TSSD-4453", "TSSD-263"]
+    },
+    {
+      "workaround": "create placeholder accounts in Xero first",
+      "risk": "additional setup overhead",
+      "evidence_keys": ["TSSD-1218"]
+    },
+    {
+      "workaround": "manual entry for GOSI employer contributions",
+      "risk": "incomplete automation",
+      "evidence_keys": ["TSSD-3194"]
+    },
+    {
+      "workaround": "page refresh after cost center assignment",
+      "risk": "poor user experience",
+      "evidence_keys": ["GS-5373"]
+    }
+  ],
+  "gaps_open_questions": [
+    "Exact BC batch line limits — Unconfirmed — Jira-only",
+    "Xero Global Pay Run impact on integration functionality — Unconfirmed — Jira-only",
+    "Codat account deactivation triggers and prevention — Unconfirmed — Jira-only",
+    "NetSuite permission requirements documentation completeness — Unconfirmed — Jira-only",
+    "QuickBooks split amount validation exact requirements — Unconfirmed — Jira-only"
+  ]
+}

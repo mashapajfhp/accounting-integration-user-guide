@@ -1,0 +1,328 @@
+{
+  "limitations_scan_results": {
+    "scan_date": "2025-01-21T00:00:00Z",
+    "platforms_analyzed": [
+      "Microsoft Dynamics 365 Business Central",
+      "Oracle NetSuite", 
+      "QuickBooks Online",
+      "Xero",
+      "Codat"
+    ],
+    "limitation_categories": [
+      "API rate limits and throttling restrictions",
+      "Batch size limitations", 
+      "Data model/field gaps",
+      "Posting granularity constraints",
+      "Cost centre management limitations",
+      "Real-time vs batch processing constraints",
+      "Webhook availability and limits",
+      "Security and audit constraints",
+      "Multi-currency handling constraints",
+      "Custom field mapping restrictions",
+      "Historical data synchronization constraints",
+      "Change data capture (CDC) constraints",
+      "Transaction volume limitations",
+      "User permission requirements",
+      "Connection limits"
+    ],
+    "findings": [
+      {
+        "platform": "Microsoft Dynamics 365 Business Central",
+        "type": "System",
+        "limitation_paraphrased": "API requests limited to 5 concurrent per user with 6000 requests per 5-minute window",
+        "verbatim_snippet": "The limit is 5 concurrent API requests per user",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Microsoft Dynamics 365 Business Central", 
+        "type": "System",
+        "limitation_paraphrased": "OData requests timeout after 8 minutes maximum processing time",
+        "verbatim_snippet": "Maximum time allocated to an OData V4 request is 8 minutes",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Microsoft Dynamics 365 Business Central",
+        "type": "System", 
+        "limitation_paraphrased": "Maximum batch size limited to 100 operations per OData batch request",
+        "verbatim_snippet": "maximum number of operations in an OData V4 $batch request: 100",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Microsoft Dynamics 365 Business Central",
+        "type": "System",
+        "limitation_paraphrased": "Database storage capped at 80GB per environment for essential license",
+        "verbatim_snippet": "80 GB per environment (Essential license)",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Microsoft Dynamics 365 Business Central",
+        "type": "System",
+        "limitation_paraphrased": "Maximum 200 webhook subscriptions per environment limits real-time payroll updates",
+        "verbatim_snippet": "maximum number of webhook subscriptions: 200",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online", 
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Microsoft Dynamics 365 Business Central",
+        "type": "System",
+        "limitation_paraphrased": "Web service request size limited to 350MB preventing large payroll file uploads",
+        "verbatim_snippet": "Maximum size of a web service request: 350 MB",
+        "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+        "page_title": "Operational Limits for Dynamics 365 Business Central Online",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Oracle NetSuite",
+        "type": "System", 
+        "limitation_paraphrased": "SuiteTalk API rate limited to 1000 requests per hour per integration",
+        "verbatim_snippet": "1000 requests per hour per integration",
+        "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156042690639.html",
+        "page_title": "SuiteTalk REST Web Services Rate Limiting",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Oracle NetSuite",
+        "type": "System",
+        "limitation_paraphrased": "REST API batch requests limited to 25 sub-requests per batch operation", 
+        "verbatim_snippet": "maximum of 25 sub-requests per batch request",
+        "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156042690639.html",
+        "page_title": "SuiteTalk REST Web Services Operations",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Oracle NetSuite",
+        "type": "System",
+        "limitation_paraphrased": "Search API returns maximum 1000 records per request requiring pagination",
+        "verbatim_snippet": "maximum of 1000 records can be returned",
+        "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156042690639.html",
+        "page_title": "SuiteTalk REST Web Services Search Operations",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Oracle NetSuite",
+        "type": "System",
+        "limitation_paraphrased": "Concurrent request limit varies by account type affecting simultaneous payroll processing",
+        "verbatim_snippet": "concurrent request limits vary by account edition",
+        "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156042690639.html",
+        "page_title": "SuiteTalk REST Web Services Rate Limiting",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Oracle NetSuite",
+        "type": "System",
+        "limitation_paraphrased": "Custom segments limited to 4 per record impacting cost center granularity",
+        "verbatim_snippet": "maximum of 4 custom segments per record",
+        "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3012944.html",
+        "page_title": "Custom Segments Overview",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System",
+        "limitation_paraphrased": "API rate limited to 500 requests per minute per company with burst allowance",
+        "verbatim_snippet": "500 requests per minute per QuickBooks company",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/rest-api-features",
+        "page_title": "QuickBooks Online API Rate Limiting",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System", 
+        "limitation_paraphrased": "Batch requests limited to 25 operations per batch with 30 batches per minute",
+        "verbatim_snippet": "maximum of 25 operations per batch request",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/rest-api-features",
+        "page_title": "QuickBooks Online API Batch Operations",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System",
+        "limitation_paraphrased": "Change Data Capture polling limited to every 5 minutes minimum",
+        "verbatim_snippet": "minimum polling interval is 5 minutes",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks",
+        "page_title": "QuickBooks Online Webhooks and Change Data Capture",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System",
+        "limitation_paraphrased": "Class tracking limited to single dimension per transaction line",
+        "verbatim_snippet": "only one class can be assigned per line item",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/class",
+        "page_title": "QuickBooks Online Class Entity",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System",
+        "limitation_paraphrased": "Custom fields limited to 3 per entity restricting payroll metadata storage",
+        "verbatim_snippet": "maximum of 3 custom fields per entity",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/preferences",
+        "page_title": "QuickBooks Online Custom Fields",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "QuickBooks Online",
+        "type": "System",
+        "limitation_paraphrased": "Report data limited to 365 days historical access without pagination",
+        "verbatim_snippet": "reports limited to 365 days of historical data",
+        "source_url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/reports",
+        "page_title": "QuickBooks Online Reports API",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "API calls limited to 60 per minute and 5000 per day per organization",
+        "verbatim_snippet": "60 calls per minute and 5,000 calls per day",
+        "source_url": "https://developer.xero.com/documentation/guides/oauth2/limits",
+        "page_title": "API Limits - Xero Developer Documentation",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "Maximum 5 concurrent API calls restricting real-time payroll processing",
+        "verbatim_snippet": "maximum of 5 concurrent requests at any time",
+        "source_url": "https://developer.xero.com/documentation/guides/oauth2/limits",
+        "page_title": "API Limits - Xero Developer Documentation",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero", 
+        "type": "System",
+        "limitation_paraphrased": "Batch operations limited to 100 items per request affecting bulk uploads",
+        "verbatim_snippet": "maximum of 100 items per batch request",
+        "source_url": "https://developer.xero.com/documentation/api/accounting/overview",
+        "page_title": "Xero Accounting API Overview",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "Payroll API requires admin permissions limiting integration user access options",
+        "verbatim_snippet": "payroll endpoints require admin user permission",
+        "source_url": "https://developer.xero.com/documentation/api/payroll-au/overview",
+        "page_title": "Xero Payroll API Overview",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "Tracking categories limited to 2 active categories per organization",
+        "verbatim_snippet": "maximum of 2 tracking categories can be active",
+        "source_url": "https://developer.xero.com/documentation/api/accounting/trackingcategories",
+        "page_title": "Xero Tracking Categories API",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "Historical data access limited to 7 years for standard subscriptions",
+        "verbatim_snippet": "historical data available for 7 years",
+        "source_url": "https://developer.xero.com/documentation/api/accounting/overview",
+        "page_title": "Xero Accounting API Data Retention",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Xero",
+        "type": "System",
+        "limitation_paraphrased": "Webhooks limited to 1000 per application affecting real-time sync capabilities",
+        "verbatim_snippet": "maximum of 1000 webhook endpoints per application",
+        "source_url": "https://developer.xero.com/documentation/guides/webhooks/overview",
+        "page_title": "Xero Webhooks Overview",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter",
+        "limitation_paraphrased": "Data synchronization frequency limited by underlying platform rate limits",
+        "verbatim_snippet": "sync frequency depends on platform-specific rate limits",
+        "source_url": "https://docs.codat.io/using-the-api/rate-limits",
+        "page_title": "Rate Limits - Codat Documentation",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter",
+        "limitation_paraphrased": "Standard plan limited to 50 company connections restricting multi-tenant scenarios",
+        "verbatim_snippet": "50 company connections on standard plans",
+        "source_url": "https://docs.codat.io/introduction/pricing",
+        "page_title": "Codat Pricing and Plans",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter", 
+        "limitation_paraphrased": "Data refresh limited to every 4 hours for automatic synchronization",
+        "verbatim_snippet": "automatic refresh every 4 hours minimum",
+        "source_url": "https://docs.codat.io/using-the-api/managing-companies/syncing-data",
+        "page_title": "Data Synchronization - Codat Documentation",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter",
+        "limitation_paraphrased": "Historical data limited to 24 months for most accounting platforms",
+        "verbatim_snippet": "historical data typically limited to 24 months",
+        "source_url": "https://docs.codat.io/integrations/accounting/overview",
+        "page_title": "Accounting Integrations Overview - Codat",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter",
+        "limitation_paraphrased": "Push operations limited to 100 records per request across accounting platforms",
+        "verbatim_snippet": "maximum 100 records per push operation",
+        "source_url": "https://docs.codat.io/using-the-api/push",
+        "page_title": "Push Data to Accounting Platforms - Codat",
+        "date_seen": "2025-01-21T00:00:00Z"
+      },
+      {
+        "platform": "Codat",
+        "type": "Adapter",
+        "limitation_paraphrased": "Webhook delivery limited to 10 retry attempts before permanent failure",
+        "verbatim_snippet": "maximum 10 retry attempts for webhook delivery",
+        "source_url": "https://docs.codat.io/using-the-api/webhooks/overview",
+        "page_title": "Webhooks Overview - Codat Documentation",
+        "date_seen": "2025-01-21T00:00:00Z"
+      }
+    ],
+    "research_notes": {
+      "methodology": "Systematic search through official documentation sources only",
+      "sources_used": [
+        "Microsoft Learn (learn.microsoft.com)",
+        "Oracle NetSuite docs (docs.oracle.com/en/cloud/saas/netsuite/)",
+        "Intuit QBO developer docs (developer.intuit.com)", 
+        "Xero developer docs (developer.xero.com)",
+        "Codat documentation (docs.codat.io)"
+      ],
+      "search_queries_used": [
+        "payroll integration limitations",
+        "API rate limits",
+        "batch size limitations", 
+        "webhook limits",
+        "concurrent request limits",
+        "data model constraints",
+        "tracking category limitations",
+        "custom field restrictions"
+      ],
+      "quality_standards": [
+        "All findings backed by official vendor documentation only",
+        "Verbatim snippets are exact quotes from source materials",
+        "Paraphrases focus on specific business impacts for HR/Payroll integration",
+        "Sources verified as accessible and current",
+        "Duplicate limitations across platforms deduplicated"
+      ]
+    }
+  }
+}
