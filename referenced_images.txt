@@ -1,0 +1,17 @@
+04-accounting-integration-banner-path1.png
+07-confirm-access-modal.png
+08-select-accounting-software-dialog.png
+current-step-view.png
+current-sync-state.png
+mode-of-entry-dropdown-options.png
+payroll-settings-initial.png
+post-config-management.png
+report-template-step1.png
+report-template-step2-mapping.png
+report-template-step3-review.png
+setup-integration-report-step1.png
+step1-basic-setup-configuration.png
+step3-review-save-interface.png
+xero-connection-modal.png
+xero-connection-successful-modal.png
+xero-waiting-connection-modal.png

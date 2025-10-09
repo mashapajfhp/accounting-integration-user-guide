@@ -317,7 +317,7 @@
                     <h3>Navigate to Integration Settings</h3>
                     <p>In Bayzat, go to: <strong>Settings → Payroll → Accounting Integration</strong></p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="../.playwright-mcp/04-accounting-integration-banner-path1.png" alt="Accounting Integration Banner" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <img src="../playwright-images/04-accounting-integration-banner-path1.png" alt="Accounting Integration Banner" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                         <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Accounting Integration banner in Bayzat</div>
                     </div>
                     <p style="margin-top: 15px; color: #6b7280; font-size: 0.9em;">
@@ -334,7 +334,7 @@
                     <h3>Accept Terms & Conditions</h3>
                     <p>Review and accept the integration terms to proceed</p>
                     <div style="text-align: center; margin: 15px 0;">
-                        <img src="../.playwright-mcp/07-confirm-access-modal.png" alt="Consent Modal" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <img src="../playwright-images/07-confirm-access-modal.png" alt="Consent Modal" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                         <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Terms and conditions consent modal</div>
                     </div>
                 </div>
@@ -355,7 +355,7 @@
                 <p style="margin-bottom: 25px;">Choose your accounting software from the available options:</p>
 
                 <div style="text-align: center; margin: 20px 0;">
-                    <img src="../.playwright-mcp/08-select-accounting-software-dialog.png" alt="Accounting System Selection" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <img src="../playwright-images/08-select-accounting-software-dialog.png" alt="Accounting System Selection" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                     <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Select your accounting software from available options</div>
                 </div>
 
@@ -547,22 +547,22 @@
             const systemInfo = {
                 'qbo': {
                     text: 'Ensure you have QuickBooks Online admin access. The integration will create journal entries automatically.',
-                    image: '../.playwright-mcp/quickbooks-online-connection-modal.png',
+                    image: '../playwright-images/quickbooks-online-connection-modal.png',
                     caption: 'QuickBooks Online authentication flow'
                 },
                 'xero': {
                     text: 'Make sure you have Xero admin permissions. Check your app connection limits before proceeding.',
-                    image: '../.playwright-mcp/xero-connection-modal.png',
+                    image: '../playwright-images/xero-connection-modal.png',
                     caption: 'Xero connection and authorization process'
                 },
                 'netsuite': {
                     text: 'Verify you have Custom Record Types and Segments permissions in NetSuite.',
-                    image: '../.playwright-mcp/oracle-netsuite-connection-modal.png',
+                    image: '../playwright-images/oracle-netsuite-connection-modal.png',
                     caption: 'NetSuite token-based authentication setup'
                 },
                 'd365': {
                     text: 'Important: Disable mandatory dimensions in Dynamics 365 before starting the connection.',
-                    image: '../.playwright-mcp/dynamics365-connection-modal.png',
+                    image: '../playwright-images/dynamics365-connection-modal.png',
                     caption: 'Dynamics 365 Business Central connection flow'
                 }
             };
