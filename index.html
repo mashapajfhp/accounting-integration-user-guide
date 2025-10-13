@@ -553,6 +553,98 @@
             </div>
         </section>
 
+        <section id="pre-implementation" class="pre-implementation-checklist" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">📋 1. Pre-Implementation Checklist</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.7;">Ensure the following pre-requisites are met before attempting setup. These are required for a successful connection and integration.</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr style="background: #f8fafc;">
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 40%;">Requirement</th>
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 15%;">Platform</th>
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 45%;">Verification Steps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Accounting System Admin Permissions</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Confirm full administrator access with read/write permissions to accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>API Integration Permission</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Enable third-party app connections and API access in accounting system settings</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Creation</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Verify ability to create and post journal entries in accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Chart of Accounts Access</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Ensure access to view and select accounts, verify payroll and liability accounts exist</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Browser Compatibility</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Use modern browser (Chrome, Firefox, Edge) with JavaScript enabled</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Popup Blockers</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Disable popup blockers for OAuth authentication flows during setup</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Payment Methods Configuration</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Configure bank accounts in Settings → Payroll → Bank Accounts matching accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Cost Center Structure</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Define organizational departments for expense allocation (multi-dimensional not supported)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Closed Payroll Month</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Have at least one completed payroll cycle available for initial sync testing</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Disable Mandatory Dimensions</strong></td>
+                        <td style="padding: 15px; color: #000000;">D365 BC</td>
+                        <td style="padding: 15px; color: #000000;">Turn off mandatory dimension requirements before integration setup to prevent posting failures</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Custom Record Types Permission</strong></td>
+                        <td style="padding: 15px; color: #000000;">NetSuite</td>
+                        <td style="padding: 15px; color: #000000;">Verify Custom Record Types, Segments, Classes, Departments access permissions</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Connection Limit Check</strong></td>
+                        <td style="padding: 15px; color: #000000;">Xero</td>
+                        <td style="padding: 15px; color: #000000;">Verify uncertified app connection limits not exceeded before attempting setup</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Validation</strong></td>
+                        <td style="padding: 15px; color: #000000;">QBO</td>
+                        <td style="padding: 15px; color: #000000;">Ensure split amounts validation enabled for proper journal entry processing</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#setup-flow" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Setup Process →
+                </a>
+            </div>
+        </section>
+
         <section id="discovery-paths" class="detailed-access-paths" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
             <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">🔧 2. Setup Steps</h2>
             
@@ -677,96 +769,6 @@
 
         </section>
 
-        <section id="pre-implementation" class="pre-implementation-checklist" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
-            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">📋 1. Pre-Implementation Checklist</h2>
-            
-            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.7;">Ensure the following pre-requisites are met before attempting setup. These are required for a successful connection and integration.</p>
-
-            <table style="width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <thead>
-                    <tr style="background: #f8fafc;">
-                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 40%;">Requirement</th>
-                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 15%;">Platform</th>
-                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 45%;">Verification Steps</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Accounting System Admin Permissions</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Confirm full administrator access with read/write permissions to accounting system</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>API Integration Permission</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Enable third-party app connections and API access in accounting system settings</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Creation</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Verify ability to create and post journal entries in accounting system</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Chart of Accounts Access</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Ensure access to view and select accounts, verify payroll and liability accounts exist</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Browser Compatibility</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Use modern browser (Chrome, Firefox, Edge) with JavaScript enabled</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Popup Blockers</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Disable popup blockers for OAuth authentication flows during setup</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Payment Methods Configuration</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Configure bank accounts in Settings → Payroll → Bank Accounts matching accounting system</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Cost Center Structure</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Define organizational departments for expense allocation (multi-dimensional not supported)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Closed Payroll Month</strong></td>
-                        <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Have at least one completed payroll cycle available for initial sync testing</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Disable Mandatory Dimensions</strong></td>
-                        <td style="padding: 15px; color: #000000;">D365 BC</td>
-                        <td style="padding: 15px; color: #000000;">Turn off mandatory dimension requirements before integration setup to prevent posting failures</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Custom Record Types Permission</strong></td>
-                        <td style="padding: 15px; color: #000000;">NetSuite</td>
-                        <td style="padding: 15px; color: #000000;">Verify Custom Record Types, Segments, Classes, Departments access permissions</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 15px; color: #374151;"><strong>Connection Limit Check</strong></td>
-                        <td style="padding: 15px; color: #000000;">Xero</td>
-                        <td style="padding: 15px; color: #000000;">Verify uncertified app connection limits not exceeded before attempting setup</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Validation</strong></td>
-                        <td style="padding: 15px; color: #000000;">QBO</td>
-                        <td style="padding: 15px; color: #000000;">Ensure split amounts validation enabled for proper journal entry processing</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
-                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
-                    ← Back to Complete User Journey Guide
-                </a>
-                <a href="#setup-flow" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
-                    Continue to Setup Process →
-                </a>
-            </div>
 
         </section>
 
