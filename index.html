@@ -1141,6 +1141,19 @@
             </div>
 
             <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">How to Execute Sync Operations</h4>
+                <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">Once setup is completed, users can synchronize payroll data by navigating to Payroll → Transactions → Select most recent closed month, then clicking the "Sync data" button.</p>
+                
+                <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 15px;">
+                    <p style="color: #92400e; margin: 0; font-size: 0.9rem;"><strong>Sync Constraints:</strong> Data synchronization is only available for the most recent closed payroll month. Historical payroll periods cannot be synchronized, and the sync button will only appear when a closed month is selected and all prerequisites are met.</p>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border-left: 4px solid #16a34a;">
+                    <p style="color: #166534; margin: 0; font-size: 0.9rem;"><strong>Privacy by Design:</strong> The integration architecture ensures personal employee data never leaves Bayzat, transferring only the financial aggregates needed for accounting purposes while maintaining strict data privacy standards.</p>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
                 <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Two Access Paths for Data Synchronization</h4>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
@@ -1235,17 +1248,6 @@
                 <p style="color: #000000; margin: 0; line-height: 1.7;">This one-time setup applies to all future sync operations and must be completed before attempting data synchronization.</p>
             </div>
 
-            <div style="margin-bottom: 25px;">
-                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Executing Data Synchronization</h4>
-                <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">Once setup is completed, users can synchronize payroll data by navigating to Payroll → Transactions → Select most recent closed month, then clicking the "Sync data" button.</p>
-                
-                
-                <p style="color: #000000; margin: 0; line-height: 1.7;"><strong>Sync Constraints:</strong> Data synchronization is only available for the most recent closed payroll month. Historical payroll periods cannot be synchronized, and the sync button will only appear when a closed month is selected and all prerequisites are met.</p>
-            </div>
-
-            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
-                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Privacy by Design:</strong> The integration architecture ensures personal employee data never leaves Bayzat, transferring only the financial aggregates needed for accounting purposes while maintaining strict data privacy standards.</p>
-            </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
                 <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
