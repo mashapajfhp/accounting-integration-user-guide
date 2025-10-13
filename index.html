@@ -1171,9 +1171,28 @@
             <div style="margin-bottom: 25px;">
                 <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Prerequisite for Data Synchronization</h4>
                 
-                <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 20px;">
-                    <p style="color: #92400e; margin: 0; font-size: 0.9rem;"><strong>Critical Prerequisite:</strong> You cannot sync data without first configuring the sync report template and completing the payroll data mapping. Additionally, you can only sync data for the most recent closed payroll cycle. Report templates must be set up before sync operations become accessible.</p>
-                </div>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #fffbeb;">
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Prerequisite</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Sync Report Template</td>
+                            <td style="color: #000000; padding: 15px;">Must be configured before sync operations become accessible</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Data Mapping</td>
+                            <td style="color: #000000; padding: 15px;">Must be completed for all active payroll components</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Cycle Status</td>
+                            <td style="color: #000000; padding: 15px;">Can only sync data for the most recent closed payroll cycle</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">What is Sync Report Template</h5>
                 <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">A sync report template defines the format and content structure for reports generated after each data synchronization. It specifies which data columns to include, how information is organized, and what details are captured for comprehensive documentation.</p>
