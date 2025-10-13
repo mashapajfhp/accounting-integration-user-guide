@@ -61,11 +61,11 @@ Create comprehensive team onboarding guides that position technical features as 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
     <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
         <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">💡 Concept</h5>
-        <p style="color: #111827; margin: 0; font-size: 0.9rem; line-height: 1.6;">[Explanation]</p>
+        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.6;">[Explanation]</p>
     </div>
     <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
         <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🚀 Business Value</h5>
-        <p style="color: #111827; margin: 0; font-size: 0.9rem; line-height: 1.6;">[Value proposition]</p>
+        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.6;">[Value proposition]</p>
     </div>
 </div>
 ```
@@ -347,7 +347,7 @@ When creating team onboarding guides:
     <style>
         /* Version 5 Design System CSS */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.7; color: #111827; }
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.7; color: #000000; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         p { margin-bottom: 15px; }
         h1, h2 { color: #6366f1; margin-bottom: 25px; }
