@@ -1127,6 +1127,33 @@
             </div>
 
             <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Prerequisites for Data Synchronization</h4>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #fffbeb;">
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Prerequisite</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Sync Report Template</td>
+                            <td style="color: #000000; padding: 15px;">Must be configured before sync operations become accessible</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Data Mapping</td>
+                            <td style="color: #000000; padding: 15px;">Must be completed for all active payroll components</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Cycle Status</td>
+                            <td style="color: #000000; padding: 15px;">Can only sync data for the most recent closed payroll cycle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-bottom: 25px;">
                 <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.3rem;">How to Execute Sync Operations</h4>
                 
                 <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">Once setup is completed, users can synchronize payroll data by navigating to Payroll → Transactions → Select most recent closed month, then clicking the "Sync data" button.</p>
@@ -1169,75 +1196,6 @@
             </div>
 
             <div style="margin-bottom: 25px;">
-                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Prerequisite for Data Synchronization</h4>
-                
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                    <thead>
-                        <tr style="background: #fffbeb;">
-                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Prerequisite</th>
-                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #f59e0b; color: #92400e; font-weight: 600;">Requirement</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; color: #374151; font-weight: 600;">Sync Report Template</td>
-                            <td style="color: #000000; padding: 15px;">Must be configured before sync operations become accessible</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Data Mapping</td>
-                            <td style="color: #000000; padding: 15px;">Must be completed for all active payroll components</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 15px; color: #374151; font-weight: 600;">Payroll Cycle Status</td>
-                            <td style="color: #000000; padding: 15px;">Can only sync data for the most recent closed payroll cycle</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">What is Sync Report Template</h5>
-                <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">A sync report template defines the format and content structure for reports generated after each data synchronization. It specifies which data columns to include, how information is organized, and what details are captured for comprehensive documentation.</p>
-                
-                <p style="color: #000000; margin-bottom: 15px; line-height: 1.7;">To configure the report template, the configuration process consists of a 3-step process accessed through:<br>Settings → Payroll → Accounting Integration → ellipse menu (⋯) → "Edit/View report"</p>
-                
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="playwright-images/setup-integration-report-step1.png" alt="Access path to report template configuration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Settings → Payroll → Accounting Integration interface showing ellipse menu access to report configuration</div>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                    
-                    <div style="margin-bottom: 25px;">
-                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 1: Define Report Name</h6>
-                        <div style="text-align: center; margin: 15px 0;">
-                            <img src="playwright-images/report-template-step1.png" alt="Report template Step 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 1: Define your reporting file name for sync results</div>
-                        </div>
-                        <p style="color: #000000; margin: 0; line-height: 1.7;">Configure a descriptive name for your sync report template that will identify the report format used for all future synchronization operations.</p>
-                    </div>
-
-                    <div style="margin-bottom: 25px;">
-                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 2: Map Data Columns</h6>
-                        <div style="text-align: center; margin: 15px 0;">
-                            <img src="playwright-images/report-template-step2-mapping.png" alt="Report template Step 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 2: Map data columns to Bayzat system data points for comprehensive sync reporting</div>
-                        </div>
-                        <p style="color: #000000; margin: 0; line-height: 1.7;">Map specific data columns to Bayzat system data points to define exactly what information will be included in your sync reports and how it will be organized.</p>
-                    </div>
-
-                    <div style="margin-bottom: 25px;">
-                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 3: Review & Save Template</h6>
-                        <div style="text-align: center; margin: 15px 0;">
-                            <img src="playwright-images/report-template-step3-review.png" alt="Report template Step 3" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 3: Review complete column mappings and save template for sync report generation</div>
-                        </div>
-                        <p style="color: #000000; margin: 0; line-height: 1.7;">Review all column mappings and template configuration, then save the template to make it available for sync report generation in all future data synchronization operations.</p>
-                    </div>
-                </div>
-                
-                <p style="color: #000000; margin: 0; line-height: 1.7;">This one-time setup applies to all future sync operations and must be completed before attempting data synchronization.</p>
-            </div>
-
-
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
                 <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
                     ← Back to Complete User Journey Guide
