@@ -820,9 +820,6 @@
                             <p style="color: #000000; margin: 0; line-height: 1.7;">The OAuth authentication process ensures Bayzat never sees or stores customer accounting credentials, which builds security trust and enables enterprise sales through industry-standard protocols. This third-party authentication model reduces liability for credential security and meets SOC 2 requirements essential for B2B sales to enterprise clients with strict security audit requirements.</p>
                         </div>
 
-                        <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b;">
-                            <p style="color: #92400e; margin: 0; font-size: 0.9rem;"><strong>Critical:</strong> D365 BC connections can take 3+ hours to establish. Plan accordingly and avoid setup during critical business periods. Ensure popup blockers are disabled.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -1457,7 +1454,6 @@
                     <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
                         <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">🟡 Major Limitations</h5>
                         <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
-                            <li><strong>Excessive connection time:</strong> Initial setup can take over 3 hours to establish, creating poor user experience and setup abandonment</li>
                             <li><strong>Batch naming requirements:</strong> Specific batch names required for successful sync - wrong names cause sync failures</li>
                             <li><strong>Large payroll constraints:</strong> API rate limiting affects organizations with high employee counts</li>
                             <li><strong>GOSI contribution gap:</strong> Employer GOSI contributions not automatically included, requires manual journal entry creation</li>
@@ -1477,8 +1473,8 @@
                             <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Use custom employee data fields for basic cost tracking instead of D365 cost centers. Configure Project Code or Department Code custom fields.</p>
                         </div>
                         <div>
-                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Connection Time Management:</p>
-                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Schedule D365 connections during off-hours. Plan 4-6 hours for setup. Use backup browser session in case of timeouts.</p>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Session Management:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Use backup browser session in case of timeouts during setup.</p>
                         </div>
                         <div>
                             <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">GOSI Contribution Handling:</p>
@@ -1703,7 +1699,6 @@
                             <li><strong>Next button disabled:</strong> Ensure all cost centers are mapped before proceeding</li>
                             <li><strong>OAuth timeout:</strong> Complete authentication within session timeout period</li>
                             <li><strong>Permission errors:</strong> Verify accounting system admin access before starting</li>
-                            <li><strong>Long connection times:</strong> D365 BC connections may take several hours</li>
                         </ul>
                     </div>
                     
