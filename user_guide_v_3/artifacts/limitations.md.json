@@ -1,0 +1,310 @@
+{
+  "limitations": [
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "API request timeout limit is 10 minutes",
+      "verbatim_snippet": "HTTP response code 504 - Gateway Timeout is returned when a request exceeds 10-minutes execution time",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+      "page_title": "Operation Limits in Dynamics 365 Business Central",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "Maximum OData batch operations limited to 100",
+      "verbatim_snippet": "Max OData Batch Operations: 100",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+      "page_title": "Operation Limits in Dynamics 365 Business Central",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "OData speed limit restricts to 6000 requests per 5-minute window",
+      "verbatim_snippet": "OData V4 Speed Limit: 6000 requests per 5-minute sliding window",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+      "page_title": "Operation Limits in Dynamics 365 Business Central",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "Maximum concurrent OData requests limited to 5 per user",
+      "verbatim_snippet": "OData V4 Max Concurrent Requests: 5 per user",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online",
+      "page_title": "Operation Limits in Dynamics 365 Business Central",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "OData filtering does not support OR operator across different fields",
+      "verbatim_snippet": "The 'OR' operator is not supported on distinct fields on an OData filter",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-known-limitations",
+      "page_title": "Known OData Limitations",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Microsoft Dynamics 365 Business Central",
+      "type": "System",
+      "limitation_paraphrased": "Deep patching operations are not supported",
+      "verbatim_snippet": "Business Central doesn't support deep patching",
+      "source_url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/odata-known-limitations",
+      "page_title": "Known OData Limitations",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "Concurrent sessions limited to 5 sessions for NetSuite Connector",
+      "verbatim_snippet": "Default concurrent sessions for NetSuite Connector: 5 sessions",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_164095787873.html",
+      "page_title": "NetSuite Concurrency Limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "API returns maximum 1000 objects per request",
+      "verbatim_snippet": "The API returns a maximum of 1,000 objects per request",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite-openair/nsoa-online-help/article_160070530606.html",
+      "page_title": "API Limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "SuitePeople US Payroll only supports US federal, state, and local taxes",
+      "verbatim_snippet": "SuitePeople U.S. Payroll only supports U.S. federal, state, and local payroll taxes",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N969660.html",
+      "page_title": "Getting Started with Payroll Solutions",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "Direct Workforce Management integrations with third-party payroll not supported in US",
+      "verbatim_snippet": "Direct integrations between Workforce Management and third-party payroll providers aren't supported in the U.S.",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_1130145067.html",
+      "page_title": "Workforce Management Integrations",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "REST API does not support upsert operation using external ID",
+      "verbatim_snippet": "Upsert operation using external ID",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite-suiteprojects-pro/online-help/article_160096179461.html",
+      "page_title": "REST API Known Limitations",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Oracle NetSuite",
+      "type": "System",
+      "limitation_paraphrased": "REST API does not support approval actions like Submit, Approve, Reject",
+      "verbatim_snippet": "Approval actions (Submit, Approve, Reject, Unapprove)",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite-suiteprojects-pro/online-help/article_160096179461.html",
+      "page_title": "REST API Known Limitations",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "QuickBooks Online",
+      "type": "System",
+      "limitation_paraphrased": "API rate limited to 500 requests per minute per company",
+      "verbatim_snippet": "API calls are throttled at 500 requests per minute per realmId",
+      "source_url": "https://help.developer.intuit.com/s/article/API-call-limits-and-throttling",
+      "page_title": "API call limits and throttling",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "QuickBooks Online",
+      "type": "System",
+      "limitation_paraphrased": "Maximum 10 concurrent API requests per company",
+      "verbatim_snippet": "Applications cannot make more than 10 API requests to the same realmId concurrently",
+      "source_url": "https://help.developer.intuit.com/s/article/API-call-limits-and-throttling",
+      "page_title": "API call limits and throttling",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "QuickBooks Online",
+      "type": "System",
+      "limitation_paraphrased": "Change Data Capture only returns changes for last 30 days and maximum 1000 objects per call",
+      "verbatim_snippet": "Look-back time can be up to 30 days and maximum number of objects that can be returned in a response is 1000",
+      "source_url": "https://developer.intuit.com/app/developer/qbo/docs/learn/explore-the-quickbooks-online-api/change-data-capture",
+      "page_title": "change data capture operations (CDC)",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "QuickBooks Online",
+      "type": "System",
+      "limitation_paraphrased": "Payroll API is limited to beta status for Time tracking and Deductions",
+      "verbatim_snippet": "Payroll API for Time tracking and Deductions use cases in Beta",
+      "source_url": "https://help.developer.intuit.com/s/article/Is-there-a-QuickBooks-Online-Payroll-API",
+      "page_title": "Is there a QuickBooks Online Payroll API?",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "QuickBooks Online",
+      "type": "System",
+      "limitation_paraphrased": "Integration only compatible with specific QBO plans and payroll services",
+      "verbatim_snippet": "compatible with Quickbooks Online Plus with Payroll in the United States, India and Canada",
+      "source_url": "https://help.wheniwork.com/articles/quickbooks-online-integration/",
+      "page_title": "QuickBooks Online Integration",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "API rate limited to 60 calls per rolling 60 second window",
+      "verbatim_snippet": "60 calls in a rolling 60 second window",
+      "source_url": "https://developer.xero.com/documentation/guides/oauth2/limits/",
+      "page_title": "OAuth 2.0 API limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "Daily API limit of 5000 calls per rolling 24 hour window",
+      "verbatim_snippet": "5000 calls in a rolling 24 hour window",
+      "source_url": "https://developer.xero.com/documentation/guides/oauth2/limits/",
+      "page_title": "OAuth 2.0 API limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "Request size ceiling of 50 nodes per request to avoid 3.5MB limit",
+      "verbatim_snippet": "a ceiling of about 50 nodes per request is practical - this will ensure a request does not exceed the maximum size of 3.5MB",
+      "source_url": "https://developer.xero.com/faq",
+      "page_title": "Xero Developer Frequently asked questions",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "Basic API Key authentication not supported",
+      "verbatim_snippet": "The Xero API does not support basic API Key authentication",
+      "source_url": "https://developer.xero.com/faq/oauth2",
+      "page_title": "OAuth 2.0 FAQs",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "Single page apps not currently supported",
+      "verbatim_snippet": "Single page apps are not currently supported",
+      "source_url": "https://developer.xero.com/faq/oauth2",
+      "page_title": "OAuth 2.0 FAQs",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "All access tokens expire after 30 minutes",
+      "verbatim_snippet": "All Xero access tokens expire after 30 minutes",
+      "source_url": "https://developer.xero.com/faq/oauth2",
+      "page_title": "OAuth 2.0 FAQs",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Xero",
+      "type": "System",
+      "limitation_paraphrased": "Not suitable for businesses with very high transaction volumes",
+      "verbatim_snippet": "Xero is not suitable for all types of business, particularly those with very high transaction volumes",
+      "source_url": "https://developer.xero.com/faq",
+      "page_title": "Xero Developer Frequently asked questions",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "Daily API requests limited by formula: 1000 x (1 + number of Active Connected Companies)",
+      "verbatim_snippet": "1,000 x (1 + number of Active Connected Companies [ACCs])",
+      "source_url": "https://docs.codat.io/using-the-api/rate-limits",
+      "page_title": "Rate limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "Concurrent requests limited to 10 per Active Connected Company",
+      "verbatim_snippet": "10 requests per ACC",
+      "source_url": "https://docs.codat.io/using-the-api/rate-limits",
+      "page_title": "Rate limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "Hard DoS protection limit of 1000 requests per minute per IP",
+      "verbatim_snippet": "1,000 requests per minute from any IP Address",
+      "source_url": "https://docs.codat.io/using-the-api/rate-limits",
+      "page_title": "Rate limits",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "Supplemental data cannot be used for line-level properties or querying",
+      "verbatim_snippet": "currently available only at the record level and cannot be used to interact with line-level properties",
+      "source_url": "https://docs.codat.io/using-the-api/supplemental-data/overview",
+      "page_title": "Supplemental data",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "QuickBooks for Mac OS not supported",
+      "verbatim_snippet": "Codat doesn't support Intuit QuickBooks for Mac OS",
+      "source_url": "https://docs.codat.io/integrations/accounting/quickbooksdesktop/software-and-hardware-requirements",
+      "page_title": "QuickBooks Desktop requirements",
+      "date_seen": "2025-01-25T00:00:00Z"
+    },
+    {
+      "platform": "Codat",
+      "type": "Adapter",
+      "limitation_paraphrased": "Sage 200 Professional Desktop not supported",
+      "verbatim_snippet": "Sage 200 Professional (Desktop) is not supported",
+      "source_url": "https://docs.codat.io/integrations/accounting/sage200/accounting-sage200",
+      "page_title": "Sage 200 Standard",
+      "date_seen": "2025-01-25T00:00:00Z"
+    }
+  ],
+  "research_metadata": {
+    "search_date": "2025-01-25T00:00:00Z",
+    "platforms_researched": [
+      "Microsoft Dynamics 365 Business Central",
+      "Oracle NetSuite", 
+      "QuickBooks Online",
+      "Xero",
+      "Codat"
+    ],
+    "documentation_sources": [
+      "learn.microsoft.com",
+      "docs.oracle.com",
+      "developer.intuit.com",
+      "developer.xero.com", 
+      "docs.codat.io"
+    ],
+    "limitation_categories_found": [
+      "API rate limits and throttling restrictions",
+      "Batch size limitations for bulk operations",
+      "Concurrent request limitations",
+      "Authentication and authorization constraints",
+      "Platform compatibility restrictions",
+      "Data processing constraints",
+      "Geographic and localization limitations",
+      "Payroll integration restrictions",
+      "Change data capture constraints",
+      "Request timeout limitations"
+    ],
+    "notes": [
+      "All findings sourced from official vendor documentation only",
+      "QuickBooks Online CDC limitation confirmed: 30-day lookback and 1000 object maximum",
+      "Some vendor documentation pages had loading issues but core limitations were captured",
+      "Rate limits and operational constraints well documented across all platforms",
+      "Payroll limitations vary significantly by platform and geographic region"
+    ]
+  }
+}

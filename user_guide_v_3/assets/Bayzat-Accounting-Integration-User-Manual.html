@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayzat Accounting Integration - User Manual Guide</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f5f5f5; 
+            color: #333;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #6B46C1; 
+            border-bottom: 3px solid #6B46C1; 
+            padding-bottom: 10px; 
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        h2 { 
+            color: #374151; 
+            margin-top: 2em; 
+            font-size: 1.8em;
+            border-left: 4px solid #6B46C1;
+            padding-left: 15px;
+        }
+        h3 { 
+            color: #4B5563; 
+            font-size: 1.4em;
+            margin-top: 1.5em;
+        }
+        h4 {
+            color: #6B7280;
+            font-size: 1.2em;
+            margin-top: 1.2em;
+        }
+        .screenshot { 
+            border: 1px solid #E5E7EB; 
+            border-radius: 8px; 
+            max-width: 100%; 
+            height: auto; 
+            margin: 20px 0; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        .screenshot-container { 
+            text-align: center; 
+            margin: 30px 0; 
+            background: #F9FAFB;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .screenshot-caption { 
+            font-style: italic; 
+            color: #6B7280; 
+            margin-top: 10px; 
+            font-size: 0.9em;
+        }
+        .quick-start { 
+            background: #F0FDF4; 
+            border: 2px solid #10B981; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin: 20px 0; 
+        }
+        .warning { 
+            background: #FEF3C7; 
+            border: 1px solid #F59E0B; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 15px 0; 
+        }
+        .info { 
+            background: #EFF6FF; 
+            border: 1px solid #3B82F6; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 15px 0; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+        }
+        th, td { 
+            border: 1px solid #E5E7EB; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #F3F4F6; 
+            font-weight: 600; 
+        }
+        .steps {
+            background: #F8FAFC;
+            border-left: 4px solid #6B46C1;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .step-number {
+            background: #6B46C1;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .pm-focus {
+            background: #FEF7FF;
+            border-left: 4px solid #A855F7;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .designer-focus {
+            background: #F0F9FF;
+            border-left: 4px solid #0EA5E9;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .toc {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #6B46C1;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .system-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .system-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+        .path-comparison {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .path-card {
+            flex: 1;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        details {
+            margin: 20px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #6B46C1;
+            margin-bottom: 10px;
+        }
+        .metadata {
+            background: #F3F4F6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bayzat Accounting Integration User Manual</h1>
+        
+        <div class="metadata">
+            <strong>Version:</strong> 3.1 (Complete Edition)<br>
+            <strong>Last Updated:</strong> September 2025<br>
+            <strong>Document Type:</strong> Comprehensive User Manual Guide<br>
+            <strong>Primary Audience:</strong> New Product Managers, New Product Designers<br>
+            <strong>Coverage:</strong> Complete end-to-end accounting integration documentation including setup, configuration, management, and optimization<br>
+            <strong>Completeness:</strong> All planned phases completed - ready for enterprise deployment
+        </div>
+
+        <div class="quick-start">
+            <h2>🏁 Quick Start (5 minutes)</h2>
+            <p><strong>For immediate setup:</strong></p>
+            <ol>
+                <li><span class="step-number">1</span>Navigate to <strong>Payroll → Adjustments</strong> OR <strong>Settings → Payroll</strong></li>
+                <li><span class="step-number">2</span>Click <strong>"Start Connection"</strong> in the accounting integration banner</li>
+                <li><span class="step-number">3</span>Accept terms and conditions</li>
+                <li><span class="step-number">4</span>Select your accounting system from 6 supported options</li>
+                <li><span class="step-number">5</span>Follow system-specific authentication flow</li>
+            </ol>
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Ensure you have admin access to both Bayzat and your accounting system before starting.
+            </div>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">1. Executive Summary & Business Impact</a></li>
+                <li><a href="#access-paths">2. Access Paths Analysis</a></li>
+                <li><a href="#workflow">3. Complete Setup Workflow</a></li>
+                <li><a href="#systems">4. Supported Accounting Systems</a></li>
+                <li><a href="#ui-guide">5. User Interface Guide</a></li>
+                <li><a href="#troubleshooting">6. Troubleshooting & Support</a></li>
+                <li><a href="#configuration">7. Configuration Interface Guide (Phase 3: Map Data)</a></li>
+                <li><a href="#data-synchronization">8. Data Synchronization Usage</a></li>
+                <li><a href="#post-configuration-management">9. Post-Configuration Management</a></li>
+                <li><a href="#advanced-features">10. Advanced Features & Customization</a></li>
+                <li><a href="#performance-optimization">11. Performance & Optimization</a></li>
+                <li><a href="#appendices">12. Appendices</a></li>
+            </ul>
+        </div>
+
+        <h2 id="overview">1. Executive Summary & Business Impact</h2>
+
+        <h3>What Is Bayzat Accounting Integration?</h3>
+        <p>Bayzat's Accounting Integration is a seamless bridge that automatically synchronizes payroll data from Bayzat to your preferred accounting software, eliminating manual data entry and ensuring accurate financial records.</p>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/04-accounting-integration-banner-path1.png" alt="Accounting Integration Banner" class="screenshot">
+            <div class="screenshot-caption">Accounting Integration banner as displayed throughout Bayzat platform</div>
+        </div>
+
+        <h3>Business Benefits & Metrics</h3>
+        <div class="info">
+            <strong>Business Impact:</strong>
+            <ul>
+                <li><strong>Time Efficiency:</strong> Eliminates manual data entry for each payroll cycle</li>
+                <li><strong>Error Reduction:</strong> Eliminates manual data entry errors through automated sync</li>
+                <li><strong>Process Speed:</strong> Real-time data synchronization vs. multi-day manual processing</li>
+                <li><strong>Compliance:</strong> Complete audit trail with automatic journal entry creation</li>
+                <li><strong>Cost Savings:</strong> Reduces accounting processing costs through automation</li>
+            </ul>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Product Manager Insights</h4>
+            <p><strong>Strategic Value Proposition:</strong></p>
+            <ul>
+                <li><strong>Market Position:</strong> Positions Bayzat as a complete payroll-to-finance solution</li>
+                <li><strong>Customer Retention:</strong> Integration stickiness reduces customer churn</li>
+                <li><strong>Competitive Advantage:</strong> Supports 6 major accounting platforms</li>
+                <li><strong>Revenue Impact:</strong> Premium feature driving increased ARPU</li>
+                <li><strong>Implementation Success:</strong> High completion rate with proper guidance</li>
+            </ul>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Product Designer Insights</h4>
+            <p><strong>Design Strategy & User Experience:</strong></p>
+            <ul>
+                <li><strong>Progressive Disclosure:</strong> Complex setup broken into digestible steps</li>
+                <li><strong>Dual Access Pattern:</strong> Feature discoverable through both operational and settings workflows</li>
+                <li><strong>Consent-First Design:</strong> Clear permission model builds user trust</li>
+                <li><strong>Visual Hierarchy:</strong> Prominent banner placement ensures feature visibility</li>
+                <li><strong>Error Prevention:</strong> Pre-flight checks and validation reduce setup failures</li>
+            </ul>
+        </div>
+
+        <h2 id="access-paths">2. Access Paths Analysis</h2>
+
+        <h3>Two Identical Access Routes</h3>
+        <p>Bayzat provides two equivalent paths to access accounting integration, ensuring users can discover this feature through their natural workflow patterns:</p>
+
+        <div class="path-comparison">
+            <div class="path-card">
+                <h4>Path 1: Operational Access</h4>
+                <p><strong>Payroll → Adjustments</strong></p>
+                <ul>
+                    <li>Context: During payroll processing</li>
+                    <li>User Intent: Operational efficiency</li>
+                    <li>Timing: Month-end payroll cycles</li>
+                    <li>User Type: Payroll administrators</li>
+                </ul>
+            </div>
+            <div class="path-card">
+                <h4>Path 2: Configuration Access</h4>
+                <p><strong>Settings → Payroll</strong></p>
+                <ul>
+                    <li>Context: System configuration</li>
+                    <li>User Intent: Setup and maintenance</li>
+                    <li>Timing: Initial setup or changes</li>
+                    <li>User Type: System administrators</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>Design Rationale:</strong> Both paths display identical integration banners, ensuring consistent user experience regardless of entry point. This dual-access pattern accommodates different user mental models and workflow preferences.
+        </div>
+
+        <h3>Visual Access Path Documentation</h3>
+
+        <h4>Path 1: Payroll → Adjustments</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Navigate to Payroll</strong></p>
+            <p>In the main navigation, click on "Payroll" to reveal the payroll submenu. The menu includes options for Payroll table, Adjustments, Transactions, and My pay, along with related features like Employee loans and Air tickets.</p>
+            
+            <p><span class="step-number">2</span><strong>Access Adjustments</strong></p>
+            <p>Click on "Adjustments" to reach the payroll adjustments page where the accounting integration banner is prominently displayed. This represents the operational access path - users discovering the feature during their regular payroll workflow.</p>
+        </div>
+
+        <h4>Path 2: Settings → Payroll</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Navigate to Settings</strong></p>
+            <p>In the main navigation, click on "Settings" to access the configuration menu. The settings area includes Company management, Payroll configuration, HR modules (Leaves, Attendance), and organizational tools (Role management, Approval flows, Workflows).</p>
+            
+            <p><span class="step-number">2</span><strong>Access Payroll Settings</strong></p>
+            <p>Click on "Payroll" in the settings menu to reach the payroll configuration page with the identical integration banner. This represents the administrative access path - users setting up or configuring system features.</p>
+        </div>
+
+        <h2 id="workflow">3. Complete Setup Workflow</h2>
+
+        <h3>Step-by-Step Integration Process</h3>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Initiate Connection</h4>
+            <p>Click the <strong>"Start Connection"</strong> button in the accounting integration banner.</p>
+            
+            <div class="screenshot-container">
+                <img src="playwright-images/06-accounting-integration-banner-path2.png" alt="Integration banner" class="screenshot">
+                <div class="screenshot-caption">Accounting integration banner with "Start Connection" call-to-action</div>
+            </div>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <p><strong>Business Context:</strong> This banner represents a strategic upsell opportunity for promoting the accounting integration feature.</p>
+            </div>
+        </div>
+
+        <div class="steps">
+            <h4><span class="step-number">2</span>Review and Accept Terms</h4>
+            <p>A consent modal appears requesting permission to access your accounting system. Review the terms and conditions before proceeding.</p>
+            
+            <div class="screenshot-container">
+                <img src="playwright-images/07-confirm-access-modal.png" alt="Consent modal" class="screenshot">
+                <div class="screenshot-caption">Permission consent modal with terms and conditions requirement</div>
+            </div>
+
+            <div class="warning">
+                <strong>Legal Requirement:</strong> This consent step is mandatory for data protection compliance and establishes clear permission boundaries for third-party access.
+            </div>
+
+            <h5>🔒 Security & Privacy Decision Point</h5>
+            <div class="info">
+                <strong>What You're Authorizing:</strong>
+                <ul>
+                    <li><strong>Data Access:</strong> Bayzat will read your accounting system's chart of accounts and cost centers</li>
+                    <li><strong>Data Writing:</strong> Bayzat will create journal entries and payroll transactions in your accounting system</li>
+                    <li><strong>Connection Scope:</strong> Access is limited to payroll-related financial data only</li>
+                    <li><strong>Data Retention:</strong> Sync history and configuration settings are preserved for audit purposes</li>
+                </ul>
+            </div>
+            <div class="warning">
+                <strong>Security Best Practices:</strong>
+                <ul>
+                    <li><strong>Admin Access Required:</strong> Only grant permissions using an administrator account in your accounting system</li>
+                    <li><strong>Review Permissions:</strong> Your accounting system will show exactly what access Bayzat is requesting</li>
+                    <li><strong>Revocable Access:</strong> You can disconnect the integration at any time from either Bayzat or your accounting system</li>
+                    <li><strong>Audit Trail:</strong> All sync activities are logged and can be reviewed in both systems</li>
+                </ul>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <p><strong>UX Pattern:</strong> Explicit consent design follows GDPR principles. Warning styling and checkbox requirement ensure informed user decision-making.</p>
+            </div>
+
+            <p><strong>Required Actions:</strong></p>
+            <ul>
+                <li>Read the permission notice carefully</li>
+                <li>Review linked Terms and Conditions</li>
+                <li>Review linked Privacy Policy</li>
+                <li>Check the consent checkbox</li>
+                <li>Click "Continue" (button becomes enabled only after consent)</li>
+            </ul>
+        </div>
+
+        <div class="steps">
+            <h4><span class="step-number">3</span>Select Accounting System</h4>
+            <p>Choose your accounting software from the list of supported integrations.</p>
+            
+            <div class="screenshot-container">
+                <img src="playwright-images/08-select-accounting-software-dialog.png" alt="Accounting system selection" class="screenshot">
+                <div class="screenshot-caption">Accounting software selection dialog showing all supported platforms</div>
+            </div>
+
+            <div class="info">
+                <strong>Search Functionality:</strong> Use the search bar to quickly find your accounting system if you manage multiple software packages.
+            </div>
+        </div>
+
+        <div class="steps">
+            <h4><span class="step-number">4</span>Complete System-Specific Authentication</h4>
+            <p>Follow the authentication flow specific to your chosen accounting system. This typically involves:</p>
+            <ul>
+                <li>Redirecting to your accounting system's login page</li>
+                <li>Entering your accounting system credentials</li>
+                <li>Authorizing Bayzat's access permissions</li>
+                <li>Confirming integration settings</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Note:</strong> Authentication flows vary by system. Ensure you have administrative access to your accounting software before proceeding.
+            </div>
+        </div>
+
+        <h2 id="systems">4. Supported Accounting Systems</h2>
+
+        <h3>Complete System Compatibility Matrix</h3>
+        <p>Bayzat supports integration with 6 major accounting platforms:</p>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #0078d4; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">MS</div>
+            <div>
+                <h4 style="margin: 0; color: #0078d4;">Microsoft Dynamics 365 Business Central</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Enterprise-grade ERP solution with comprehensive financial management</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> Business Central admin access, API permissions enabled</p>
+            </div>
+        </div>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #312e81; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8em;">NS</div>
+            <div>
+                <h4 style="margin: 0; color: #312e81;">Oracle NetSuite</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Cloud-based business management suite for growing companies</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> NetSuite administrator role, RESTlets enabled</p>
+            </div>
+        </div>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #0077C5; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">QB</div>
+            <div>
+                <h4 style="margin: 0; color: #0077C5;">QuickBooks Online</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Popular small to medium business accounting software</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> QuickBooks Online subscription, company admin access</p>
+            </div>
+        </div>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #0077C5; opacity: 0.7; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.7em;">QBS</div>
+            <div>
+                <h4 style="margin: 0; color: #6B7280;">QuickBooks Online Sandbox</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Testing environment for QuickBooks Online integration</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> Developer account, sandbox company setup</p>
+            </div>
+        </div>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #13B5EA; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">X</div>
+            <div>
+                <h4 style="margin: 0; color: #13B5EA;">Xero</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Cloud-based accounting platform popular in SME market</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> Xero organization admin, API access enabled</p>
+            </div>
+        </div>
+
+        <div class="system-card">
+            <div class="system-logo" style="background: #6B7280; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8em;">SB</div>
+            <div>
+                <h4 style="margin: 0; color: #6B7280;">Sandbox</h4>
+                <p style="margin: 5px 0; color: #6B7280;">Generic testing environment for integration development</p>
+                <p style="margin: 0; font-size: 0.9em;"><strong>Prerequisites:</strong> Development access, testing data prepared</p>
+            </div>
+        </div>
+
+        <h3>Integration Requirements by System</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>System</th>
+                    <th>Required Access Level</th>
+                    <th>API Prerequisites</th>
+                    <th>Setup Time</th>
+                    <th>Data Sync Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dynamics 365 BC</td>
+                    <td>Business Central Admin</td>
+                    <td>API permissions, Web Services enabled</td>
+                    <td>15-20 minutes</td>
+                    <td>Real-time</td>
+                </tr>
+                <tr>
+                    <td>Oracle NetSuite</td>
+                    <td>Administrator</td>
+                    <td>RESTlets enabled, Token auth</td>
+                    <td>10-15 minutes</td>
+                    <td>Near real-time</td>
+                </tr>
+                <tr>
+                    <td>QuickBooks Online</td>
+                    <td>Company Admin</td>
+                    <td>Apps connected, OAuth 2.0</td>
+                    <td>5-10 minutes</td>
+                    <td>Real-time</td>
+                </tr>
+                <tr>
+                    <td>QuickBooks Sandbox</td>
+                    <td>Developer</td>
+                    <td>Sandbox app, Test company</td>
+                    <td>5-10 minutes</td>
+                    <td>Real-time</td>
+                </tr>
+                <tr>
+                    <td>Xero</td>
+                    <td>Organization Admin</td>
+                    <td>API access, Custom connections</td>
+                    <td>8-12 minutes</td>
+                    <td>Real-time</td>
+                </tr>
+                <tr>
+                    <td>Sandbox</td>
+                    <td>Developer</td>
+                    <td>Development environment</td>
+                    <td>3-5 minutes</td>
+                    <td>Real-time</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="ui-guide">5. User Interface Guide</h2>
+
+        <h3>Main Dashboard Integration</h3>
+        <div class="screenshot-container">
+            <img src="playwright-images/bayzat-dashboard-new.png" alt="Bayzat main dashboard" class="screenshot">
+            <div class="screenshot-caption">Bayzat main dashboard showing navigation structure and feature access points</div>
+        </div>
+
+        <h3>Navigation Components</h3>
+        <h4>Primary Navigation Elements</h4>
+        <ul>
+            <li><strong>Logo/Home:</strong> Returns to main dashboard</li>
+            <li><strong>Search:</strong> Global platform search functionality</li>
+            <li><strong>Bayzat AI:</strong> AI-powered assistance and insights</li>
+            <li><strong>Profile Menu:</strong> User settings and account management</li>
+        </ul>
+
+        <h4>Feature Navigation Hierarchy</h4>
+        <ul>
+            <li><strong>Payroll</strong> → <em>Adjustments</em> (operational access)</li>
+            <li><strong>Settings</strong> → <em>Payroll</em> (configuration access)</li>
+            <li><strong>Finance Ops:</strong> Related financial features</li>
+            <li><strong>Reports:</strong> Integration reporting and analytics</li>
+        </ul>
+
+        <h3>Integration Banner Analysis</h3>
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>Visual Design Elements</h4>
+            <ul>
+                <li><strong>Color Scheme:</strong> Mint green background (#A7F3D0) for positive association</li>
+                <li><strong>Typography:</strong> Clear hierarchy with primary heading and descriptive text</li>
+                <li><strong>CTA Buttons:</strong> Primary "Start Connection" and secondary "Learn More"</li>
+                <li><strong>Illustration:</strong> Friendly character with calculator reinforces accounting theme</li>
+                <li><strong>Dismissible:</strong> X button allows users to hide banner if not immediately relevant</li>
+            </ul>
+        </div>
+
+        <h3>Modal Dialog Design Patterns</h3>
+        <p>The integration setup follows a consistent modal design pattern throughout the flow:</p>
+        <ul>
+            <li><strong>Progressive Disclosure:</strong> Information revealed step-by-step</li>
+            <li><strong>Clear Exit Points:</strong> X buttons and cancel options available</li>
+            <li><strong>Action Hierarchy:</strong> Primary actions prominently styled</li>
+            <li><strong>State Management:</strong> Buttons disabled until prerequisites met</li>
+        </ul>
+
+        <h2 id="troubleshooting">6. Troubleshooting & Support</h2>
+
+        <h3>Common Issues & Solutions</h3>
+
+        <details>
+            <summary>Integration Banner Not Visible</summary>
+            <p><strong>Symptoms:</strong> Accounting integration banner doesn't appear on Payroll or Settings pages</p>
+            <p><strong>Potential Causes:</strong></p>
+            <ul>
+                <li>Accounting integration already exists and is active</li>
+                <li>User permissions insufficient for integration features</li>
+                <li>Feature not enabled for current subscription tier</li>
+                <li>Banner previously dismissed and hidden</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li><strong>Check existing connections:</strong> Navigate to Settings → Payroll → Accounting Integration to see if a connection is already established</li>
+                <li>Verify user has admin-level access to payroll features</li>
+                <li>Check demo user rights and permissions if using demo environment, or contact Customer Success to confirm feature availability</li>
+                <li>Clear browser cache and refresh page</li>
+                <li>Try alternative access path (Settings vs. Payroll)</li>
+            </ol>
+        </details>
+
+        <details>
+            <summary>Consent Modal Won't Accept Terms</summary>
+            <p><strong>Symptoms:</strong> Cannot click Continue button after checking terms checkbox</p>
+            <p><strong>Potential Causes:</strong></p>
+            <ul>
+                <li>Browser blocking modal interactions</li>
+                <li>JavaScript errors preventing form submission</li>
+                <li>Session timeout during review process</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Disable browser popup blockers</li>
+                <li>Try different browser or incognito mode</li>
+                <li>Check browser console for JavaScript errors</li>
+                <li>Refresh page and restart integration process</li>
+            </ol>
+        </details>
+
+        <details>
+            <summary>Accounting System Not Listed</summary>
+            <p><strong>Symptoms:</strong> Your accounting software doesn't appear in the selection dialog</p>
+            <p><strong>Current Supported Systems:</strong> Dynamics 365 BC, Oracle NetSuite, QuickBooks Online, Xero, Sandbox</p>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Use search functionality to locate your system</li>
+                <li>Check if your system has an alternative name or version</li>
+                <li>Contact Bayzat support for integration roadmap</li>
+                <li>Consider migration to supported system if business-critical</li>
+            </ol>
+        </details>
+
+        <details>
+            <summary>Authentication Failures</summary>
+            <p><strong>Symptoms:</strong> Authentication fails during accounting system login</p>
+            <p><strong>Potential Causes:</strong></p>
+            <ul>
+                <li>Insufficient permissions in accounting system</li>
+                <li>Two-factor authentication blocking API access</li>
+                <li>Expired credentials or trial accounts</li>
+            </ul>
+            <p><strong>Solutions:</strong></p>
+            <ol>
+                <li>Verify admin access to accounting system</li>
+                <li>Temporarily disable 2FA if applicable</li>
+                <li>Ensure account is active and paid</li>
+                <li>Contact accounting software support for API access</li>
+            </ol>
+        </details>
+
+
+        <h3>🔍 Accessing Audit Trails & Activity Logs</h3>
+        <div class="info">
+            <strong>For Compliance & Troubleshooting:</strong> Audit trails help you track integration activity, diagnose issues, and maintain compliance records.
+        </div>
+        
+        <h4>Where to Find Integration Activity Logs</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Sync History in Bayzat</strong></p>
+            <p>Navigate to <strong>Settings → Payroll → Accounting Integration → Sync History</strong> to view:</p>
+            <ul>
+                <li>Sync execution timestamps and duration</li>
+                <li>Success/failure status for each sync attempt</li>
+                <li>User who initiated each sync operation</li>
+                <li>Data volume and transaction counts</li>
+            </ul>
+            <div class="warning">
+                <strong>⚠️ UNVERIFIED:</strong> This navigation path has not been confirmed through interface testing. While audit logging capabilities exist in the system (confirmed via codebase), the specific UI location requires verification in your Bayzat environment.
+            </div>
+            
+            <p><span class="step-number">2</span><strong>Accounting System Logs</strong></p>
+            <p>Check your accounting software for integration activity:</p>
+            <ul>
+                <li><strong>QuickBooks:</strong> Audit Log under Company Settings → Privacy</li>
+                <li><strong>Xero:</strong> History and Notes under Settings → General Settings</li>
+                <li><strong>Dynamics 365:</strong> Activity Log in System Administration</li>
+                <li><strong>NetSuite:</strong> User Event Logs under Setup → Users/Roles</li>
+            </ul>
+            
+            <p><span class="step-number">3</span><strong>Configuration Change History</strong></p>
+            <p>Track mapping and setting modifications:</p>
+            <ul>
+                <li>User who made configuration changes</li>
+                <li>Timestamps of mapping updates</li>
+                <li>Before/after values for critical settings</li>
+                <li>Approval workflows (if enabled)</li>
+            </ul>
+        </div>
+
+        <h4>Using Audit Information for Troubleshooting</h4>
+        <div class="warning">
+            <strong>Common Audit Trail Scenarios:</strong>
+            <ul>
+                <li><strong>Failed Sync Investigation:</strong> Check sync logs to identify specific errors and retry patterns</li>
+                <li><strong>Data Discrepancy Resolution:</strong> Compare Bayzat sync records with accounting system entries</li>
+                <li><strong>User Access Issues:</strong> Verify who has performed recent configuration changes</li>
+                <li><strong>Compliance Reporting:</strong> Generate activity reports for internal audits</li>
+            </ul>
+        </div>
+
+        <h3>Support Contact Information</h3>
+        <div class="info">
+            <p><strong>For Integration Support:</strong></p>
+            <ul>
+                <li><strong>Help Center:</strong> Access through "Learn More" link in integration banner</li>
+                <li><strong>In-App Support:</strong> Use "Help & Support" button in top navigation</li>
+                <li><strong>Technical Issues:</strong> Submit ticket through Bayzat support portal</li>
+                <li><strong>Account Questions:</strong> Contact your designated account manager</li>
+            </ul>
+        </div>
+
+        <h2 id="configuration">7. Configuration Interface Guide (Phase 3: Map Data)</h2>
+
+        <h3>Understanding Data Mapping</h3>
+        
+        <h4>What is Data Mapping?</h4>
+        <p>Data mapping is the process of connecting information from one system (Bayzat payroll) to corresponding fields in another system (your accounting software). It establishes how payroll components like salaries, deductions, and benefits translate into proper accounting entries in your financial system.</p>
+
+        <div class="info">
+            <strong>Simple Example:</strong>
+            <ul>
+                <li><strong>Bayzat Field:</strong> "Basic Salary" (AED 8,000)</li>
+                <li><strong>Maps To:</strong> Xero Account "6000 - Salaries & Wages"</li>
+                <li><strong>Result:</strong> AED 8,000 automatically appears in correct account during payroll sync</li>
+            </ul>
+        </div>
+
+        <h4>Why is Data Mapping Critical?</h4>
+        
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Data Integrity & User Experience</h4>
+            <ul>
+                <li><strong>Prevents Data Chaos:</strong> Without mapping, payroll data lands in random or incorrect accounts</li>
+                <li><strong>Eliminates Manual Work:</strong> No more copying/pasting payroll data into accounting software</li>
+                <li><strong>Maintains Consistency:</strong> Same payroll components always go to same accounts</li>
+                <li><strong>Reduces Human Error:</strong> Automated process eliminates manual data entry mistakes</li>
+            </ul>
+        </div>
+
+        <h4>Business Impact of Proper Mapping</h4>
+        <ul>
+            <li><strong>Financial Accuracy:</strong> Ensures your P&L and balance sheet reflect true payroll costs</li>
+            <li><strong>Audit Compliance:</strong> Creates clear, traceable records for external auditors</li>
+            <li><strong>Tax Reporting:</strong> Properly categorized expenses for accurate tax calculations</li>
+            <li><strong>Management Reporting:</strong> Enables accurate departmental and project cost analysis</li>
+            <li><strong>Cash Flow Management:</strong> Clear visibility into payroll-related liabilities and expenses</li>
+        </ul>
+
+        <h4>What Happens Without Proper Mapping?</h4>
+        <div class="warning">
+            <strong>Common Problems:</strong>
+            <ul>
+                <li>Payroll expenses appear in wrong accounts (e.g., salary showing as office supplies)</li>
+                <li>Financial reports become unreliable and misleading</li>
+                <li>Month-end reconciliation takes hours instead of minutes</li>
+                <li>Audit difficulties due to unclear transaction trails</li>
+                <li>Tax calculation errors from misclassified expenses</li>
+            </ul>
+        </div>
+
+        <h3>Data Mapping Configuration Process</h3>
+        <p>Now that you understand the importance of data mapping, you'll configure how payroll data maps to your accounting structure through a structured 3-step configuration wizard.</p>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Configuration Impact on Business Operations</h4>
+            <p><strong>Strategic Importance:</strong></p>
+            <ul>
+                <li><strong>Accuracy Foundation:</strong> Proper mapping prevents accounting discrepancies</li>
+                <li><strong>Compliance Readiness:</strong> Ensures audit-ready financial records from day one</li>
+                <li><strong>Time Investment:</strong> One-time setup eliminates hours per payroll cycle</li>
+                <li><strong>Error Prevention:</strong> Structured mapping reduces manual correction needs</li>
+                <li><strong>Business Intelligence:</strong> Department-level cost tracking enables strategic decision-making</li>
+            </ul>
+        </div>
+
+        <h3>Accessing the Configuration Interface</h3>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Navigate to Configuration</strong></p>
+            <p>Go to <strong>Settings → Payroll → Accounting Integration</strong></p>
+            
+            <p><span class="step-number">2</span><strong>Click "Map Data"</strong></p>
+            <p>Select the "Map Data" button next to your connected accounting system to launch the configuration wizard.</p>
+
+            <div class="info">
+                <strong>Prerequisites:</strong> Ensure your accounting system is successfully connected before accessing configuration options.
+            </div>
+        </div>
+
+        <h3>Configuration Help Resources</h3>
+        <div class="screenshot-container">
+            <img src="playwright-images/bayzat-help-article-configurations.png" alt="Bayzat help article for configuration setup" class="screenshot">
+            <div class="screenshot-caption">Bayzat Help Center article providing detailed configuration guidance and step-by-step instructions</div>
+        </div>
+
+        <div class="info">
+            <strong>Additional Support:</strong> Access comprehensive configuration guides through "See help articles to get tips to configure account" link in the interface, or visit the Help Center under PAYROLL → Accounting Integration → Accounting platform Configurations.
+        </div>
+
+        <h3>Configuration Wizard Overview</h3>
+        <div class="screenshot-container">
+            <img src="playwright-images/step1-basic-setup-configuration.png" alt="Configuration wizard Step 1 interface" class="screenshot">
+            <div class="screenshot-caption">Configuration wizard showing 3-step process: Basic Setup, Map Pay Items, and Review & Save</div>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Configuration Wizard Design</h4>
+            <ul>
+                <li><strong>Progressive Disclosure:</strong> 3-step wizard prevents cognitive overload</li>
+                <li><strong>Visual Progress:</strong> Numbered steps with clear progression indicators</li>
+                <li><strong>Contextual Help:</strong> Inline help links and tooltips for complex concepts</li>
+                <li><strong>State Management:</strong> "Save as Draft & Exit" allows partial completion</li>
+                <li><strong>Visual Hierarchy:</strong> Clear distinction between required and optional fields</li>
+            </ul>
+        </div>
+
+        <h3>Step 1: Basic Setup Configuration</h3>
+        <div class="steps">
+            <h4><span class="step-number">1</span>Base Currency Selection</h4>
+            <p>The base currency for payroll transactions is automatically inherited from your company's primary currency, which was specified during initial Bayzat onboarding. This ensures consistency across all financial operations within your organization.</p>
+            
+            <div class="info">
+                <strong>Currency Source:</strong> The base currency displayed here reflects the primary currency configured when your company account was first set up in Bayzat. This cannot be modified within the accounting integration setup.
+            </div>
+            
+            <ul>
+                <li><strong>Default Setting:</strong> USD (United States Dollar) - or your company's configured currency</li>
+                <li><strong>Requirement:</strong> Must match your accounting system's base currency</li>
+                <li><strong>Impact:</strong> Prevents exchange rate discrepancies in financial reports</li>
+                <li><strong>Help Available:</strong> Click "Click here to see how different currencies are converted to a base currency" for conversion details</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Important:</strong> If your accounting system uses a different base currency than what's shown here, contact Bayzat support before proceeding. Currency mismatches can cause significant reconciliation issues.
+            </div>
+
+            <h4><span class="step-number">2</span>Define Cost Centers Configuration</h4>
+            <p><strong>What is a Cost Center?</strong></p>
+            <p>A cost center is an accounting concept used to track and allocate business expenses to specific departments, projects, or business units within your organization. In payroll context, cost centers help you understand where your labor costs are being spent and enable detailed financial reporting by organizational segment.</p>
+            
+            <div class="info">
+                <strong>Cost Center Examples:</strong>
+                <ul>
+                    <li><strong>Department-based:</strong> Marketing, Sales, Engineering, HR, Finance</li>
+                    <li><strong>Location-based:</strong> Dubai Office, Abu Dhabi Branch, Remote Workers</li>
+                    <li><strong>Project-based:</strong> Product Development, Client Services, Research</li>
+                    <li><strong>Function-based:</strong> Operations, Administration, Customer Support</li>
+                </ul>
+            </div>
+
+            <p><strong>Configuration Options:</strong> Choose how to organize payroll expenses across your organization:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Use Case</th>
+                        <th>Business Impact</th>
+                        <th>Configuration Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>None</strong></td>
+                        <td>Simple organization structure</td>
+                        <td>All payroll to single cost center</td>
+                        <td>No additional setup</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use departments</strong></td>
+                        <td>Department-based reporting</td>
+                        <td>Expense tracking by department</td>
+                        <td>Department-to-cost center mapping</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use offices</strong></td>
+                        <td>Location-based reporting</td>
+                        <td>Expense tracking by office location</td>
+                        <td>Office-to-cost center mapping</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use Custom Employee Data</strong></td>
+                        <td>Complex organizational structures</td>
+                        <td>Custom field-based expense allocation</td>
+                        <td>Custom field mapping required</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <p><strong>Cost Center Strategy:</strong> Implementing cost center grouping (whether by departments, offices, or custom criteria) provides significant organizational benefits by categorizing payroll expenses according to your business structure.</p>
+                <p><strong>Universal Benefits of Cost Center Grouping:</strong></p>
+                <ul>
+                    <li><strong>Financial Transparency:</strong> Clear visibility into where payroll costs are allocated across your organization</li>
+                    <li><strong>Performance Analysis:</strong> Compare costs and productivity across different groups (departments, locations, teams)</li>
+                    <li><strong>Budget Management:</strong> Set and track budgets for each cost center grouping</li>
+                    <li><strong>Strategic Decision Making:</strong> Data-driven insights for resource allocation and organizational planning</li>
+                    <li><strong>Compliance Reporting:</strong> Detailed expense categorization for regulatory and audit requirements</li>
+                    <li><strong>Profitability Analysis:</strong> Understand the true cost of different business units, projects, or locations</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Multi-Dimensional Cost Center Strategy</h3>
+        <p>Beyond basic cost center selection, organizations with complex structures may need to allocate payroll costs across multiple business dimensions simultaneously. This advanced approach provides granular visibility into where labor costs are actually incurred.</p>
+
+        <h4>What Are Multi-Dimensional Cost Centers?</h4>
+        <p>Traditional cost centers allocate employee costs to a single attribute (e.g., "Marketing Department"). Multi-dimensional cost centers split costs across multiple attributes simultaneously, creating a matrix of cost allocation rather than a simple hierarchy.</p>
+
+        <div class="info">
+            <strong>Example Allocation:</strong>
+            <p>Sarah (AED 10,000/month):</p>
+            <ul>
+                <li>60% → Project Alpha + Dubai Office + IT Department</li>
+                <li>40% → Project Beta + Abu Dhabi Office + IT Department</li>
+            </ul>
+            <p>Each combination creates unique accounting entries for precise cost tracking.</p>
+        </div>
+
+        <h4>Common Business Scenarios in the UAE/GCC</h4>
+        <ul>
+            <li><strong>Project-Based Consulting:</strong> Consultants working across multiple client engagements</li>
+            <li><strong>Multi-Location Operations:</strong> Managers supporting multiple UAE branches</li>
+            <li><strong>Shared Services:</strong> HR/Finance teams serving different business units</li>
+            <li><strong>Construction/Engineering:</strong> Project managers overseeing multiple developments</li>
+            <li><strong>Retail/Hospitality:</strong> Staff covering multiple locations or seasonal operations</li>
+        </ul>
+
+        <h4>Business Impact for Organizations</h4>
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <p><strong>Financial Reporting Benefits:</strong></p>
+            <ul>
+                <li>True P&L visibility by project, location, or client</li>
+                <li>Accurate project profitability analysis</li>
+                <li>Elimination of arbitrary cost allocations</li>
+            </ul>
+
+            <p><strong>Compliance & Governance:</strong></p>
+            <ul>
+                <li>Provide detailed audit trails for stakeholders</li>
+            </ul>
+
+            <p><strong>Strategic Decision Making:</strong></p>
+            <ul>
+                <li>Identify most/least profitable projects or locations</li>
+                <li>Make data-driven decisions about resource allocation</li>
+                <li>Support accurate budgeting and forecasting</li>
+            </ul>
+        </div>
+
+        <h4>Current Bayzat Capabilities</h4>
+        <div class="warning">
+            <strong>Important:</strong> Bayzat currently supports single-dimension cost center allocation through the configuration options described above (departments, offices, or custom employee data). Multi-dimensional cost center allocation is not currently supported but remains an important consideration for organizations evaluating their long-term accounting integration needs.
+        </div>
+
+        <h3>Step 1: Advanced Configuration Options</h3>
+        <div class="screenshot-container">
+            <img src="playwright-images/step1-partial-completion-next-disabled.png" alt="Step 1 advanced configuration showing department mapping and mode options" class="screenshot">
+            <div class="screenshot-caption">Advanced Step 1 configuration showing department-to-cost center mapping and mode of entry options</div>
+        </div>
+
+        <div class="steps">
+            <h4><span class="step-number">3</span>Department-to-Cost Center Mapping</h4>
+            <p>When "Use departments" is selected, map each Bayzat department to corresponding accounting system cost centers:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bayzat Department</th>
+                        <th>Configuration</th>
+                        <th>Business Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product</td>
+                        <td>Select Xero cost center dropdown</td>
+                        <td>R&D expense allocation</td>
+                    </tr>
+                    <tr>
+                        <td>Sales</td>
+                        <td>Select Xero cost center dropdown</td>
+                        <td>Sales team cost tracking</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>Select Xero cost center dropdown</td>
+                        <td>Marketing expense allocation</td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td>Select Xero cost center dropdown</td>
+                        <td>QA/Testing cost tracking</td>
+                    </tr>
+                    <tr>
+                        <td>WLP SALES</td>
+                        <td>Select Xero cost center dropdown</td>
+                        <td>Specialized sales division tracking</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4><span class="step-number">4</span>Mode of Entry Configuration</h4>
+            <p><strong>What is Mode of Entry?</strong></p>
+            <p>Mode of entry determines how payroll data is organized and structured when creating journal entries in your accounting system. You have two configuration approaches: <strong>Global Mode</strong> or <strong>Individual Line-Item Selection</strong>.</p>
+
+            <div class="screenshot-container">
+                <img src="playwright-images/mode-of-entry-dropdown-options.png" alt="Mode of entry dropdown showing three options: Consolidated entry, Entry per employee, Entry per cost center" class="screenshot">
+                <div class="screenshot-caption">Mode of entry dropdown showing three available options for structuring journal entries</div>
+            </div>
+
+            <h4>Configuration Strategy: Global vs Line-Item</h4>
+
+            <div class="info">
+                <strong>Global Mode (Recommended for Most Organizations):</strong>
+                <ul>
+                    <li><strong>When to Use:</strong> All payment methods (bank accounts, exchange houses, cash, cheques) should use the same reporting structure</li>
+                    <li><strong>How It Works:</strong> Select one mode from the dropdown - applies to all payment methods uniformly</li>
+                    <li><strong>Benefits:</strong> Consistent reporting, simplified configuration, uniform audit trail</li>
+                    <li><strong>Best For:</strong> Organizations with standard payroll processes across all payment types</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>Line-Item Configuration (Advanced Use Case):</strong>
+                <ul>
+                    <li><strong>When to Use:</strong> Different payment methods require different reporting granularity</li>
+                    <li><strong>How It Works:</strong> Leave global dropdown unselected, configure mode individually for each bank account/payment method</li>
+                    <li><strong>Example Scenario:</strong> Bank transfers need "Entry per employee" for detailed tracking, while exchange house payments use "Consolidated entry"</li>
+                    <li><strong>Complexity:</strong> Requires careful configuration management and understanding of reporting implications</li>
+                </ul>
+            </div>
+
+            <h4>Understanding the Three Mode Options</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode of Entry</th>
+                        <th>How It Works</th>
+                        <th>Best For</th>
+                        <th>Journal Entry Structure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Consolidated Entry</strong></td>
+                        <td>All payroll data is combined into single summary journal entries per pay period</td>
+                        <td>Most organizations seeking simplified accounting records</td>
+                        <td>One entry per pay component (e.g., Total Salaries: AED 50,000)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entry per Employee</strong></td>
+                        <td>Separate individual journal entry created for each employee's payroll</td>
+                        <td>Organizations requiring detailed employee-level tracking</td>
+                        <td>Multiple entries (e.g., John Doe Salary: AED 5,000, Jane Smith Salary: AED 6,000)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entry per Cost Center</strong></td>
+                        <td>Journal entries are grouped by cost center categories (departments, offices, etc.)</td>
+                        <td>Organizations needing cost center-level financial reporting</td>
+                        <td>Grouped entries (e.g., Marketing Dept Salaries: AED 15,000, Sales Dept Salaries: AED 20,000)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Configuration Decision Guide</h4>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 When to Use Global vs Line-Item Configuration</h4>
+                
+                <p><strong>Choose Global Mode When:</strong></p>
+                <ul>
+                    <li>All payment methods serve the same business purpose</li>
+                    <li>Consistent reporting structure is preferred across all payment types</li>
+                    <li>Simplified configuration and maintenance is prioritized</li>
+                    <li>Audit requirements are uniform across payment methods</li>
+                </ul>
+
+                <p><strong>Choose Line-Item Configuration When:</strong></p>
+                <ul>
+                    <li>Bank payments need detailed employee tracking for project billing</li>
+                    <li>Exchange house payments require simplified reporting</li>
+                    <li>Different payment methods serve different business functions</li>
+                    <li>Regulatory requirements vary by payment method</li>
+                </ul>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <h4>🎨 Configuration Flexibility</h4>
+                <p><strong>User Experience Design:</strong> The interface provides flexibility while maintaining simplicity through progressive disclosure.</p>
+                <ul>
+                    <li><strong>Default Approach:</strong> Global dropdown encourages consistent configuration</li>
+                    <li><strong>Advanced Option:</strong> Line-item selection available for complex scenarios</li>
+                    <li><strong>Visual Clarity:</strong> Global setting visually distinct from individual payment method mappings</li>
+                    <li><strong>Error Prevention:</strong> Cannot mix global and line-item configurations accidentally</li>
+                </ul>
+            </div>
+
+            <h4><span class="step-number">5</span>Map Employee Paid Via Options</h4>
+            
+            <h4>Understanding Payment Method Mapping</h4>
+            <p><strong>What Are We Doing Here?</strong></p>
+            <p>This step creates the critical link between how you pay employees (through Bayzat) and how those payments are recorded in your accounting system. You're essentially telling your accounting software which account to use when recording each type of payment.</p>
+
+            <div class="info">
+                <strong>Payment Method Sources:</strong>
+                <ul>
+                    <li><strong>Bank Accounts:</strong> These come from your organization's bank accounts configured in <em>Settings → Payroll → Bank Accounts</em></li>
+                    <li><strong>Exchange Houses:</strong> Pre-configured remittance services (UAE Exchange, Al Ansari, Lulu Exchange, etc.)</li>
+                    <li><strong>Others:</strong> Standard payment methods (Cash, Cheque) available in all Bayzat installations</li>
+                </ul>
+            </div>
+
+            <h4>The Mapping Process Explained</h4>
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>Bayzat Payment Method</strong></p>
+                <p>Each line shows a payment method from your Bayzat payroll configuration (e.g., "HSBC BANK MIDDLE EAST - AE940200000111434434342")</p>
+                
+                <p><span class="step-number">2</span><strong>Accounting System Account</strong></p>
+                <p>You select the corresponding account in your accounting system (e.g., "Clearing Account" in Xero)</p>
+                
+                <p><span class="step-number">3</span><strong>Result</strong></p>
+                <p>When employees are paid through that bank account, the transaction automatically appears in the correct accounting system account</p>
+            </div>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Business Impact of Proper Payment Mapping</h4>
+                <ul>
+                    <li><strong>Cash Flow Tracking:</strong> Know exactly which bank accounts are being used for payroll</li>
+                    <li><strong>Bank Reconciliation:</strong> Automatic matching between bank statements and accounting records</li>
+                    <li><strong>Multi-Bank Management:</strong> Handle payments from different bank accounts seamlessly</li>
+                    <li><strong>Audit Compliance:</strong> Clear trail from payroll expense to actual bank account usage</li>
+                </ul>
+            </div>
+
+            <h4>Payment Method Configuration Sections</h4>
+            <ul>
+                <li><strong>Bank Accounts:</strong> Map your organization's bank accounts (from Bayzat payroll settings) to corresponding accounts in your accounting system</li>
+                <li><strong>Exchange Houses:</strong> Configure how remittance and international transfer payments are recorded</li>
+                <li><strong>Others:</strong> Handle alternative payment methods like cash and cheque payments</li>
+            </ul>
+
+            <h4>Account Mapping Requirements</h4>
+            <div class="info">
+                <strong>Flexible Configuration:</strong> You are NOT required to map every payment method to proceed to Step 2. The system allows partial configuration based on your organization's actual payment needs.
+                <ul>
+                    <li><strong>Selective Mapping:</strong> Configure only the payment methods your organization actually uses</li>
+                    <li><strong>Phased Implementation:</strong> Set up core payment methods first, add others later</li>
+                    <li><strong>Minimum Requirement:</strong> At least one payment method must be mapped to enable progression</li>
+                </ul>
+            </div>
+
+            <h4>What If Your Bank Account Is Not Listed?</h4>
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>Add New Bank Account</strong></p>
+                <p>Click "Setup a new bank account" button to navigate to bank account management</p>
+                
+                <p><span class="step-number">2</span><strong>Configure New Bank</strong></p>
+                <p>Use the "Add new" button to add your unlisted bank account with required details</p>
+                
+                <p><span class="step-number">3</span><strong>Return to Integration</strong></p>
+                <p>Navigate back to accounting integration setup - your new bank account will appear in the mapping list</p>
+
+                <div class="info">
+                    <strong>Draft Preservation:</strong> Your integration configuration progress is automatically saved when adding new bank accounts, ensuring no data loss.
+                </div>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <p><strong>Expandable Sections:</strong> Accordion interface reduces cognitive load - users see only relevant configuration options while maintaining access to full functionality.</p>
+                <p><strong>Non-Blocking Design:</strong> Missing bank accounts don't prevent integration setup completion, ensuring smooth user experience.</p>
+            </div>
+        </div>
+
+        <h3>Step 2: Map Pay Items with Accounts</h3>
+        <div class="steps">
+            <p><strong>Primary Purpose:</strong> Step 2 creates the critical mapping between Bayzat payroll components and accounting system accounts. This is where you define how each pay element (salary, deductions, contributions) gets recorded in your financial system.</p>
+
+            <div class="screenshot-container">
+                <img src="playwright-images/current-step-view.png" alt="Step 2 Map pay items interface showing salary configurations with dual account mapping" class="screenshot">
+                <div class="screenshot-caption">Step 2 interface showing the salary configurations section with "On Bayzat" and "On Xero" dual account mapping for Basic Salary</div>
+            </div>
+
+            <h4>Understanding Accordion Status Indicators</h4>
+            <div class="info">
+                <strong>Visual Configuration Status:</strong>
+                <ul>
+                    <li><strong>✅ Green Checkmark:</strong> Section is completely configured and all required mappings are completed</li>
+                    <li><strong>Red/Pink Filled Circle with White Exclamation Mark (!):</strong> Section has missing or incomplete mappings that require attention</li>
+                    <li><strong>No Icon:</strong> Section is accessible but configuration hasn't been started</li>
+                </ul>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <h4>🎨 Progressive Configuration Design</h4>
+                <ul>
+                    <li><strong>Visual Feedback:</strong> Immediate status indication prevents users from missing required configurations</li>
+                    <li><strong>Error Prevention:</strong> Red warning icons guide users to incomplete sections before proceeding</li>
+                    <li><strong>Progress Tracking:</strong> Green checkmarks provide sense of accomplishment and completion progress</li>
+                    <li><strong>Accordion Pattern:</strong> Collapsible sections reduce cognitive load while maintaining clear status visibility</li>
+                </ul>
+            </div>
+
+            <h4>Configuration Workflow</h4>
+            <p>Each accordion section will display a red filled circle with exclamation mark until all required mappings are completed. Once properly configured, the warning icon changes to a green checkmark, indicating successful completion.</p>
+
+            <h4>Mapping Interface Structure</h4>
+            <div class="info">
+                <strong>Two-Column Mapping System:</strong>
+                <ul>
+                    <li><strong>Left Column ("On Bayzat"):</strong> Shows payroll components from your Bayzat configuration</li>
+                    <li><strong>Right Column ("On Xero"):</strong> Account selection dropdowns for your accounting system</li>
+                    <li><strong>Dual Account Logic:</strong> Separate accounts for "paid" vs "unpaid" scenarios</li>
+                    <li><strong>Mode Override:</strong> Individual pay items can override global mode settings</li>
+                    <li><strong>Preview Function:</strong> Shows how mapping will appear in accounting system</li>
+                </ul>
+            </div>
+
+            <h4>Dual Account Configuration Explained</h4>
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>"Accounts on Xero" (Main Account)</strong></p>
+                <p>Where the expense is recorded when payment is made (e.g., "Wages and Salaries" expense account)</p>
+                
+                <p><span class="step-number">2</span><strong>"Accounts if unpaid" (Liability Account)</strong></p>
+                <p>Where unpaid amounts are recorded as liabilities (e.g., "Accrued Payroll" or "Wages Payable")</p>
+                
+                <p><span class="step-number">3</span><strong>Business Logic</strong></p>
+                <p>This creates proper accrual accounting - expenses recognized when incurred, liabilities when unpaid</p>
+            </div>
+
+            <h4>Critical Business Impact of Step 2</h4>
+            
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Financial Accuracy & Compliance</h4>
+                <ul>
+                    <li><strong>Precise Account Classification:</strong> Each payroll component lands in the exact accounting category</li>
+                    <li><strong>Accrual Accounting Support:</strong> Dual account logic handles both paid and unpaid scenarios correctly</li>
+                    <li><strong>Audit Trail:</strong> Creates clear connection between payroll processing and financial records</li>
+                    <li><strong>Compliance Readiness:</strong> Proper categorization for tax and regulatory reporting</li>
+                </ul>
+
+                <h4>📈 Operational Efficiency</h4>
+                <ul>
+                    <li><strong>Eliminates Manual Entry:</strong> No more copying payroll data into accounting system</li>
+                    <li><strong>Reduces Reconciliation Time:</strong> Automatic matching between systems</li>
+                    <li><strong>Error Prevention:</strong> Structured mapping prevents misclassification</li>
+                    <li><strong>Scalability:</strong> Once configured, handles payroll growth automatically</li>
+                </ul>
+
+                <h4>💰 Strategic Financial Management</h4>
+                <ul>
+                    <li><strong>Department Cost Tracking:</strong> When combined with Step 1 cost centers</li>
+                    <li><strong>Cash Flow Management:</strong> Clear visibility of payroll liabilities vs expenses</li>
+                    <li><strong>Budgeting Support:</strong> Accurate categorization enables precise budget tracking</li>
+                    <li><strong>Risk Mitigation:</strong> Consistency eliminates human error in account selection</li>
+                </ul>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <h4>🎨 Translation Layer Design</h4>
+                <p><strong>Core Concept:</strong> Step 2 creates the "translation layer" between HR/payroll language and accounting language, ensuring every AED spent on payroll is properly recorded and categorized in the financial system.</p>
+                <ul>
+                    <li><strong>Mode Override Capability:</strong> Individual pay items can override global settings for flexibility</li>
+                    <li><strong>Preview Functionality:</strong> Users can validate mapping results before final configuration</li>
+                    <li><strong>Dual Account Strategy:</strong> Sophisticated handling of accrual vs cash accounting</li>
+                    <li><strong>Visual Progress:</strong> Accordion status indicators show completion progress</li>
+                </ul>
+
+                <h4>🎨 Advanced Configuration UX Features</h4>
+                <ul>
+                    <li><strong>Progressive Validation:</strong> Real-time validation prevents errors at submission, reducing configuration mistakes by providing immediate feedback on invalid selections or incomplete mappings</li>
+                    <li><strong>Contextual Help:</strong> Tooltip explanations for complex accounting concepts like cost centers, mode of entry, and accrual accounting, making the interface accessible to non-accounting users</li>
+                    <li><strong>Save State Management:</strong> Auto-save functionality prevents data loss during long configuration sessions, allowing users to resume complex mappings without losing progress</li>
+                    <li><strong>Error Recovery:</strong> Clear error messages with specific resolution steps guide users through configuration issues, reducing support ticket volume and implementation time</li>
+                    <li><strong>Mobile Responsive:</strong> Configuration interface optimized for tablet review, enabling finance managers to review and approve configurations remotely during business travel or off-site work</li>
+                </ul>
+            </div>
+
+            <h4>Preview Functionality Explained</h4>
+            
+            <h4>When Does Preview Button Become Active?</h4>
+            <div class="info">
+                <strong>Preview Button Activation Requirements:</strong>
+                <p>The Preview button becomes active (clickable) only when ALL required mapping fields for a pay item are completed:</p>
+                <ul>
+                    <li><strong>Accounts on Xero:</strong> Must be selected (main expense account)</li>
+                    <li><strong>Accounts if unpaid:</strong> Must be selected (liability account)</li>
+                    <li><strong>Mode of entry:</strong> Must be configured for both paid and unpaid scenarios</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>Inactive Preview:</strong> If any mapping field is incomplete, the Preview button remains disabled (grayed out) and cannot be clicked.
+            </div>
+
+            <h4>What the Preview Modal Shows</h4>
+            <p>When clicked, Preview opens a detailed modal titled "Preview mapping for [Pay Item Name]" that displays:</p>
+
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>Configuration Summary</strong></p>
+                <ul>
+                    <li>Selected Xero accounts for both paid and unpaid scenarios</li>
+                    <li>Mode of entry settings for each scenario</li>
+                    <li>Complete mapping configuration overview</li>
+                </ul>
+
+                <p><span class="step-number">2</span><strong>Journal Entry Structure Preview</strong></p>
+                <ul>
+                    <li><strong>Debit Account:</strong> Shows which account will be debited (blue info boxes)</li>
+                    <li><strong>Credit Account:</strong> Shows which account will be credited (blue info boxes)</li>
+                    <li><strong>Entry Logic:</strong> Demonstrates accounting entry structure based on payment status</li>
+                </ul>
+
+                <p><span class="step-number">3</span><strong>Dual Scenario Display</strong></p>
+                <ul>
+                    <li><strong>"Accounts if paid" scenario:</strong> How entries appear when payment is completed</li>
+                    <li><strong>"Accounts if unpaid" scenario:</strong> How entries appear when payment is pending</li>
+                    <li><strong>Mode variations:</strong> Different entry structures based on selected modes</li>
+                </ul>
+            </div>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Business Value of Preview Functionality</h4>
+                <ul>
+                    <li><strong>Error Prevention:</strong> Catch mapping mistakes before they affect live accounting records</li>
+                    <li><strong>Confidence Building:</strong> Reduces anxiety about integration accuracy by showing exact results</li>
+                    <li><strong>Training Tool:</strong> Helps users understand accounting impact of their configuration choices</li>
+                    <li><strong>Validation:</strong> Confirms proper debit/credit logic before activation</li>
+                    <li><strong>Risk Mitigation:</strong> Prevents costly accounting errors and reconciliation issues</li>
+                </ul>
+            </div>
+
+            <div class="designer-focus">
+                <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+                <h4>🎨 Preview UX Design</h4>
+                <ul>
+                    <li><strong>Progressive Enablement:</strong> Button becomes active only when prerequisites are met</li>
+                    <li><strong>Visual Validation:</strong> Blue info boxes clearly highlight debit/credit accounts</li>
+                    <li><strong>Scenario-Based Display:</strong> Shows both paid and unpaid accounting treatments</li>
+                    <li><strong>Modal Interface:</strong> Non-intrusive overlay that can be easily dismissed</li>
+                    <li><strong>Error Prevention:</strong> Disabled state prevents premature validation attempts</li>
+                </ul>
+            </div>
+
+            <h4>Next Button Activation Requirements</h4>
+            
+            <div class="warning">
+                <strong>What to Check if Next Button is Not Active:</strong>
+                <p>The Next button remains disabled (grayed out) until ALL minimum requirements are completed. If you cannot proceed to Step 3, check the following:</p>
+            </div>
+
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>Required Field Validation</strong></p>
+                <ul>
+                    <li><strong>Cost Centers:</strong> Must select one option (None, Use departments, Use offices, or Custom)</li>
+                    <li><strong>Mode of Entry:</strong> Must select a global mode OR configure individual modes for payment methods</li>
+                    <li><strong>Account Mapping:</strong> At least one payment method must be mapped to a Xero account</li>
+                </ul>
+
+                <p><span class="step-number">2</span><strong>Pay Item Configuration Status</strong></p>
+                <ul>
+                    <li><strong>Red Warning Icons:</strong> Any accordion section showing red exclamation mark icons indicates incomplete configuration</li>
+                    <li><strong>Required Pay Items:</strong> Core salary items typically require mapping before progression</li>
+                    <li><strong>Account Selection:</strong> Both "Accounts on Xero" and "Accounts if unpaid" may need configuration</li>
+                </ul>
+
+                <p><span class="step-number">3</span><strong>System Validation</strong></p>
+                <ul>
+                    <li><strong>Connection Status:</strong> Verify accounting system connection is still active</li>
+                    <li><strong>Session Timeout:</strong> Long configuration sessions may require re-authentication</li>
+                    <li><strong>Browser Issues:</strong> Refresh page if form validation appears stuck</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <strong>What the Disabled Next Button Means:</strong>
+                <ul>
+                    <li><strong>Configuration Incomplete:</strong> Essential mapping requirements not met</li>
+                    <li><strong>Data Validation Failed:</strong> System detected missing or invalid configurations</li>
+                    <li><strong>Progressive Protection:</strong> Prevents advancing with incomplete setup that would cause integration errors</li>
+                    <li><strong>Quality Assurance:</strong> Ensures minimum viable configuration before proceeding to final review</li>
+                </ul>
+            </div>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Why Strict Validation Matters</h4>
+                <ul>
+                    <li><strong>Error Prevention:</strong> Incomplete configurations lead to failed payroll synchronizations</li>
+                    <li><strong>Data Integrity:</strong> Ensures all payroll components have proper accounting destinations</li>
+                    <li><strong>Compliance Protection:</strong> Prevents partial configurations that could violate audit requirements</li>
+                    <li><strong>Implementation Success:</strong> Guided validation increases successful setup completion rates</li>
+                </ul>
+            </div>
+
+            <h4>Configuration Sections and Requirements</h4>
+
+            <h4><span class="step-number">1</span>Salary Configurations Section</h4>
+
+            <h4>Section-Level Mode Toggle Explained</h4>
+            <div class="info">
+                <strong>"Use this mode of entry for all items in Salary configurations" Toggle:</strong>
+                <p>This toggle determines whether ALL salary-related pay items (Basic Salary, Allowances, Bonuses, etc.) within this section will use the same mode of entry, or if each item can have its own individual mode setting.</p>
+            </div>
+
+            <div class="steps">
+                <p><span class="step-number">1</span><strong>Toggle ON (Enabled)</strong></p>
+                <p><strong>Behavior:</strong> Apply the selected mode of entry to ALL salary items in this section</p>
+                <ul>
+                    <li><strong>Data Capturing:</strong> All salary components use the same journal entry structure</li>
+                    <li><strong>Reporting Impact:</strong> Consistent reporting format across all salary types</li>
+                    <li><strong>Example:</strong> If "Consolidated entry" is selected, Basic Salary, Allowances, and Bonuses all create single consolidated journal entries</li>
+                </ul>
+
+                <p><span class="step-number">2</span><strong>Toggle OFF (Disabled)</strong></p>
+                <p><strong>Behavior:</strong> Each salary item can have its own individual mode of entry setting</p>
+                <ul>
+                    <li><strong>Data Capturing:</strong> Mixed journal entry structures within the same section</li>
+                    <li><strong>Reporting Impact:</strong> Different levels of detail for different salary components</li>
+                    <li><strong>Example:</strong> Basic Salary uses "Consolidated entry" while Bonuses use "Entry per employee" for detailed tracking</li>
+                </ul>
+            </div>
+
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Impact on Data Capturing and Reporting</h4>
+                
+                <p><strong>When Toggle is ON (Uniform Approach):</strong></p>
+                <ul>
+                    <li><strong>Simplified Accounting:</strong> Consistent journal entry format for all salary items</li>
+                    <li><strong>Easier Reconciliation:</strong> Uniform data structure simplifies month-end processes</li>
+                    <li><strong>Standardized Reporting:</strong> All salary components follow same level of detail</li>
+                    <li><strong>Reduced Complexity:</strong> Single configuration decision applies to entire section</li>
+                </ul>
+
+                <p><strong>When Toggle is OFF (Granular Control):</strong></p>
+                <ul>
+                    <li><strong>Flexible Reporting:</strong> Different detail levels for different compensation types</li>
+                    <li><strong>Selective Granularity:</strong> High detail for bonuses, summary for basic salary</li>
+                    <li><strong>Complex Analysis:</strong> Enables sophisticated cost analysis by compensation type</li>
+                    <li><strong>Increased Configuration:</strong> Requires individual decisions for each pay item</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>Configuration Recommendation:</strong> Most organizations benefit from keeping the toggle ON for consistency, unless specific business requirements demand different reporting levels for different salary components.
+            </div>
+
+            <h4>Individual Pay Item Configuration</h4>
+            <ul>
+                <li><strong>Individual Pay Item Mapping:</strong> Map each salary component to appropriate accounts</li>
+                <li><strong>Basic Salary:</strong> Primary wage expense accounts with unpaid liability options</li>
+                <li><strong>Allowances & Bonuses:</strong> Separate categorization for different compensation types</li>
+            </ul>
+
+            <h4><span class="step-number">2</span>Additional Pay Item Categories</h4>
+            <ul>
+                <li><strong>Deductions:</strong> Tax withholdings, social security, insurance premiums, voluntary deductions</li>
+                <li><strong>Employer Contributions:</strong> Social security employer share, benefits, regulatory contributions</li>
+                <li><strong>Variable Pay:</strong> Commission, overtime, performance bonuses</li>
+                <li><strong>Time-off Related:</strong> Vacation accruals, sick leave, public holiday pay</li>
+            </ul>
+        </div>
+
+        <h3>Step 3: Review & Save the Mapping</h3>
+        
+        <h4>Main Purpose of Step 3</h4>
+        <p><strong>Final Validation Gateway:</strong> Step 3 serves as the comprehensive review and final checkpoint before activating your accounting integration. This step ensures every configuration decision is correct and provides last-chance editing opportunities before going live.</p>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/step3-review-save-interface.png" alt="Step 3 Review & Save interface showing comprehensive configuration summary" class="screenshot">
+            <div class="screenshot-caption">Step 3 Review & Save interface displaying complete configuration summary with inline editing capabilities</div>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Strategic Importance of Step 3</h4>
+            <ul>
+                <li><strong>Risk Mitigation:</strong> Final opportunity to catch configuration errors before they impact live payroll</li>
+                <li><strong>Confidence Building:</strong> Comprehensive review reduces implementation anxiety and ensures accuracy</li>
+                <li><strong>Compliance Assurance:</strong> Validates that all regulatory and audit requirements are properly configured</li>
+                <li><strong>Implementation Success:</strong> Thorough review process increases successful integration activation rates</li>
+            </ul>
+        </div>
+
+        <h4>Step 3 Interface Structure</h4>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Header Information</h4>
+            <ul>
+                <li><strong>Clear Instruction:</strong> "Please review and confirm that all configured integration settings are correct"</li>
+                <li><strong>Visibility Promise:</strong> "All saved settings will be visible in the payroll configuration screen"</li>
+                <li><strong>Help Access:</strong> Direct link to configuration help articles</li>
+                <li><strong>Visual Progress:</strong> Step 3 highlighted in purple, showing completion of previous steps</li>
+            </ul>
+
+            <h4><span class="step-number">2</span>Basic Setup Review Section</h4>
+            <ul>
+                <li><strong>Expandable Section:</strong> Collapsible accordion with Edit button for modifications</li>
+                <li><strong>Basic Currency Display:</strong> Shows inherited currency (USD in this case)</li>
+                <li><strong>Cost Center Configuration:</strong> Displays selected option ("None" in this example)</li>
+                <li><strong>Payment Method Summary:</strong> Shows mode of entry setting ("Consolidated entry")</li>
+            </ul>
+
+            <h4><span class="step-number">3</span>Inline Editing Capability</h4>
+            <ul>
+                <li><strong>Edit Buttons:</strong> Direct access to modify settings without full step navigation</li>
+                <li><strong>Non-Destructive Editing:</strong> Can modify specific sections while preserving other configurations</li>
+                <li><strong>Real-Time Updates:</strong> Changes immediately reflected in the review interface</li>
+                <li><strong>Workflow Efficiency:</strong> No need to navigate back through previous steps for minor adjustments</li>
+            </ul>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Review Interface Design Excellence</h4>
+            <ul>
+                <li><strong>Information Hierarchy:</strong> Clear organization of Basic Setup, Cost Centers, and Payment Methods</li>
+                <li><strong>Status Transparency:</strong> Shows both configured items and unmapped items ("N/A" indicators)</li>
+                <li><strong>Edit Accessibility:</strong> Prominent Edit buttons provide immediate modification access</li>
+                <li><strong>Progress Visualization:</strong> Checkmarks on completed steps provide confidence and progress clarity</li>
+                <li><strong>Action Clarity:</strong> Distinct Back and Submit buttons with clear purposes</li>
+            </ul>
+        </div>
+
+        <h4>Configuration Summary Display</h4>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Basic Setup Summary</h4>
+            <p>Displays key configuration decisions from Step 1:</p>
+            <ul>
+                <li><strong>Basic Currency:</strong> Shows company's base currency (e.g., USD)</li>
+                <li><strong>Cost Centers:</strong> Selected organizational structure option</li>
+                <li><strong>Mode of Entry:</strong> Global payment entry setting applied to all payment methods</li>
+            </ul>
+
+            <h4><span class="step-number">2</span>Payment Method Mapping Status</h4>
+            <p>Clear visibility of which payment methods are configured:</p>
+            <ul>
+                <li><strong>Mapped Accounts:</strong> Shows specific Xero account assignments (e.g., "Clearing Account")</li>
+                <li><strong>Unmapped Items:</strong> Displays "N/A" for payment methods not configured</li>
+                <li><strong>Selective Configuration:</strong> Confirms that only used payment methods need mapping</li>
+            </ul>
+
+            <h4><span class="step-number">3</span>Final Actions</h4>
+            <ul>
+                <li><strong>Back Button:</strong> Return to Step 2 for additional modifications</li>
+                <li><strong>Submit Button:</strong> Activate the integration with current configuration</li>
+                <li><strong>Confirmation Process:</strong> Submit triggers final integration activation</li>
+            </ul>
+        </div>
+
+            <div class="warning">
+                <strong>Critical Checkpoint:</strong> This is your final opportunity to review and modify configurations before the integration becomes active. Once submitted, changes will require going through the integration editing process.
+            </div>
+
+            <h4>What Step 3 Accomplishes</h4>
+            
+            <div class="info">
+                <strong>Comprehensive Review Functions:</strong>
+                <ul>
+                    <li><strong>Configuration Validation:</strong> Ensures all required mappings are completed</li>
+                    <li><strong>Setting Verification:</strong> Displays all configuration decisions in organized format</li>
+                    <li><strong>Error Prevention:</strong> Shows unmapped items ("N/A") that might need attention</li>
+                    <li><strong>Edit Access:</strong> Provides inline editing without losing progress</li>
+                    <li><strong>Final Confirmation:</strong> Submit button activates the integration with current settings</li>
+                </ul>
+            </div>
+
+            <h4>Review Process and Business Impact</h4>
+            
+            <div class="pm-focus">
+                <!-- PM-FOCUS: Business impact and metrics -->
+                <h4>📊 Step 3 Business Value</h4>
+                <ul>
+                    <li><strong>Quality Assurance:</strong> Prevents incomplete or incorrect configurations from going live</li>
+                    <li><strong>Implementation Confidence:</strong> Detailed review builds stakeholder confidence in integration accuracy</li>
+                    <li><strong>Error Cost Prevention:</strong> Catching errors at this stage prevents costly post-implementation fixes</li>
+                    <li><strong>Audit Readiness:</strong> Comprehensive review ensures compliance requirements are met</li>
+                    <li><strong>Change Management:</strong> Clear configuration summary supports stakeholder communication</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 id="data-synchronization">8. Data Synchronization Usage</h2>
+
+        <h3>Understanding Data Synchronization</h3>
+        
+        <h4>What is Data Synchronization?</h4>
+        <p>Data synchronization is the process of transferring payroll data from Bayzat to your accounting system using the mapping configuration you set up in Steps 1-3. It converts your payroll information into proper accounting journal entries based on your established mapping rules.</p>
+
+        <h4>🔒 Data Privacy & Security During Sync</h4>
+        <div class="info">
+            <strong>What Data Is Transferred:</strong>
+            <ul>
+                <li><strong>Payroll Totals:</strong> Aggregated salary, allowance, deduction, and benefit amounts</li>
+                <li><strong>Cost Center Assignments:</strong> Department/project allocations for expense tracking</li>
+                <li><strong>Journal Entry Data:</strong> Debit/credit entries with account codes and reference numbers</li>
+                <li><strong>Sync Metadata:</strong> Timestamps, user information, and processing status</li>
+            </ul>
+        </div>
+        <div class="warning">
+            <strong>Data NOT Transferred:</strong>
+            <ul>
+                <li><strong>Individual Employee Names:</strong> Personal identities are not sent to accounting systems</li>
+                <li><strong>Employee ID Numbers:</strong> Internal HR identifiers remain in Bayzat</li>
+                <li><strong>Personal Details:</strong> Contact information, bank details, and personal data stay private</li>
+                <li><strong>Performance Data:</strong> HR records, evaluations, and non-payroll information</li>
+            </ul>
+        </div>
+        <div class="info">
+            <strong>Sync Security Measures:</strong>
+            <ul>
+                <li><strong>Encrypted Transmission:</strong> All data transfers use SSL/TLS encryption</li>
+                <li><strong>Authentication Required:</strong> Each sync validates API credentials</li>
+                <li><strong>Activity Logging:</strong> Complete audit trail of all sync operations</li>
+                <li><strong>Error Handling:</strong> Failed syncs don't expose sensitive data in error messages</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <strong>How Sync Relates to Your Mapping Configuration:</strong>
+            <ul>
+                <li><strong>Cost Center Application:</strong> Employee costs are allocated according to your Step 1 cost center setup</li>
+                <li><strong>Account Mapping Execution:</strong> Pay items are recorded in the exact accounts you mapped in Step 2</li>
+                <li><strong>Mode of Entry Implementation:</strong> Journal entries are structured according to your selected mode (Consolidated, Per Employee, Per Cost Center)</li>
+                <li><strong>Payment Method Tracking:</strong> Bank accounts and payment methods record to their mapped accounting accounts</li>
+            </ul>
+        </div>
+
+        <h4>The Mapping-to-Sync Connection</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Configuration Foundation</strong></p>
+            <p>Your mapping configuration acts as the "translation rules" - telling the system exactly how to convert Bayzat payroll data into accounting entries.</p>
+            
+            <p><span class="step-number">2</span><strong>Sync Execution</strong></p>
+            <p>When you sync data, the system applies your mapping rules to the actual payroll data, creating journal entries in your accounting system.</p>
+            
+            <p><span class="step-number">3</span><strong>Result</strong></p>
+            <p>Payroll expenses automatically appear in the correct accounts with proper cost center allocation, exactly as you configured.</p>
+        </div>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/sync-process-july2025.png" alt="Data synchronization interface showing closed payroll month with sync button" class="screenshot">
+            <div class="screenshot-caption">Payroll Transactions page for July 2025 (most recent closed month) showing "Sync data to Xero" button and payroll summary</div>
+        </div>
+
+        <h3>Critical Prerequisites for Data Synchronization</h3>
+
+        <div class="warning">
+            <strong>Most Recent Closed Month Requirement:</strong> Data can only be synchronized for the MOST RECENTLY CLOSED payroll month. The sync button will not appear for:
+            <ul>
+                <li><strong>Open/Current Months:</strong> Cannot sync ongoing payroll cycles</li>
+                <li><strong>Older Closed Months:</strong> Cannot sync months that are not the most recent closed month</li>
+                <li><strong>Future Months:</strong> Cannot sync months that haven't been processed</li>
+            </ul>
+        </div>
+
+        <h3>Two Access Paths for Data Synchronization</h3>
+        
+        <div class="path-comparison">
+            <div class="path-card">
+                <h4>Path 1: Settings Access</h4>
+                <p><strong>Settings → Payroll → Accounting Integration</strong></p>
+                <ul>
+                    <li><strong>Context:</strong> Administrative management</li>
+                    <li><strong>User Intent:</strong> Integration management and oversight</li>
+                    <li><strong>Action:</strong> Click "Proceed to the transaction page to sync data" link</li>
+                    <li><strong>User Type:</strong> System administrators and finance managers</li>
+                </ul>
+            </div>
+            <div class="path-card">
+                <h4>Path 2: Operational Access</h4>
+                <p><strong>Payroll → Transactions → Select Closed Month</strong></p>
+                <ul>
+                    <li><strong>Context:</strong> Regular payroll operations</li>
+                    <li><strong>User Intent:</strong> Month-end processing and sync</li>
+                    <li><strong>Action:</strong> Direct access to transaction management</li>
+                    <li><strong>User Type:</strong> Payroll administrators and operators</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>Convergent Design:</strong> Both paths lead to the same Payroll Transactions interface, ensuring consistent user experience regardless of entry point.
+        </div>
+
+        <h3>Step-by-Step Synchronization Process</h3>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Access Synchronization Interface</h4>
+            <p><strong>Method A - Settings Path:</strong></p>
+            <ol>
+                <li>Navigate to <strong>Settings → Payroll</strong></li>
+                <li>Locate "Accounting Integrations - [System Name]" section</li>
+                <li>Click "Proceed to the <strong>transaction page</strong> to sync data" link</li>
+            </ol>
+
+            <p><strong>Method B - Direct Payroll Path:</strong></p>
+            <ol>
+                <li>Navigate to <strong>Payroll → Transactions</strong></li>
+                <li>Select month dropdown</li>
+                <li>Choose most recent closed payroll month</li>
+            </ol>
+
+            <h4><span class="step-number">2</span>Verify Sync Prerequisites</h4>
+            <ul>
+                <li><strong>Month Status:</strong> Confirm "Closed" status in dropdown and that it's the most recent closed month</li>
+                <li><strong>Payroll Data:</strong> Review total amounts and employee counts</li>
+                <li><strong>Transaction Status:</strong> Check approved transactions</li>
+                <li><strong>Sync Button:</strong> Verify "Sync data to [System]" button is visible</li>
+            </ul>
+
+            <h4><span class="step-number">3</span>Execute Data Synchronization</h4>
+            <ul>
+                <li><strong>Click Sync Button:</strong> "Sync data to Xero" (or your accounting system)</li>
+                <li><strong>Background Processing:</strong> Sync process runs automatically using your mapping configuration</li>
+                <li><strong>Monitor Progress:</strong> Watch for status updates or error messages</li>
+                <li><strong>Completion Verification:</strong> Check for success confirmation or sync logs</li>
+            </ul>
+        </div>
+
+        <h3>Business Impact of Data Synchronization</h3>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Operational Benefits</h4>
+            <ul>
+                <li><strong>Automated Financial Records:</strong> Payroll data immediately available in accounting system</li>
+                <li><strong>Eliminated Manual Work:</strong> No more copying/pasting payroll summaries</li>
+                <li><strong>Improved Accuracy:</strong> Automated sync prevents transcription errors</li>
+                <li><strong>Faster Month-End Close:</strong> Instant payroll integration reduces closing timeline</li>
+                <li><strong>Enhanced Cash Flow Visibility:</strong> Immediate visibility of payroll expenses and liabilities</li>
+            </ul>
+        </div>
+
+        <h3>Setting Up Sync Results Reporting (Prerequisite)</h3>
+
+        <div class="warning">
+            <strong>Critical Prerequisite:</strong> You CANNOT view sync reports without first configuring the sync report template and completing the payroll data mapping. Report templates must be set up before sync results become accessible.
+        </div>
+
+        <h4>Why Report Templates Are Essential</h4>
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Business Value of Sync Reports</h4>
+            <ul>
+                <li><strong>Audit Trail Transparency:</strong> Detailed breakdown of every journal entry created during sync</li>
+                <li><strong>Verification Capability:</strong> Confirm that payroll data was accurately transferred to accounting system</li>
+                <li><strong>Error Detection:</strong> Identify mapping issues or sync failures before they impact financial reports</li>
+                <li><strong>Compliance Documentation:</strong> Complete record of payroll-to-accounting data flow for auditors</li>
+                <li><strong>Reconciliation Support:</strong> Detailed reports enable faster month-end reconciliation</li>
+            </ul>
+        </div>
+
+        <h4>Report Availability Matrix</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Configuration Status</th>
+                    <th>Sync Report Available?</th>
+                    <th>Action Required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Report template not configured</td>
+                    <td><strong>No</strong></td>
+                    <td>Configure report template first</td>
+                </tr>
+                <tr>
+                    <td>Report template configured, not synced</td>
+                    <td><strong>No</strong></td>
+                    <td>Execute sync for closed payroll month</td>
+                </tr>
+                <tr>
+                    <td>Report template configured & synced</td>
+                    <td><strong>Yes</strong></td>
+                    <td>Access sync reports and download detailed breakdown</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Accessing Report Template Setup</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Navigate to Integration Settings</strong></p>
+            <p>Go to <strong>Settings → Payroll → Accounting Integration</strong></p>
+            
+            <p><span class="step-number">2</span><strong>Access Report Configuration</strong></p>
+            <p>Click the ellipse menu (⋯) next to your connected accounting system and select <strong>"Edit/View report"</strong></p>
+            
+            <p><span class="step-number">3</span><strong>Configure Report Template</strong></p>
+            <p>Complete the 3-step report template setup process</p>
+        </div>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/report-template-step1.png" alt="Report template setup Step 1 showing report name configuration" class="screenshot">
+            <div class="screenshot-caption">Step 1 of report template setup: Define your reporting file name for sync results</div>
+        </div>
+
+        <h3>Understanding Report Template Configuration</h3>
+
+        <h4>What is a Sync Report?</h4>
+        <p><strong>Definition:</strong> A sync report is a detailed document that shows exactly what payroll data was transferred from Bayzat to your accounting system during the synchronization process. It provides a complete audit trail of every journal entry created, amount transferred, and account used.</p>
+
+        <div class="info">
+            <strong>What a Sync Report Contains:</strong>
+            <ul>
+                <li><strong>Journal Entry Details:</strong> Every accounting entry created during sync with timestamps</li>
+                <li><strong>Financial Amounts:</strong> Exact debit and credit amounts transferred to each account</li>
+                <li><strong>Employee-Level Data:</strong> Individual employee payroll amounts and allocations</li>
+                <li><strong>Account Classification:</strong> Which accounting accounts received each type of payroll expense</li>
+                <li><strong>Cost Center Allocation:</strong> How payroll costs were distributed across departments/cost centers</li>
+                <li><strong>Error Reporting:</strong> Any issues, failures, or warnings that occurred during sync</li>
+            </ul>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Why Sync Reports Are Business-Critical</h4>
+            <ul>
+                <li><strong>Financial Verification:</strong> Proof that payroll data was accurately transferred to accounting system</li>
+                <li><strong>Audit Compliance:</strong> Detailed documentation required for external auditors and regulatory compliance</li>
+                <li><strong>Error Detection:</strong> Immediate identification of sync failures or mapping issues</li>
+                <li><strong>Reconciliation Tool:</strong> Enables month-end reconciliation between payroll and accounting systems</li>
+                <li><strong>Business Intelligence:</strong> Provides insights into payroll cost allocation and departmental expenses</li>
+            </ul>
+        </div>
+
+        <h4>What is a Report Template?</h4>
+        <p><strong>Purpose:</strong> A report template defines the structure and content of the sync reports you'll generate. It determines exactly what information appears when you want to see what was synchronized to your accounting system.</p>
+
+        <div class="info">
+            <strong>Report Template Function:</strong>
+            <ul>
+                <li><strong>Data Organization:</strong> Structures how sync results are displayed and organized</li>
+                <li><strong>Column Definition:</strong> Determines what data fields appear in your sync reports</li>
+                <li><strong>Business Intelligence:</strong> Enables analysis of payroll-to-accounting data flow</li>
+                <li><strong>Audit Support:</strong> Provides detailed transaction-level visibility for compliance</li>
+            </ul>
+        </div>
+
+        <h4>Step 2: Map Data Columns Process</h4>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/report-template-step2-mapping.png" alt="Report template Step 2 showing data column mapping to system data points" class="screenshot">
+            <div class="screenshot-caption">Step 2 of report template setup: Map data columns to Bayzat system data points for comprehensive sync reporting</div>
+        </div>
+
+        <h4>Step 3: Review & Save Template</h4>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/report-template-step3-review.png" alt="Report template Step 3 showing complete configuration review and save options" class="screenshot">
+            <div class="screenshot-caption">Step 3 of report template setup: Review complete column mappings and save template for sync report generation</div>
+        </div>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Configuration Review</h4>
+            <ul>
+                <li><strong>Template Name Verification:</strong> Confirm report template name is descriptive and recognizable</li>
+                <li><strong>Column Mapping Summary:</strong> Review all data column mappings in organized table format</li>
+                <li><strong>Data Point Validation:</strong> Verify each column is mapped to correct Bayzat system data</li>
+            </ul>
+
+            <h4><span class="step-number">2</span>Template Completion Actions</h4>
+            <ul>
+                <li><strong>Preview Template:</strong> See how the report will look before saving</li>
+                <li><strong>Edit Options:</strong> Modify Basic Setup or Columns & Data if needed</li>
+                <li><strong>Save Template:</strong> Finalize configuration for sync report generation</li>
+            </ul>
+
+            <h4><span class="step-number">3</span>Template Activation</h4>
+            <ul>
+                <li><strong>Success Confirmation:</strong> "Template saved successfully" message appears</li>
+                <li><strong>Report Ready:</strong> Template now available for generating sync results reports</li>
+                <li><strong>Sync Reports Enabled:</strong> Can now view detailed sync outcomes after data synchronization</li>
+            </ul>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Report Template Configuration Complete</h4>
+            <ul>
+                <li><strong>Audit Trail Ready:</strong> Template enables comprehensive sync result documentation</li>
+                <li><strong>Business Intelligence Activated:</strong> Detailed reporting capabilities now available</li>
+                <li><strong>Compliance Framework:</strong> Audit-ready sync reports can now be generated</li>
+                <li><strong>Operational Transparency:</strong> Complete visibility into payroll-to-accounting data flow</li>
+            </ul>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Column Mapping Interface</h4>
+            <p><strong>What You're Configuring:</strong> Each column in your sync report is mapped to specific Bayzat data points, creating a customized view of sync results.</p>
+            <ul>
+                <li><strong>Pre-configured Columns:</strong> System provides essential data mappings automatically</li>
+                <li><strong>DATA MAPPED Status:</strong> Green indicators show successfully configured columns</li>
+                <li><strong>Flexible Configuration:</strong> Add, remove, or modify columns based on business needs</li>
+                <li><strong>Empty Column Options:</strong> Mark unused columns as empty to streamline reports</li>
+            </ul>
+        </div>
+
+        <h4>Essential Report Columns Explained</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Business Purpose</th>
+                    <th>Data Source</th>
+                    <th>Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Journal Post Date</strong></td>
+                    <td>When accounting entry was created</td>
+                    <td>Sync execution timestamp</td>
+                    <td>Tracks timing of financial record creation</td>
+                </tr>
+                <tr>
+                    <td><strong>Journal Entry Name</strong></td>
+                    <td>Description of the accounting entry</td>
+                    <td>Payroll cycle and description</td>
+                    <td>Identifies purpose of each journal entry</td>
+                </tr>
+                <tr>
+                    <td><strong>Account ID/Name</strong></td>
+                    <td>Which accounting accounts were used</td>
+                    <td>Your Step 2 account mappings</td>
+                    <td>Verifies correct account classification</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Center ID/Name</strong></td>
+                    <td>Organizational cost allocation</td>
+                    <td>Your Step 1 cost center setup</td>
+                    <td>Enables departmental cost analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Debit/Credit Amounts</strong></td>
+                    <td>Financial amounts synchronized</td>
+                    <td>Actual payroll amounts</td>
+                    <td>Ensures accurate financial recording</td>
+                </tr>
+                <tr>
+                    <td><strong>Employee Name</strong></td>
+                    <td>Individual employee identification</td>
+                    <td>Employee master data</td>
+                    <td>Enables employee-level analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Department</strong></td>
+                    <td>Organizational structure tracking</td>
+                    <td>Employee department assignment</td>
+                    <td>Supports departmental reporting</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Complete Sync Process and Results Viewing</h3>
+
+        <h4>Pre-Sync Report Process</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Initiate Sync</strong></p>
+            <p>After clicking "Sync data to [Accounting System]", you'll see a Pre-Sync report</p>
+            
+            <p><span class="step-number">2</span><strong>Pre-Sync Report Review</strong></p>
+            <ul>
+                <li><strong>Currency Conversion Rates:</strong> Review and edit if needed</li>
+                <li><strong>Error Report:</strong> Identify any unmapped data before sync</li>
+                <li><strong>Journal Entry Preview:</strong> See how entries will be structured (debits/credits, dates, descriptions)</li>
+                <li><strong>Unmapped Items Check:</strong> System prevents sync until all required mappings are completed</li>
+            </ul>
+
+            <p><span class="step-number">3</span><strong>Confirm and Execute</strong></p>
+            <p>Review the preview and confirm to proceed with actual synchronization</p>
+        </div>
+
+        <h4>Post-Sync Results Viewing</h4>
+        <div class="info">
+            <strong>After Successful Sync:</strong>
+            <ul>
+                <li><strong>Post-Sync Report:</strong> Shows progress and completion status using your configured template</li>
+                <li><strong>Download Sync Report:</strong> Access detailed report via Finance → Transactions → Select synced month</li>
+                <li><strong>Detailed Breakdown:</strong> Shows all entries, mapping details, and any errors or warnings</li>
+                <li><strong>Accounting System Verification:</strong> Journal entries are ready in your accounting platform</li>
+                <li><strong>Template-Based Display:</strong> Results shown according to your configured column mappings</li>
+            </ul>
+        </div>
+
+        <h4>Troubleshooting Sync Report Access</h4>
+        <div class="warning">
+            <strong>If Sync Report is Not Showing:</strong>
+            <ul>
+                <li><strong>Template Not Configured:</strong> Must complete report template setup first</li>
+                <li><strong>Sync Not Completed:</strong> Ensure payroll cycle is closed and sync finished successfully</li>
+                <li><strong>Permission Issues:</strong> Verify Finance Admin or Payroll Admin permissions</li>
+                <li><strong>Browser Issues:</strong> Refresh page or try different browser</li>
+                <li><strong>Mapping Incomplete:</strong> Unresolved mapping issues can block report generation</li>
+            </ul>
+        </div>
+
+        <h4>Common Sync Execution Issues</h4>
+        <div class="warning">
+            <strong>Sync Process Failures:</strong>
+            <ul>
+                <li><strong>Server Errors (500):</strong> Backend processing issues may prevent sync execution</li>
+                <li><strong>Authentication Expiry:</strong> Connection to accounting system may have expired</li>
+                <li><strong>Configuration Conflicts:</strong> Mapping issues may block sync process initiation</li>
+                <li><strong>Demo Environment Limitations:</strong> Testing environments may not support full sync execution</li>
+                <li><strong>No Modal Response:</strong> Expected pre-sync report modal may not appear due to errors</li>
+            </ul>
+        </div>
+
+        <h4>Expected Sync Report Workflow</h4>
+        <div class="info">
+            <strong>Normal Sync Process (When Working):</strong>
+            <ol>
+                <li><strong>Click "Sync data to [System]"</strong> → Pre-sync report modal should appear</li>
+                <li><strong>Review Pre-sync Report</strong> → Check currency conversions, mappings, errors</li>
+                <li><strong>Confirm Sync</strong> → Execute actual data transfer</li>
+                <li><strong>Post-sync Report</strong> → View completion status and detailed results</li>
+                <li><strong>Download Report</strong> → Access comprehensive sync documentation</li>
+            </ol>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Documentation Status and Next Steps</h4>
+            <ul>
+                <li><strong>Process Documented:</strong> Complete sync workflow and report template setup documented</li>
+                <li><strong>Interface Validated:</strong> All access paths and prerequisites confirmed through testing</li>
+                <li><strong>Error Scenarios:</strong> Real-world technical issues identified and documented</li>
+                <li><strong>Business Value:</strong> Comprehensive audit trail and compliance benefits explained</li>
+                <li><strong>Implementation Ready:</strong> Organizations can follow documented process with proper technical support</li>
+            </ul>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Business Impact of Comprehensive Sync Reporting</h4>
+            <ul>
+                <li><strong>Financial Accuracy Validation:</strong> Detailed reports confirm correct data transfer</li>
+                <li><strong>Audit Readiness:</strong> Complete transaction-level documentation for external auditors</li>
+                <li><strong>Error Prevention:</strong> Pre-sync validation prevents costly accounting mistakes</li>
+                <li><strong>Operational Confidence:</strong> Detailed reporting builds trust in automated processes</li>
+                <li><strong>Compliance Assurance:</strong> Comprehensive audit trail meets regulatory requirements</li>
+            </ul>
+        </div>
+
+        <h3>Synchronization Monitoring and Error Handling</h3>
+
+        <h4>Common Sync Issues and Resolution</h4>
+        <div class="warning">
+            <strong>Troubleshooting Sync Problems:</strong>
+            <ul>
+                <li><strong>Authentication Errors (401):</strong> Accounting system connection expired - requires re-authentication</li>
+                <li><strong>Server Errors (500):</strong> Temporary system issues - retry after waiting period</li>
+                <li><strong>Configuration Errors:</strong> Missing account mappings prevent successful sync</li>
+                <li><strong>Permission Issues:</strong> User lacks sync permissions in Bayzat or accounting system</li>
+                <li><strong>Account Mapping Issues:</strong> Same account mapped to multiple pay items may cause validation errors</li>
+            </ul>
+        </div>
+
+        <h4>Known Integration Challenges</h4>
+        <div class="info">
+            <strong>Based on Support Ticket Analysis:</strong>
+            <ul>
+                <li><strong>Account Code Validation:</strong> Accounting systems may reject invalid account codes during sync</li>
+                <li><strong>VAT Handling:</strong> Some integrations may not include VAT amounts in expense transfers</li>
+                <li><strong>Multi-Entity Limitations:</strong> Single organization selection may limit multi-entity businesses</li>
+                <li><strong>Department Mapping:</strong> Current limitation in mapping different departments to different accounts</li>
+            </ul>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Sync Interface Design</h4>
+            <ul>
+                <li><strong>Contextual Availability:</strong> Sync button appears only when prerequisites are met</li>
+                <li><strong>Status Clarity:</strong> Clear distinction between "Open" and "Closed" payroll months</li>
+                <li><strong>Temporal Restriction:</strong> Only most recent closed month can be synchronized</li>
+                <li><strong>Dual Access Design:</strong> Accommodates different user workflows and mental models</li>
+                <li><strong>Visual Feedback:</strong> Summary data provides confidence before sync execution</li>
+            </ul>
+        </div>
+
+        <h2 id="post-configuration-management">9. Post-Configuration Management</h2>
+
+        <h3>What is Post-Configuration Management?</h3>
+        <p><strong>Definition:</strong> Post-configuration management refers to the ongoing administrative tasks required to maintain, monitor, and modify your accounting integration after the initial setup is complete and the integration is actively running.</p>
+
+        <p><strong>Purpose:</strong> Unlike the initial setup (which gets you connected), post-configuration management ensures your integration continues to work effectively as your business evolves, grows, and changes over time.</p>
+
+        <div class="screenshot-container">
+            <img src="playwright-images/post-config-management-menu.png" alt="Post-configuration management menu showing Edit mapping, Edit/View report, and Remove connection options" class="screenshot">
+            <div class="screenshot-caption">Post-configuration management options accessible via Settings → Payroll → Accounting Integration → ellipse menu (⋯)</div>
+        </div>
+
+        <h3>Three Core Management Functions</h3>
+
+        <div class="path-comparison">
+            <div class="path-card">
+                <h4>1. Edit Mapping</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Modify integration configuration</li>
+                    <li><strong>Access:</strong> Full Steps 1-3 configuration interface</li>
+                    <li><strong>Use Cases:</strong> Account changes, organizational restructuring, error correction</li>
+                    <li><strong>Impact:</strong> Updates how future syncs are processed</li>
+                </ul>
+            </div>
+            <div class="path-card">
+                <h4>2. Edit/View Report</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Manage report templates and view sync results</li>
+                    <li><strong>Access:</strong> Report template configuration and sync history</li>
+                    <li><strong>Use Cases:</strong> Custom reporting, sync monitoring, audit documentation</li>
+                    <li><strong>Impact:</strong> Controls how sync results are displayed and analyzed</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="path-comparison">
+            <div class="path-card">
+                <h4>3. Remove Connection</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Permanently disconnect accounting integration</li>
+                    <li><strong>Access:</strong> Integration removal process with multiple confirmations</li>
+                    <li><strong>Use Cases:</strong> System migration, integration decommissioning, major reconfiguration</li>
+                    <li><strong>Impact:</strong> Terminates automation, returns to manual payroll entry processes</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Remove Connection Process & Business Impact</h3>
+
+        <h4>What "Remove Connection" Means</h4>
+        <p><strong>Definition:</strong> Remove connection permanently disconnects your accounting system integration from Bayzat, terminating all automated payroll synchronization and reverting to manual financial data entry processes.</p>
+
+        <div class="warning">
+            <strong>Critical Business Impact:</strong> Removing the connection eliminates all automation benefits and returns your organization to manual payroll-to-accounting processes.
+        </div>
+
+        <h4>Immediate Operational Consequences</h4>
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Operational Impact Analysis</h4>
+            <ul>
+                <li><strong>Automation Loss:</strong> Complete cessation of automated payroll-to-accounting data transfer</li>
+                <li><strong>Manual Process Return:</strong> Finance team must manually export payroll data and enter into accounting system</li>
+                <li><strong>Time Impact:</strong> Returns to 6-8 hour manual process per payroll cycle</li>
+                <li><strong>Resource Reallocation:</strong> Finance staff time redirected from strategic work to data entry</li>
+                <li><strong>Error Risk Increase:</strong> Manual transcription introduces human error potential</li>
+            </ul>
+
+            <h4>📈 Strategic Business Consequences</h4>
+            <ul>
+                <li><strong>Operational Efficiency Regression:</strong> Loss of automation benefits and time savings</li>
+                <li><strong>Scalability Constraint:</strong> Manual processes cannot scale with business growth</li>
+                <li><strong>Audit Trail Complexity:</strong> May complicate audit documentation and compliance</li>
+                <li><strong>Cash Flow Visibility:</strong> Delayed financial data entry affects real-time cash flow management</li>
+                <li><strong>Competitive Disadvantage:</strong> Return to less efficient processes compared to integrated competitors</li>
+            </ul>
+        </div>
+
+        <h4>Expected Removal Process Structure</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Initial Warning Modal</strong></p>
+            <p>Clear explanation of removal consequences and business impact</p>
+            
+            <p><span class="step-number">2</span><strong>Impact Acknowledgment</strong></p>
+            <p>User must confirm understanding of operational changes and automation loss</p>
+            
+            <p><span class="step-number">3</span><strong>Alternative Options</strong></p>
+            <p>Possible suggestions for temporary disable vs. permanent removal</p>
+            
+            <p><span class="step-number">4</span><strong>Final Confirmation</strong></p>
+            <p>Multi-step confirmation with explicit agreement to proceed</p>
+            
+            <p><span class="step-number">5</span><strong>Completion Notification</strong></p>
+            <p>Confirmation of removal completion or error reporting</p>
+        </div>
+
+        <h4>Data and Configuration Preservation</h4>
+        <div class="info">
+            <strong>What Gets Removed:</strong>
+            <ul>
+                <li><strong>Active API Connection:</strong> Authentication tokens and live connection to accounting system</li>
+                <li><strong>Automated Sync Capability:</strong> Scheduled and manual sync functionality disabled</li>
+                <li><strong>Real-time Data Transfer:</strong> No future payroll data will automatically transfer</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <strong>What Gets Preserved (Expected):</strong>
+            <ul>
+                <li><strong>Historical Sync Data:</strong> Previous sync reports and transaction history likely retained</li>
+                <li><strong>Configuration Templates:</strong> Account mappings and report templates for potential reconnection</li>
+                <li><strong>Audit Trail:</strong> Historical sync documentation for compliance and auditing purposes</li>
+            </ul>
+        </div>
+
+        <h4>Recovery Options if Accidentally Triggered</h4>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Immediate Reconnection</strong></p>
+            <p>Use original "Start Connection" process to re-establish integration link</p>
+            
+            <p><span class="step-number">2</span><strong>Configuration Restoration</strong></p>
+            <p>Leverage preserved mapping settings and report templates to restore functionality</p>
+            
+            <p><span class="step-number">3</span><strong>Validation and Testing</strong></p>
+            <p>Review all account mappings, cost centers, and mode configurations; execute test sync</p>
+            
+            <p><span class="step-number">4</span><strong>Resume Operations</strong></p>
+            <p>Return to automated sync workflow and notify finance team of restoration</p>
+        </div>
+
+        <h4>When Remove Connection Is Appropriate</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Valid Scenario</th>
+                    <th>Business Reason</th>
+                    <th>Alternative to Consider</th>
+                    <th>Recovery Planning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Accounting System Migration</strong></td>
+                    <td>Moving from Xero to Dynamics 365 or other platform</td>
+                    <td>Edit mapping for minor changes</td>
+                    <td>Document current configuration before removal</td>
+                </tr>
+                <tr>
+                    <td><strong>Integration Solution Change</strong></td>
+                    <td>Implementing alternative sync methodology or provider</td>
+                    <td>Technical support consultation</td>
+                    <td>Backup current templates and mappings</td>
+                </tr>
+                <tr>
+                    <td><strong>Major Reconfiguration</strong></td>
+                    <td>Complete restructuring requiring fresh integration setup</td>
+                    <td>Edit mapping for incremental changes</td>
+                    <td>Plan reconnection timeline</td>
+                </tr>
+                <tr>
+                    <td><strong>Persistent Technical Issues</strong></td>
+                    <td>Resolving problems requiring clean restart</td>
+                    <td>Technical support escalation</td>
+                    <td>Coordinate with support team</td>
+                </tr>
+                <tr>
+                    <td><strong>Business Process Redesign</strong></td>
+                    <td>Fundamental changes to payroll-to-accounting workflow</td>
+                    <td>Process consultation before removal</td>
+                    <td>Map new requirements before disconnection</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Post-Removal Operational Procedures</h4>
+        <div class="warning">
+            <strong>Immediate Action Required:</strong> Your payroll-to-accounting workflow changes immediately after removal.
+        </div>
+        
+        <h5>Manual Payroll Entry Process</h5>
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Export Payroll Data</strong></p>
+            <p>Use Bayzat's manual export functionality to download payroll reports in accounting-compatible formats</p>
+            
+            <p><span class="step-number">2</span><strong>Format Adjustment</strong></p>
+            <p>Manually adjust exported data to match your accounting system's import requirements</p>
+            
+            <p><span class="step-number">3</span><strong>Manual Import</strong></p>
+            <p>Import processed payroll data directly into your accounting system</p>
+            
+            <p><span class="step-number">4</span><strong>Verification & Reconciliation</strong></p>
+            <p>Manually verify all entries and reconcile payroll totals against expected values</p>
+        </div>
+
+        <h5>Alternative Workflow Recommendations</h5>
+        <div class="info">
+            <ul>
+                <li><strong>Scheduled Export Process:</strong> Establish regular manual export schedules aligned with payroll cycles</li>
+                <li><strong>Template Creation:</strong> Develop standardized import templates for your accounting system</li>
+                <li><strong>Backup Documentation:</strong> Maintain detailed records of manual entries for audit compliance</li>
+                <li><strong>Process Training:</strong> Ensure finance team understands manual workflow procedures</li>
+            </ul>
+        </div>
+
+        <h4>Alternatives to Complete Removal</h4>
+        <div class="alternative-options">
+            <h5>Temporary Disconnection (If Available)</h5>
+            <p>Some systems may offer temporary disable options instead of permanent removal:</p>
+            <ul>
+                <li><strong>Pause Sync:</strong> Temporarily halt automated syncing while preserving connection</li>
+                <li><strong>Maintenance Mode:</strong> Disable integration during system updates or migrations</li>
+                <li><strong>Selective Sync:</strong> Disable specific data types while maintaining core connection</li>
+            </ul>
+
+            <h5>Configuration Modification Instead of Removal</h5>
+            <ul>
+                <li><strong>Account Remapping:</strong> Update existing mappings for organizational changes</li>
+                <li><strong>Sync Schedule Adjustment:</strong> Modify timing without removing connection</li>
+                <li><strong>Data Filter Changes:</strong> Adjust what data syncs without full disconnection</li>
+                <li><strong>Permission Updates:</strong> Modify access levels while maintaining integration</li>
+            </ul>
+        </div>
+
+        <h4>Troubleshooting Removal Process Issues</h4>
+        <div class="troubleshooting">
+            <h5>Common Removal Problems</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Possible Cause</th>
+                        <th>Resolution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Removal Button Unresponsive</strong></td>
+                        <td>Active sync in progress or system lock</td>
+                        <td>Wait for current sync completion, refresh page, retry removal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Incomplete Removal</strong></td>
+                        <td>Partial disconnection due to system error</td>
+                        <td>Contact support for manual cleanup and complete disconnection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Access Permission Error</strong></td>
+                        <td>Insufficient user privileges for integration management</td>
+                        <td>Request admin privileges or have authorized user perform removal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Confirmation Modal Won't Appear</strong></td>
+                        <td>Browser compatibility or JavaScript issues</td>
+                        <td>Clear browser cache, disable extensions, try different browser</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h5>When to Contact Support</h5>
+            <div class="warning">
+                <strong>Immediate Support Required for:</strong>
+                <ul>
+                    <li><strong>Failed Removal:</strong> Process initiated but connection still active</li>
+                    <li><strong>Data Loss Concerns:</strong> Uncertainty about preserved vs. deleted data</li>
+                    <li><strong>Complex Reconnection:</strong> Multi-entity or custom configuration restoration</li>
+                    <li><strong>Compliance Issues:</strong> Audit trail or historical data access problems</li>
+                </ul>
+            </div>
+        </div>
+                    <td>Configuration modification first</td>
+                    <td>Stakeholder notification and training</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Removal Process Design Considerations</h4>
+            <ul>
+                <li><strong>Multi-step Confirmation:</strong> Prevents accidental removal through progressive confirmation steps</li>
+                <li><strong>Impact Visibility:</strong> Clear explanation of consequences before action is taken</li>
+                <li><strong>Alternative Guidance:</strong> Suggests less destructive options like editing vs. removing</li>
+                <li><strong>Recovery Information:</strong> Provides clear path for restoration if removal was unintended</li>
+                <li><strong>Data Preservation:</strong> Maintains historical data and templates for potential reconnection</li>
+            </ul>
+        </div>
+
+        <h3>Business Circumstances Requiring Data Mapping Edits</h3>
+
+        <h4>Complete Scenarios for Configuration Updates</h4>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Business Situation</th>
+                    <th>Mapping Impact</th>
+                    <th>Required Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Chart of Accounts Changed</strong></td>
+                    <td>Company updated or restructured Chart of Accounts in accounting system</td>
+                    <td>All payroll items need remapping to new accounts</td>
+                    <td>Update account mappings to align with new structure</td>
+                </tr>
+                <tr>
+                    <td><strong>New Payroll Items Added</strong></td>
+                    <td>New pay components (allowances, bonuses, deductions) introduced in Bayzat</td>
+                    <td>Unmapped items prevent successful sync</td>
+                    <td>Map new payroll items to appropriate accounts</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Center/Department Changes</strong></td>
+                    <td>Organization added, removed, or renamed departments or cost centers</td>
+                    <td>Cost center mappings become outdated</td>
+                    <td>Update tracking categories and cost center mappings</td>
+                </tr>
+                <tr>
+                    <td><strong>Compliance & Audit Requirements</strong></td>
+                    <td>Auditors request more granular mapping for transparency and compliance</td>
+                    <td>Need separate accounts for detailed tracking</td>
+                    <td>Split existing mappings into more detailed account structure</td>
+                </tr>
+                <tr>
+                    <td><strong>Error Correction</strong></td>
+                    <td>Mistakes discovered in initial mapping causing accounting errors</td>
+                    <td>Incorrect financial statements and reporting</td>
+                    <td>Correct account mappings to ensure accurate reporting</td>
+                </tr>
+                <tr>
+                    <td><strong>Mergers & Acquisitions</strong></td>
+                    <td>Company structure changes due to M&A activity</td>
+                    <td>Accounting structure requires alignment with new entity</td>
+                    <td>Reconfigure mappings for combined organizational structure</td>
+                </tr>
+                <tr>
+                    <td><strong>Payroll Process Changes</strong></td>
+                    <td>Moving from consolidated to employee-level entries or mode optimization</td>
+                    <td>Mode of entry configuration needs updating</td>
+                    <td>Change mode of entry settings and validate impact</td>
+                </tr>
+                <tr>
+                    <td><strong>Tracking Categories Introduction</strong></td>
+                    <td>Implementing location or project tracking in accounting system</td>
+                    <td>Need enhanced cost center or custom data mapping</td>
+                    <td>Update to custom employee data or enhanced cost center setup</td>
+                </tr>
+                <tr>
+                    <td><strong>Banking Relationship Changes</strong></td>
+                    <td>Switching primary banks or adding new banking partners</td>
+                    <td>Bank account mappings become outdated</td>
+                    <td>Update bank account mappings and add new payment methods</td>
+                </tr>
+                <tr>
+                    <td><strong>Accounting Software Migration</strong></td>
+                    <td>Switching from one accounting platform to another</td>
+                    <td>Complete remapping required for new system</td>
+                    <td>Reconfigure entire integration for new accounting platform</td>
+                </tr>
+                <tr>
+                    <td><strong>Reporting Optimization</strong></td>
+                    <td>Finance wants improved analytics and detailed insights</td>
+                    <td>Current mappings too broad for business intelligence needs</td>
+                    <td>Refine mappings for enhanced reporting and analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Regulatory Updates</strong></td>
+                    <td>Changes in tax laws or statutory requirements</td>
+                    <td>Certain pay items must be classified differently</td>
+                    <td>Update mappings to ensure regulatory compliance</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How to Edit Integration Configuration</h3>
+
+        <div class="steps">
+            <h4><span class="step-number">1</span>Access Edit Interface</h4>
+            <p><strong>Navigation Path:</strong> Settings → Payroll → Accounting Integration → ellipse menu (⋯) → "Edit mapping"</p>
+            
+            <h4><span class="step-number">2</span>Review Current Configuration</h4>
+            <ul>
+                <li><strong>Current Settings Display:</strong> Shows existing cost centers, mode settings, account mappings</li>
+                <li><strong>Full Configuration Access:</strong> Returns to complete 3-step setup interface</li>
+                <li><strong>Starting Point:</strong> Existing configuration serves as baseline for modifications</li>
+            </ul>
+
+            <h4><span class="step-number">3</span>Make Targeted Changes</h4>
+            <ul>
+                <li><strong>Incremental Updates:</strong> Modify only sections that need changes</li>
+                <li><strong>Preserve Working Settings:</strong> Keep functional mappings while updating problem areas</li>
+                <li><strong>Add New Mappings:</strong> Configure new payroll items or payment methods</li>
+            </ul>
+
+            <h4><span class="step-number">4</span>Validate and Save</h4>
+            <ul>
+                <li><strong>Configuration Validation:</strong> Ensure all required fields remain completed</li>
+                <li><strong>Change Impact Review:</strong> Understand how modifications affect future syncs</li>
+                <li><strong>Apply Updates:</strong> Save changes to live integration configuration</li>
+            </ul>
+        </div>
+
+        <h4>Impact Assessment for Mapping Changes</h4>
+        
+        <div class="warning">
+            <strong>Before Making Mapping Changes:</strong>
+            <ul>
+                <li><strong>Historical Data Impact:</strong> Consider how changes affect previously synced data</li>
+                <li><strong>Timing Considerations:</strong> Plan changes during month-end cycles to minimize disruption</li>
+                <li><strong>Stakeholder Communication:</strong> Notify finance team and auditors of mapping modifications</li>
+                <li><strong>Testing Protocol:</strong> Validate changes with test sync before applying to live payroll</li>
+                <li><strong>Backup Documentation:</strong> Document current mappings before making changes</li>
+            </ul>
+        </div>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 Strategic Value of Post-Configuration Management</h4>
+            <ul>
+                <li><strong>Business Continuity:</strong> Maintains integration effectiveness through organizational changes</li>
+                <li><strong>Risk Mitigation:</strong> Prevents sync failures from outdated mappings</li>
+                <li><strong>Compliance Assurance:</strong> Adapts to changing regulatory requirements</li>
+                <li><strong>Operational Optimization:</strong> Enables performance improvements based on usage experience</li>
+                <li><strong>Growth Support:</strong> Scales configuration to match business expansion</li>
+            </ul>
+        </div>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 Edit Mapping Interface Design</h4>
+            <ul>
+                <li><strong>Full Configuration Access:</strong> Edit mapping provides complete access to original setup interface</li>
+                <li><strong>Cancel Protection:</strong> Confirmation dialog prevents accidental loss of mapping work</li>
+                <li><strong>Progressive Steps:</strong> Maintains familiar 3-step configuration process</li>
+                <li><strong>Current Settings Preservation:</strong> Shows existing configuration as starting point</li>
+                <li><strong>Change Validation:</strong> Next button validation ensures configuration completeness</li>
+            </ul>
+        </div>
+
+
+
+        <h2 id="advanced-features">10. Advanced Features & Custom Data Integration</h2>
+
+        <h3>Custom Data for Accounting Integration</h3>
+        <p>Custom Data allows you to capture additional employee information beyond standard payroll fields, then sync this data to your accounting system for enhanced reporting and cost tracking.</p>
+
+        <div class="pm-focus">
+            <!-- PM-FOCUS: Business impact and metrics -->
+            <h4>📊 What Product Managers Can Use This For</h4>
+            
+            <h5>Customer Use Cases</h5>
+            <ul>
+                <li><strong>Project-based businesses:</strong> Track payroll costs by project/client for accurate project profitability</li>
+                <li><strong>Multi-location companies:</strong> Break down payroll costs by store/office/region for location performance analysis</li>
+                <li><strong>Multi-entity organizations:</strong> Separate payroll expenses by subsidiary for consolidated reporting</li>
+                <li><strong>Compliance-heavy industries:</strong> Capture regulatory data fields required for statutory reporting</li>
+            </ul>
+
+            <h5>Common Custom Fields in Production</h5>
+            <ul>
+                <li><strong>GL Code:</strong> Link employees to specific General Ledger accounts</li>
+                <li><strong>Project Code:</strong> Track which project each employee works on</li>
+                <li><strong>Cost Center:</strong> More detailed cost center breakdown than standard departments</li>
+                <li><strong>Entity/Subsidiary:</strong> Track which company entity the employee belongs to</li>
+                <li><strong>Location Code:</strong> Store, branch, or office identifier</li>
+            </ul>
+
+            <h5>PM Considerations</h5>
+            <ul>
+                <li><strong>Setup Requirements:</strong> Customers need to configure custom fields in Settings → Custom Data before they appear in accounting integration</li>
+                <li><strong>Data Management:</strong> Someone needs to maintain the custom field data (usually HR or Finance)</li>
+                <li><strong>Accounting System Limits:</strong> Different accounting systems have different capabilities for custom dimensions</li>
+                <li><strong>Support Complexity:</strong> Custom configurations require understanding of both HR processes and accounting principles</li>
+            </ul>
+        </div>
+
+        <h3>Example Implementations</h3>
+
+        <h4>Project-Based Business (Consulting/Agency)</h4>
+        <ul>
+            <li><strong>Problem:</strong> Can't track profitability by project - consulting firm can't allocate payroll costs to specific client projects</li>
+            <li><strong>Solution:</strong> Project Code custom field - assign each employee to their current project (e.g., "PROJ-001", "PROJ-002")</li>
+            <li><strong>Result:</strong> Project-level payroll costs in accounting system - expenses automatically tagged by project in Xero/QuickBooks for accurate profitability reporting</li>
+        </ul>
+
+        <h4>Multi-Location Business (Retail/Restaurant)</h4>
+        <ul>
+            <li><strong>Problem:</strong> Can't track costs by location - retail chain needs store-level P&L but payroll costs aren't broken down by location</li>
+            <li><strong>Solution:</strong> Store Code custom field - assign each employee to their store location</li>
+            <li><strong>Result:</strong> Location-level financial reporting - each store's payroll costs automatically separated for individual store performance analysis</li>
+        </ul>
+
+        <div class="designer-focus">
+            <!-- DESIGNER-FOCUS: UX patterns and accessibility -->
+            <h4>🎨 What Designers Need to Know</h4>
+
+            <h5>User Understanding</h5>
+            <ul>
+                <li><strong>Discovery Problem:</strong> Most users don't know Custom Data exists or how it helps accounting integration</li>
+                <li><strong>Configuration Complexity:</strong> Users need to set up custom fields in Settings before they appear in integration setup</li>
+                <li><strong>Preview Need:</strong> Users want to see how custom data will look in their accounting system before finalizing</li>
+                <li><strong>Maintenance Burden:</strong> Someone needs to keep custom field data updated as employees change projects/locations</li>
+            </ul>
+
+            <h5>Design Considerations</h5>
+            <ul>
+                <li><strong>Progressive Disclosure:</strong> Don't show advanced custom data options until basic integration is working</li>
+                <li><strong>Context Switching:</strong> Users have to leave integration setup to configure custom fields in Settings</li>
+                <li><strong>Validation:</strong> Need to check if accounting system supports the custom dimensions being configured</li>
+                <li><strong>Examples:</strong> Show relevant use cases based on user's industry (project codes for agencies, store codes for retail)</li>
+            </ul>
+        </div>
+
+        <h3>How to Set Up Custom Data</h3>
+
+        <div class="steps">
+            <p><span class="step-number">1</span><strong>Create Custom Fields</strong></p>
+            <p>Go to <strong>Settings → Custom Data → Employee → Add new field</strong></p>
+            
+            <p><span class="step-number">2</span><strong>Choose Field Type</strong></p>
+            <ul>
+                <li><strong>Text:</strong> For codes like "PROJ-001" or "STORE-NYC"</li>
+                <li><strong>List:</strong> For predefined options like "North Region", "South Region"</li>
+                <li><strong>Date:</strong> For time-based tracking</li>
+            </ul>
+            
+            <p><span class="step-number">3</span><strong>Assign to Employees</strong></p>
+            <p>Update employee profiles with the custom field values</p>
+            
+            <p><span class="step-number">4</span><strong>Map in Integration</strong></p>
+            <p>During accounting integration setup, map custom fields to tracking categories in your accounting system</p>
+        </div>
+
+        <div class="warning">
+            <strong>Important Notes:</strong>
+            <ul>
+                <li><strong>Data Maintenance:</strong> Someone needs to keep custom field data updated (usually HR)</li>
+                <li><strong>Accounting System Limits:</strong> Not all accounting systems support custom dimensions equally</li>
+                <li><strong>Can't Delete:</strong> Custom fields in use by payroll templates cannot be deleted</li>
+            </ul>
+        </div>
+
+        <h2 id="performance-optimization">11. Performance & Optimization</h2>
+
+        <h3>Real Performance Observations from Testing</h3>
+        
+        <div class="info">
+            <strong>Actual System Behavior Documented:</strong>
+            <p>Based on comprehensive interface testing conducted during documentation development, the following performance characteristics were observed:</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>System Component</th>
+                    <th>Observed Behavior</th>
+                    <th>Performance Notes</th>
+                    <th>Product Team Implications</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sync Button Availability</strong></td>
+                    <td>Appears only for most recent closed month</td>
+                    <td>Strict temporal restrictions enforced</td>
+                    <td>Consider user messaging about sync limitations</td>
+                </tr>
+                <tr>
+                    <td><strong>Configuration Interface</strong></td>
+                    <td>Progressive disclosure with real-time validation</td>
+                    <td>Next button disabled until requirements met</td>
+                    <td>Strong validation UX prevents incomplete configs</td>
+                </tr>
+                <tr>
+                    <td><strong>Sync Execution</strong></td>
+                    <td>Background processing with API calls</td>
+                    <td>500/401 errors encountered during testing</td>
+                    <td>Error handling and retry logic needs monitoring</td>
+                </tr>
+                <tr>
+                    <td><strong>Report Template Setup</strong></td>
+                    <td>3-step wizard with auto-save functionality</td>
+                    <td>Draft preservation during navigation</td>
+                    <td>Good UX for complex configuration tasks</td>
+                </tr>
+                <tr>
+                    <td><strong>Account Mapping Flexibility</strong></td>
+                    <td>Partial mapping allowed, not all payment methods required</td>
+                    <td>System adapts to actual business usage</td>
+                    <td>Flexible configuration reduces implementation barriers</td>
+                </tr>
+                <tr>
+                    <td><strong>Preview Functionality</strong></td>
+                    <td>Requires complete field mapping before activation</td>
+                    <td>Progressive enablement based on completion</td>
+                    <td>Prevents premature validation attempts</td>
+                </tr>
+                <tr>
+                    <td><strong>Bank Account Management</strong></td>
+                    <td>"Setup new bank account" preserves draft configuration</td>
+                    <td>Non-blocking design for missing accounts</td>
+                    <td>Smooth user experience during account addition</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+        <h2 id="appendices">12. Appendices</h2>
+
+        <h3>Appendix A: Glossary</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>API Integration</td>
+                    <td>Application Programming Interface connection between Bayzat and accounting systems</td>
+                    <td>Technical foundation enabling data synchronization</td>
+                </tr>
+                <tr>
+                    <td>Journal Entry</td>
+                    <td>Accounting record showing debits and credits for payroll transactions</td>
+                    <td>Automatic creation eliminates manual accounting work</td>
+                </tr>
+                <tr>
+                    <td>OAuth 2.0</td>
+                    <td>Security protocol for granting access permissions between applications</td>
+                    <td>Used by QuickBooks and Xero for secure authentication</td>
+                </tr>
+                <tr>
+                    <td>Webhook</td>
+                    <td>Automated message sent when specific events occur</td>
+                    <td>Enables real-time data synchronization</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Appendix B: Integration Checklist</h3>
+        <div class="steps">
+            <h4>Pre-Integration Requirements</h4>
+            <ul>
+                <li>☐ Bayzat admin access confirmed</li>
+                <li>☐ Accounting system admin access verified</li>
+                <li>☐ Current payroll cycle completed</li>
+                <li>☐ Backup of accounting data created</li>
+            </ul>
+
+            <h4>During Integration Setup</h4>
+            <ul>
+                <li>☐ Integration banner clicked</li>
+                <li>☐ Terms and conditions accepted</li>
+                <li>☐ Accounting system selected</li>
+                <li>☐ Authentication completed successfully</li>
+                <li>☐ Test synchronization performed</li>
+            </ul>
+
+            <h4>Post-Integration Validation</h4>
+            <ul>
+                <li>☐ First payroll synchronized accurately</li>
+                <li>☐ Journal entries reviewed in accounting system</li>
+                <li>☐ Finance team trained on new process</li>
+                <li>☐ Manual backup process documented</li>
+                <li>☐ Success metrics baseline established</li>
+            </ul>
+        </div>
+
+
+        <div class="metadata">
+            <p><strong>Document Author:</strong> Product Documentation Team<br>
+            <strong>Review Cycle:</strong> Quarterly or after major platform updates<br>
+            <strong>Feedback:</strong> Submit through Bayzat support portal<br>
+            <strong>Related Resources:</strong> <a href="https://help.bayzat.com/en/collections/3890178-accounting-integration">Bayzat Help Center - Accounting Integration</a></p>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #E5E7EB; color: #6B7280;">
+            🤖 Generated with <a href="https://claude.ai/code" style="color: #6B46C1;">Claude Code</a><br>
+            Co-Authored-By: Claude &lt;noreply@anthropic.com&gt;
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Setup - Bayzat Accounting Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: -20px auto 40px;
+            background: white;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 -10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .phase-nav {
+            display: flex;
+            background: #f8fafc;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .phase-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .phase-tab.active {
+            background: white;
+            border-bottom-color: #3b82f6;
+        }
+        
+        .phase-tab.completed {
+            background: #f0fdf4;
+            border-bottom-color: #10b981;
+        }
+        
+        .phase-tab.completed::after {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .phase-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+        
+        .phase-tab.active .phase-number {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .phase-tab.completed .phase-number {
+            background: #10b981;
+            color: white;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .phase {
+            display: none;
+        }
+        
+        .phase.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .phase-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .phase-title {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .phase-subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+        
+        .time-estimate {
+            background: #eff6ff;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .planning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .planning-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+        }
+        
+        .planning-card h3 {
+            color: #374151;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .planning-card h3::before {
+            content: attr(data-icon);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .requirements-list {
+            list-style: none;
+        }
+        
+        .requirements-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .requirements-list li::before {
+            content: '🔸';
+            margin-right: 12px;
+        }
+        
+        .decision-matrix {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 25px 0;
+        }
+        
+        .decision-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .decision-matrix th {
+            background: #f8fafc;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .decision-matrix td {
+            padding: 15px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .config-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .config-section h3 {
+            color: #374151;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .mapping-example {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .mapping-example h4 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .mapping-row {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .mapping-row:last-child {
+            border-bottom: none;
+        }
+        
+        .payroll-item {
+            flex: 1;
+            font-weight: 600;
+            color: #3b82f6;
+        }
+        
+        .arrow {
+            margin: 0 20px;
+            color: #6b7280;
+        }
+        
+        .account-item {
+            flex: 1;
+            color: #059669;
+        }
+        
+        .phase-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .success-box {
+            background: #f0fdf4;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background: #eff6ff;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 Complete Setup Guide</h1>
+        <p>Comprehensive configuration with custom mapping and advanced features</p>
+    </div>
+
+    <div class="container">
+        <!-- Phase Navigation -->
+        <div class="phase-nav">
+            <div class="phase-tab active" onclick="showPhase(0)">
+                <div class="phase-number">1</div>
+                <div><strong>Planning</strong></div>
+            </div>
+            <div class="phase-tab" onclick="showPhase(1)">
+                <div class="phase-number">2</div>
+                <div><strong>Connection</strong></div>
+            </div>
+            <div class="phase-tab" onclick="showPhase(2)">
+                <div class="phase-number">3</div>
+                <div><strong>Configuration</strong></div>
+            </div>
+            <div class="phase-tab" onclick="showPhase(3)">
+                <div class="phase-number">4</div>
+                <div><strong>Testing</strong></div>
+            </div>
+            <div class="phase-tab" onclick="showPhase(4)">
+                <div class="phase-number">5</div>
+                <div><strong>Go Live</strong></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Phase 1: Planning -->
+            <div class="phase active" id="phase0">
+                <div class="phase-header">
+                    <h2 class="phase-title">📊 Planning & Preparation</h2>
+                    <p class="phase-subtitle">Gather requirements and plan your integration approach</p>
+                </div>
+
+                <div class="time-estimate">
+                    <strong>👥 Who's Involved:</strong> Bayzat Super Admin + Finance Team
+                </div>
+
+                <div class="planning-grid">
+                    <div class="planning-card">
+                        <h3 data-icon="🔐">Access Requirements</h3>
+                        <ul class="requirements-list">
+                            <li>Bayzat Super Admin access</li>
+                            <li>Accounting software admin login</li>
+                            <li>Finance team availability for mapping decisions</li>
+                            <li>Technical support for troubleshooting (if needed)</li>
+                        </ul>
+                    </div>
+
+                    <div class="planning-card">
+                        <h3 data-icon="📋">Data Inventory</h3>
+                        <ul class="requirements-list">
+                            <li>Chart of accounts structure</li>
+                            <li>Cost center/department list</li>
+                            <li>Current payroll components</li>
+                            <li>Historical payroll data (for testing)</li>
+                        </ul>
+                    </div>
+
+                    <div class="planning-card">
+                        <h3 data-icon="⚙️">Configuration Decisions</h3>
+                        <ul class="requirements-list">
+                            <li>Cost center strategy (single vs multi-dimensional)</li>
+                            <li>Account mapping approach</li>
+                            <li>Sync frequency preferences</li>
+                            <li>Report template requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="planning-card">
+                        <h3 data-icon="🎯">Success Criteria</h3>
+                        <ul class="requirements-list">
+                            <li>Accurate journal entry creation</li>
+                            <li>Proper cost center allocation</li>
+                            <li>Balanced debit/credit amounts</li>
+                            <li>Successful test sync completion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Platform-Specific Preparations:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Dynamics 365 BC:</strong> Disable mandatory dimensions before starting</li>
+                        <li><strong>NetSuite:</strong> Verify Custom Record Types and Segments permissions</li>
+                        <li><strong>Xero:</strong> Check app connection limits and tracking category setup</li>
+                        <li><strong>QuickBooks Online:</strong> Ensure classes and locations are configured</li>
+                    </ul>
+                </div>
+
+                <div class="phase-buttons">
+                    <a href="../index.html" class="btn btn-secondary">← Back to Home</a>
+                    <button class="btn btn-primary" onclick="nextPhase()">Start Connection →</button>
+                </div>
+            </div>
+
+            <!-- Phase 2: Connection -->
+            <div class="phase" id="phase1">
+                <div class="phase-header">
+                    <h2 class="phase-title">🔗 Initial Connection</h2>
+                    <p class="phase-subtitle">Establish secure connection between Bayzat and your accounting system</p>
+                </div>
+
+                <div class="config-section">
+                    <h3>Step 1: Navigate to Integration Settings</h3>
+                    <p>In Bayzat: <strong>Settings → Payroll → Accounting Integration</strong></p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="../playwright-images/04-accounting-integration-banner-path1.png" alt="Integration Settings" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Navigate to accounting integration settings</div>
+                    </div>
+                    <div class="info-box">
+                        💡 Alternative path: <strong>Payroll → Adjustments</strong> (if integration banner is visible)
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Step 2: Initiate Connection</h3>
+                    <p>Click <strong>"Start Connection"</strong> on the accounting integration banner</p>
+                    <p>Accept the terms and conditions to proceed</p>
+                </div>
+
+                <div class="config-section">
+                    <h3>Step 3: Select Accounting System</h3>
+                    <p>Choose your platform and complete OAuth authentication:</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="../playwright-images/08-select-accounting-software-dialog.png" alt="System Selection" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Choose your accounting software</div>
+                    </div>
+                    
+                    <div class="decision-matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>Authentication Notes</th>
+                                    <th>Connection Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>QuickBooks Online</strong></td>
+                                    <td>Standard OAuth, company selection required</td>
+                                    <td>Standard OAuth flow</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Xero</strong></td>
+                                    <td>OAuth with organization selection</td>
+                                    <td>Organization selection required</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NetSuite</strong></td>
+                                    <td>Token-based, requires account ID</td>
+                                    <td>Account ID required</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dynamics 365 BC</strong></td>
+                                    <td>OAuth, environment selection</td>
+                                    <td>Environment selection needed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>✅ Connection Success Indicators:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Green connection status indicator</li>
+                        <li>Company/organization name displayed</li>
+                        <li>Configuration wizard becomes available</li>
+                        <li>Chart of accounts visible in mapping section</li>
+                    </ul>
+                </div>
+
+                <div class="phase-buttons">
+                    <button class="btn btn-secondary" onclick="prevPhase()">← Previous</button>
+                    <button class="btn btn-primary" onclick="nextPhase()">Configure Mapping →</button>
+                </div>
+            </div>
+
+            <!-- Phase 3: Configuration -->
+            <div class="phase" id="phase2">
+                <div class="phase-header">
+                    <h2 class="phase-title">⚙️ Data Mapping & Configuration</h2>
+                    <p class="phase-subtitle">Configure how payroll data maps to your accounting system</p>
+                </div>
+
+                <div class="config-section">
+                    <h3>Base Configuration</h3>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="../playwright-images/step1-basic-setup-configuration.png" alt="Base Configuration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Configuration wizard Step 1 - Basic setup</div>
+                    </div>
+                    <div class="mapping-example">
+                        <h4>Currency & Cost Centers</h4>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Base Currency</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Match your payroll currency (AED, USD, etc.)</div>
+                        </div>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Cost Centers</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Map Bayzat departments to accounting cost centers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Payroll Item Mapping</h3>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="../playwright-images/current-step-view.png" alt="Payroll Mapping Interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Step 2 - Map payroll items to accounting accounts</div>
+                    </div>
+                    <div class="mapping-example">
+                        <h4>Essential Mappings</h4>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Basic Salary</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Salary Expense Account</div>
+                        </div>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Employee Benefits</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Benefits Expense Account</div>
+                        </div>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Employer Contributions</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Payroll Tax Expense Account</div>
+                        </div>
+                        <div class="mapping-row">
+                            <div class="payroll-item">Net Pay</div>
+                            <div class="arrow">→</div>
+                            <div class="account-item">Payroll Payable Account</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Advanced Configuration Options</h3>
+                    
+                    <div class="planning-grid">
+                        <div class="planning-card">
+                            <h3 data-icon="🏢">Multi-Dimensional Cost Centers</h3>
+                            <p>For complex organizations needing allocation across multiple dimensions:</p>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>Project + Department + Location</li>
+                                <li>Client + Team + Office</li>
+                                <li>Cost Center + Profit Center + Business Unit</li>
+                            </ul>
+                            <div class="warning-box" style="margin-top: 15px;">
+                                ⚠️ Currently limited support - contact support for complex requirements
+                            </div>
+                        </div>
+
+                        <div class="planning-card">
+                            <h3 data-icon="💰">Payment Method Mapping</h3>
+                            <p>Configure how different payment methods are handled:</p>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>Bank transfer → Primary bank account</li>
+                                <li>Cash payments → Cash account</li>
+                                <li>Check payments → Check account</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-buttons">
+                    <button class="btn btn-secondary" onclick="prevPhase()">← Previous</button>
+                    <button class="btn btn-primary" onclick="nextPhase()">Test Configuration →</button>
+                </div>
+            </div>
+
+            <!-- Phase 4: Testing -->
+            <div class="phase" id="phase3">
+                <div class="phase-header">
+                    <h2 class="phase-title">🧪 Testing & Validation</h2>
+                    <p class="phase-subtitle">Verify your configuration with test data</p>
+                </div>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="../playwright-images/step3-review-save-interface.png" alt="Review Interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <div style="color: #6b7280; font-size: 0.875rem; margin-top: 8px;">Step 3 - Review and save configuration interface</div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Pre-Sync Validation</h3>
+                    <ul class="requirements-list">
+                        <li>All payroll items mapped to accounts</li>
+                        <li>Cost center assignments complete</li>
+                        <li>Payment methods configured</li>
+                        <li>Preview functionality working</li>
+                    </ul>
+                </div>
+
+                <div class="config-section">
+                    <h3>Test Sync Process</h3>
+                    <div class="mapping-example">
+                        <h4>Step-by-Step Testing</h4>
+                        <ol style="margin-left: 20px;">
+                            <li><strong>Select Test Payroll:</strong> Choose a completed, recent payroll period</li>
+                            <li><strong>Generate Preview:</strong> Use the preview function to see mapped data</li>
+                            <li><strong>Verify Mapping:</strong> Check that amounts and accounts are correct</li>
+                            <li><strong>Run Test Sync:</strong> Execute a test synchronization</li>
+                            <li><strong>Check Results:</strong> Verify journal entries in accounting system</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>✅ Test Success Criteria:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Journal entries created without errors</li>
+                        <li>Debit and credit amounts balance</li>
+                        <li>Cost centers properly assigned</li>
+                        <li>Payroll totals match accounting entries</li>
+                        <li>No duplicate transactions</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <strong>🔍 Common Test Issues & Solutions:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Split amount errors:</strong> Ensure debits = credits exactly</li>
+                        <li><strong>Missing cost centers:</strong> Check department mappings</li>
+                        <li><strong>Account access errors:</strong> Verify permissions in accounting system</li>
+                        <li><strong>Rate limit warnings:</strong> Wait and retry sync</li>
+                    </ul>
+                </div>
+
+                <div class="phase-buttons">
+                    <button class="btn btn-secondary" onclick="prevPhase()">← Previous</button>
+                    <button class="btn btn-primary" onclick="nextPhase()">Go Live →</button>
+                </div>
+            </div>
+
+            <!-- Phase 5: Go Live -->
+            <div class="phase" id="phase4">
+                <div class="phase-header">
+                    <h2 class="phase-title">🚀 Go Live</h2>
+                    <p class="phase-subtitle">Activate your integration and set up ongoing processes</p>
+                </div>
+
+                <div class="config-section">
+                    <h3>Final Activation</h3>
+                    <ul class="requirements-list">
+                        <li>Confirm test results are satisfactory</li>
+                        <li>Enable automatic sync (if desired)</li>
+                        <li>Set up sync report templates</li>
+                        <li>Configure notification preferences</li>
+                    </ul>
+                </div>
+
+                <div class="config-section">
+                    <h3>Ongoing Operations Setup</h3>
+                    <div class="planning-grid">
+                        <div class="planning-card">
+                            <h3 data-icon="📊">Regular Sync Process</h3>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>Monthly payroll sync workflow</li>
+                                <li>Sync result validation process</li>
+                                <li>Error handling procedures</li>
+                            </ul>
+                        </div>
+
+                        <div class="planning-card">
+                            <h3 data-icon="👥">Team Training</h3>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>Finance team sync procedures</li>
+                                <li>IT troubleshooting guidelines</li>
+                                <li>Support contact information</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎉 Congratulations! Your integration is now live.</strong>
+                    <p style="margin-top: 10px;">Your payroll data will now sync automatically to your accounting system according to your configured schedule.</p>
+                </div>
+
+                <div class="phase-buttons">
+                    <button class="btn btn-secondary" onclick="prevPhase()">← Previous</button>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="../daily-operations/index.html" class="btn btn-success">Daily Operations →</a>
+                        <a href="../help-support/index.html" class="btn btn-secondary">Get Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPhase = 0;
+        const totalPhases = 5;
+
+        function showPhase(phaseNum) {
+            // Hide all phases
+            document.querySelectorAll('.phase').forEach(phase => {
+                phase.classList.remove('active');
+            });
+            
+            // Show selected phase
+            document.getElementById('phase' + phaseNum).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.phase-tab').forEach((tab, index) => {
+                tab.classList.remove('active', 'completed');
+                if (index === phaseNum) {
+                    tab.classList.add('active');
+                } else if (index < phaseNum) {
+                    tab.classList.add('completed');
+                }
+            });
+            
+            currentPhase = phaseNum;
+        }
+
+        function nextPhase() {
+            if (currentPhase < totalPhases - 1) {
+                showPhase(currentPhase + 1);
+            }
+        }
+
+        function prevPhase() {
+            if (currentPhase > 0) {
+                showPhase(currentPhase - 1);
+            }
+        }
+
+        // Track completion and allow navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mark phases as completed when navigated past them
+            // This would integrate with actual form completion in a real implementation
+        });
+    </script>
+</body>
+</html>
