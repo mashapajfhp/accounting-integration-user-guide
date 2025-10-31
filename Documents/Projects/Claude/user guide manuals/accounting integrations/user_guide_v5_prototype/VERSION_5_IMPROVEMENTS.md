@@ -123,7 +123,7 @@ Dynamics 365 Limitations:
 ### Cross-Platform Issues
 **Universal Challenges:**
 - **Configuration complexity** requiring accounting + technical expertise
-- **Multi-dimensional limitations** affecting all platforms
+- **Multi-dimensional limitations** due to Bayzat's data structure constraints
 - **API rate limiting** impacting large organizations
 - **Historical sync restrictions** limiting operational flexibility
 

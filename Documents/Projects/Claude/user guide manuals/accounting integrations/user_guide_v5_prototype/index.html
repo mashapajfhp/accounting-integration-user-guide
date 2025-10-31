@@ -724,7 +724,7 @@
                     <tr style="border-bottom: 1px solid #e2e8f0;">
                         <td style="padding: 15px; color: #374151;"><strong>Cost Center Structure</strong></td>
                         <td style="padding: 15px; color: #000000;">All</td>
-                        <td style="padding: 15px; color: #000000;">Define organizational departments for expense allocation (multi-dimensional not supported)</td>
+                        <td style="padding: 15px; color: #000000;">Define organizational departments for expense allocation (single-dimension due to Bayzat limitations)</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #e2e8f0;">
                         <td style="padding: 15px; color: #374151;"><strong>Closed Payroll Month</strong></td>
@@ -1434,7 +1434,7 @@
                         
                         <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
                             <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🚫 Current Limitation</h5>
-                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Bayzat supports single-dimension allocation (departments OR offices OR custom data). Multi-dimensional allocation not supported but remains most requested enterprise feature.</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Bayzat supports single-dimension allocation (departments OR offices OR custom data). Multi-dimensional allocation limited by Bayzat's current data structure, though supported by most accounting platforms.</p>
                         </div>
                     </div>
 
@@ -1751,7 +1751,7 @@
                     <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
                         <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔄 Data & Sync Operations</h5>
                         <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
-                            <li><strong>Multi-dimensional:</strong> Not supported on any platform</li>
+                            <li><strong>Multi-dimensional:</strong> Limited by Bayzat's data structure - platforms support it (NetSuite: unlimited, D365 BC: robust, QuickBooks: basic, Xero: 2 categories)</li>
                             <li><strong>Historical sync:</strong> No pre-go-live date syncing</li>
                             <li><strong>Single month:</strong> Only most recent closed month</li>
                             <li><strong>API rate limits:</strong> 500 requests/minute + 10 concurrent - generous for most organizations</li>
