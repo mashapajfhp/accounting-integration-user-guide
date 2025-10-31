@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="version" content="5.0 - Team Onboarding Edition">
+    <meta name="last-updated" content="October 7, 2025">
+    <title>Accounting Integration - Team Onboarding Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #000000;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .header .purpose {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-overview {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-overview h2 {
+            color: #6366f1;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-overview h2::before {
+            content: '';
+            margin-right: 0px;
+            font-size: 2rem;
+        }
+        
+        .business-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: #000000;
+            font-size: 0.9rem;
+        }
+        
+        .audience-paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .audience-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .audience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .audience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--accent-color);
+        }
+        
+        .audience-card.pm {
+            --accent-color: #059669;
+        }
+        
+        .audience-card.designer {
+            --accent-color: #dc2626;
+        }
+        
+        .audience-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .audience-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .audience-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #000000;
+        }
+        
+        .audience-subtitle {
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .learning-goals {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .learning-goals li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            color: #374151;
+            line-height: 1.5;
+        }
+        
+        .learning-goals li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .audience-button {
+            width: 100%;
+            padding: 15px 30px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .audience-button:hover {
+            background: color-mix(in srgb, var(--accent-color) 85%, black);
+            transform: translateY(-2px);
+        }
+        
+        .feature-context {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .context-item {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .context-item:hover {
+            background: #eff6ff;
+            border-color: #6366f1;
+        }
+        
+        .context-item h3 {
+            color: #374151;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .context-item h3::before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .context-item p {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        
+        .context-item ul {
+            list-style: none;
+            color: #4b5563;
+        }
+        
+        .context-item li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .context-item li::before {
+            content: '•';
+            color: #6366f1;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .audience-paths {
+                grid-template-columns: 1fr;
+            }
+            
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .strategic-banner {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .strategic-banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .strategic-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔗 Accounting Integration</h1>
+            <div class="subtitle">Team Onboarding Guide</div>
+            <div class="purpose">Strategic context and business rationale for Product Managers & Designers joining the team</div>
+        </header>
+
+        <section class="feature-overview">
+            <h2>What Is Bayzat Accounting Integration?</h2>
+            <p style="font-size: 1.2rem; color: #374151; margin-bottom: 25px;">
+                Bayzat's Accounting Integration is a strategic product feature that positions us as a complete payroll-to-finance solution. It addresses a critical enterprise pain point where finance teams manually transfer payroll data monthly, creating user friction and limiting our platform stickiness. This integration enables premium pricing tiers while establishing Bayzat as an essential workflow automation tool rather than just a payroll processor.
+            </p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <img src=".playwright-mcp/04-accounting-integration-banner-path1.png" alt="Integration Banner" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                <div style="color: #000000; font-size: 0.9rem; margin-top: 10px;">Strategic integration banner placement in Bayzat interface</div>
+            </div>
+            
+            <div class="strategic-banner">
+                <h3>💡 Strategic Business Context</h3>
+                <p>This feature positions Bayzat as a complete payroll-to-finance solution, creates integration stickiness for customer retention, and drives premium pricing through automation value.</p>
+            </div>
+
+            <p style="color: #4b5563; margin: 30px 0; font-size: 1.1rem;">
+                <strong style="color: #1e40af;">PLATFORM COVERAGE:</strong> This integration works through Codat's unified API, supporting 4 major accounting systems (Dynamics 365 BC, NetSuite, QuickBooks Online, Xero). Codat enforces daily rate limits calculated as 1,000 × (1 + number of Active Connected Companies) with 10 concurrent requests per company.
+            </p>
+        </section>
+
+
+        <section class="feature-context">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">Strategic Context for New Team Members</h2>
+            
+            <div class="context-grid">
+                <div class="context-item">
+                    <h3 data-icon="🎯">Business Problem Solved</h3>
+                    <p>Enterprise customers face tedious monthly workflows where finance teams manually export payroll data and recreate entries in their accounting systems, leading to delays and potential errors.</p>
+                    <ul>
+                        <li>Manual data entry elimination</li>
+                        <li>Error reduction through automation</li>
+                        <li>Faster month-end closing processes</li>
+                        <li>Complete audit trail creation</li>
+                    </ul>
+                </div>
+
+                <div class="context-item">
+                    <h3 data-icon="💰">Revenue Impact</h3>
+                    <p>Premium feature driving increased ARPU and customer stickiness through automation value.</p>
+                    <ul>
+                        <li>Premium feature pricing tier</li>
+                        <li>Increased customer retention</li>
+                        <li>Enterprise sales enabler</li>
+                        <li>Competitive differentiation</li>
+                    </ul>
+                </div>
+
+                <div class="context-item">
+                    <h3 data-icon="🏗️">Technical Architecture</h3>
+                    <p>Built on Codat's unified API platform supporting 4 major accounting systems with platform-specific constraints that impact product decisions. Rate limits vary by platform: Xero (60/min), QuickBooks (500/min), NetSuite (15+ concurrent), D365 BC (300-600/min).</p>
+                    <ul>
+                        <li>Third-party dependency through Codat API</li>
+                        <li>OAuth-based authentication model</li>
+                        <li>Platform coverage drives competitive positioning</li>
+                        <li>Integration reliability impacts customer trust</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="user-journey" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">Complete User Journey Guide</h2>
+            
+            <div class="journey-flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 30px 0;">
+                
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #10b981; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #10b981; margin-bottom: 15px; font-size: 1.25rem;">🔍 1. Feature Discovery</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>How users find the integration:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #10b981; margin-right: 10px;">→</span>
+                            Payroll → Adjustments → Accounting Integration banner (first-time setup only)
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #10b981; margin-right: 10px;">→</span>
+                            Settings → Payroll → Accounting Integration
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #10b981; margin-right: 10px;">→</span>
+                            Payroll → Transactions (operational access)
+                        </li>
+                    </ul>
+                    <a href="#discovery-paths" style="color: #10b981; text-decoration: none; font-weight: 600;">View detailed access paths →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #3b82f6; margin-bottom: 15px; font-size: 1.25rem;">📋 2. Pre-Implementation</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Essential preparation checklist:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #3b82f6; margin-right: 10px;">✓</span>
+                            Accounting system admin permissions
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #3b82f6; margin-right: 10px;">✓</span>
+                            Chart of accounts review
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #3b82f6; margin-right: 10px;">✓</span>
+                            Payroll categorization decisions
+                        </li>
+                    </ul>
+                    <a href="#pre-implementation" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Complete checklist →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #8b5cf6; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #8b5cf6; margin-bottom: 15px; font-size: 1.25rem;">⚙️ 3. Setup Process</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>3-step configuration wizard:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #8b5cf6; margin-right: 10px;">1.</span>
+                            Platform selection & OAuth connection
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #8b5cf6; margin-right: 10px;">2.</span>
+                            Data mapping configuration
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #8b5cf6; margin-right: 10px;">3.</span>
+                            Sync settings & validation
+                        </li>
+                    </ul>
+                    <a href="#setup-flow" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Step-by-step guide →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #374151; margin-bottom: 15px; font-size: 1.25rem;">🔄 4. Data Synchronization</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Ongoing sync management:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">◉</span>
+                            Automated monthly sync processes
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">◉</span>
+                            Manual sync trigger options
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">◉</span>
+                            Sync status monitoring
+                        </li>
+                    </ul>
+                    <a href="#data-synchronization" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Sync guide →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #374151; margin-bottom: 15px; font-size: 1.25rem;">🛠️ 5. Post-Configuration Management</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Ongoing administrative tasks:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⚡</span>
+                            Connection health monitoring
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⚡</span>
+                            Mapping updates & modifications
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⚡</span>
+                            Troubleshooting workflows
+                        </li>
+                    </ul>
+                    <a href="#post-configuration" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Management guide →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #374151; margin-bottom: 15px; font-size: 1.25rem;">🚀 6. Advanced Features & Customization</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Enterprise capabilities:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⭐</span>
+                            Custom data field mapping
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⭐</span>
+                            Feature requests & capabilities
+                        </li>
+                    </ul>
+                    <a href="#advanced-features" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Advanced guide →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #374151; margin-bottom: 15px; font-size: 1.25rem;">📋 7. Platform Limitations Reference</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Known constraints:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⚠️</span>
+                            Platform-specific limitations
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">⚠️</span>
+                            Workarounds & solutions
+                        </li>
+                    </ul>
+                    <a href="#platform-limitations" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Limitations guide →</a>
+                </div>
+
+                <div class="journey-step" style="background: #f8fafc; border-left: 4px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #374151; margin-bottom: 15px; font-size: 1.25rem;">🛠️ 8. Support Resources</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;"><strong>Help & documentation:</strong></p>
+                    <ul style="color: #000000; list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">📚</span>
+                            Troubleshooting support
+                        </li>
+                        <li style="padding: 5px 0; display: flex; align-items: flex-start;">
+                            <span style="color: #000000; margin-right: 10px;">📚</span>
+                            Glossary & definitions
+                        </li>
+                    </ul>
+                    <a href="#support-resources" style="color: #7c3aed; text-decoration: none; font-weight: 600;">Support guide →</a>
+                </div>
+
+            </div>
+
+            <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 30px; border-radius: 16px; margin: 40px 0; text-align: center;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">📚 Complete Implementation Guide</h3>
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px;">Follow the structured approach below for successful accounting integration deployment</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="#pre-implementation" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Start Setup Guide</a>
+                    <a href="#platform-limitations" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Platform Reference</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="discovery-paths" class="detailed-access-paths" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">1. Detailed Access Paths Analysis</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Multiple access routes provide flexibility for users to reach accounting integration based on their workflow needs and user context.</p>
+
+            <div class="access-paths-grid" style="display: grid; gap: 30px; margin: 30px 0;">
+                
+                <div class="access-path-detail" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #374151; margin: 0; font-size: 1.4rem;">1.1 Primary Discovery Path</h3>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <code style="color: #374151; font-weight: 600;">Payroll → Adjustments → Accounting Integration banner</code>
+                        <span style="color: #000000; font-size: 0.9rem; display: block; margin-top: 5px;">(Available during first-time setup only)</span>
+                    </div>
+
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src=".playwright-mcp/04-accounting-integration-banner-path1.png" alt="First-time setup banner in Payroll Adjustments" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Accounting Integration banner as it appears in Payroll → Adjustments during initial setup</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: #374151; margin-bottom: 10px; font-size: 1.1rem;">Context & Usage:</h4>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px;">
+                            <li><strong>User Intent:</strong> First-time feature discovery and setup initiation</li>
+                            <li><strong>Timing:</strong> Appears only when no integration is configured</li>
+                            <li><strong>User Type:</strong> Finance teams during initial platform exploration</li>
+                            <li><strong>Action Required:</strong> Click "Start Connection" to begin setup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="access-path-detail" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #374151; margin: 0; font-size: 1.4rem;">1.2 Configuration Access Path</h3>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <code style="color: #374151; font-weight: 600;">Settings → Payroll → Accounting Integration</code>
+                        <span style="color: #000000; font-size: 0.9rem; display: block; margin-top: 5px;">(Initial setup access)</span>
+                    </div>
+
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src=".playwright-mcp/payroll-settings-initial.png" alt="Settings Payroll path to Accounting Integration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Settings → Payroll navigation showing Accounting Integration section</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: #374151; margin-bottom: 10px; font-size: 1.1rem;">Context & Usage:</h4>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px;">
+                            <li><strong>User Intent:</strong> System configuration, setup, and maintenance</li>
+                            <li><strong>Timing:</strong> Available at all times, regardless of integration status</li>
+                            <li><strong>User Type:</strong> System administrators and finance managers</li>
+                            <li><strong>Actions Available:</strong> Configure, edit mapping, view reports, manage settings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="access-path-detail" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #374151; margin: 0; font-size: 1.4rem;">1.3 Operational Access Path</h3>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <code style="color: #374151; font-weight: 600;">Payroll → Transactions</code>
+                        <span style="color: #000000; font-size: 0.9rem; display: block; margin-top: 5px;">(Direct operational access)</span>
+                    </div>
+
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src=".playwright-mcp/current-sync-state.png" alt="Payroll Transactions showing sync functionality" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Payroll → Transactions interface with integrated sync functionality</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: #374151; margin-bottom: 10px; font-size: 1.1rem;">Context & Usage:</h4>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px;">
+                            <li><strong>User Intent:</strong> Regular payroll operations and monthly sync processes</li>
+                            <li><strong>Timing:</strong> During month-end payroll processing cycles</li>
+                            <li><strong>User Type:</strong> Payroll administrators and operators</li>
+                            <li><strong>Primary Action:</strong> Execute data synchronization after payroll completion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="access-path-detail" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #374151; margin: 0; font-size: 1.4rem;">1.4 Post-Configuration Management</h3>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <code style="color: #374151; font-weight: 600;">Settings → Payroll → Accounting Integration</code>
+                        <span style="color: #000000; font-size: 0.9rem; display: block; margin-top: 5px;">(Established connection management)</span>
+                    </div>
+
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src=".playwright-mcp/post-config-management.png" alt="Post-configuration management interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Settings → Payroll interface showing established Xero integration with management options</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <h4 style="color: #374151; margin-bottom: 10px; font-size: 1.1rem;">Context & Usage:</h4>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px;">
+                            <li><strong>User Intent:</strong> Manage existing integrations, edit configurations, view reports</li>
+                            <li><strong>Timing:</strong> After successful integration setup for ongoing management</li>
+                            <li><strong>User Type:</strong> System administrators and finance managers</li>
+                            <li><strong>Available Actions:</strong> Edit mapping, view/edit reports, sync data, remove connection</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#pre-implementation" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Pre-Implementation Checklist →
+                </a>
+            </div>
+
+        </section>
+
+        <section id="pre-implementation" class="pre-implementation-checklist" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">2. Pre-Implementation Checklist</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Ensure the following pre-requisites are met before attempting setup. These are required for a successful connection and integration.</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr style="background: #f8fafc;">
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 40%;">Requirement</th>
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 15%;">Platform</th>
+                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 45%;">Verification Steps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Accounting System Admin Permissions</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Confirm full administrator access with read/write permissions to accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>API Integration Permission</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Enable third-party app connections and API access in accounting system settings</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Creation</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Verify ability to create and post journal entries in accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Chart of Accounts Access</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Ensure access to view and select accounts, verify payroll and liability accounts exist</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Browser Compatibility</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Use modern browser (Chrome, Firefox, Edge) with JavaScript enabled</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Popup Blockers</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Disable popup blockers for OAuth authentication flows during setup</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Payment Methods Configuration</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Configure bank accounts in Settings → Payroll → Bank Accounts matching accounting system</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Cost Center Structure</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Define organizational departments for expense allocation (single-dimension due to Bayzat limitations)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Closed Payroll Month</strong></td>
+                        <td style="padding: 15px; color: #000000;">All</td>
+                        <td style="padding: 15px; color: #000000;">Have at least one completed payroll cycle available for initial sync testing</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Disable Mandatory Dimensions</strong></td>
+                        <td style="padding: 15px; color: #000000;">D365 BC</td>
+                        <td style="padding: 15px; color: #000000;">Turn off mandatory dimension requirements before integration setup to prevent posting failures</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Custom Record Types Permission</strong></td>
+                        <td style="padding: 15px; color: #000000;">NetSuite</td>
+                        <td style="padding: 15px; color: #000000;">Verify Custom Record Types, Segments, Classes, Departments access permissions</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 15px; color: #374151;"><strong>Connection Limit Check</strong></td>
+                        <td style="padding: 15px; color: #000000;">Xero</td>
+                        <td style="padding: 15px; color: #000000;">Verify uncertified app connection limits not exceeded before attempting setup</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; color: #374151;"><strong>Journal Entry Validation</strong></td>
+                        <td style="padding: 15px; color: #000000;">QBO</td>
+                        <td style="padding: 15px; color: #000000;">Ensure split amounts validation enabled for proper journal entry processing</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#setup-flow" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Setup Process →
+                </a>
+            </div>
+
+        </section>
+
+        <section id="setup-flow" class="setup-process" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">3. Setup Process</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Complete 3-step configuration wizard to establish the connection between Bayzat and your accounting system. Each step builds upon the previous one to ensure proper integration setup.</p>
+
+            <div class="setup-overview" style="background: #f8fafc; padding: 25px; border-radius: 12px; margin: 30px 0; border: 1px solid #e2e8f0;">
+                <h3 style="color: #374151; margin: 0 0 15px 0; font-size: 1.2rem;">🎯 Setup Overview</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <div style="color: #8b5cf6; font-weight: bold; font-size: 1.1rem;">Step 1</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Platform Connection</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="color: #8b5cf6; font-weight: bold; font-size: 1.1rem;">Step 2</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Data Mapping</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="color: #8b5cf6; font-weight: bold; font-size: 1.1rem;">Step 3</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Review & Save</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setup-steps" style="display: grid; gap: 30px; margin: 30px 0;">
+                
+                <div class="setup-step" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; position: relative;">
+                    <div style="position: absolute; top: -15px; left: 30px; background: #8b5cf6; color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Step 1</div>
+                    
+                    <div style="margin-top: 15px;">
+                        <h3 style="color: #8b5cf6; margin-bottom: 20px; font-size: 1.4rem;">Platform Selection & OAuth Connection</h3>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.1 Initial Access - Finding the Integration</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Navigate to the integration through one of the verified access paths:</p>
+                            <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li>Payroll → Adjustments → Accounting Integration banner (first-time setup only)</li>
+                                <li>Settings → Payroll → Accounting Integration</li>
+                            </ul>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/04-accounting-integration-banner-path1.png" alt="Integration banner" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Accounting Integration banner with "Start Connection" primary action</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.2 Click "Start Connection" - Initiating Setup</h4>
+                            <p style="color: #000000; margin-bottom: 10px; line-height: 1.6;">The "Start Connection" button is the primary conversion point where users commit to the integration process. This action indicates genuine intent to automate their payroll-to-finance workflow.</p>
+                            <p style="color: #000000; margin: 0; line-height: 1.6;"><strong>User Action:</strong> Click the "Start Connection" button to begin the 3-step configuration wizard.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.3 Terms and Conditions Popup - Legal Compliance</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">A modal appears requiring explicit consent before proceeding:</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/07-confirm-access-modal.png" alt="Terms and conditions modal" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Legal consent modal protecting both Bayzat and customer interests</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">This consent step protects both Bayzat and customers by establishing clear data sharing agreements that build trust through transparency. It ensures compliance for international customers while setting expectations about data processing scope to prevent future disputes. The explicit consent model demonstrates our commitment to data privacy, which is crucial for enterprise sales and maintaining customer confidence in our platform.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.4 Select Your Accounting System - Platform Choice</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Choose your accounting platform from 4 strategically selected systems:</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/08-select-accounting-software-dialog.png" alt="Accounting system selection" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Platform selection covering 85%+ of our target market</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Users can search for their specific accounting tool within the selection interface. These 4 platforms cover 85%+ of our target market across SMB to Enterprise segments, maximizing integration value while keeping development costs manageable.</p>
+                            <p style="color: #000000; margin: 0; line-height: 1.6;"><strong>User Flow:</strong> When an accounting tool is selected, the "Next" button is activated. Clicking "Next" takes the user to the authentication flow for their respective accounting system.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.5 Platform-Specific Connection Confirmation</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">After selecting the accounting platform, a confirmation modal appears showing the specific system details and connection requirements:</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/xero-connection-modal.png" alt="Platform-specific connection confirmation" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Example: Xero connection confirmation modal with platform-specific details</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">This confirmation step allows users to verify they've selected the correct accounting system before proceeding to authentication. Each platform displays its specific branding and connection requirements, reducing setup errors and building confidence in the integration process. Importantly, this modal provides clarity by specifying the exact type of data that Bayzat will have access to, ensuring transparency about data permissions and helping users make informed decisions about the integration scope.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.6 Connection Processing - Waiting State</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">While the system establishes the connection, users see a waiting modal that provides feedback during the authentication process:</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/xero-waiting-connection-modal.png" alt="Connection processing waiting state" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Example: Xero connection processing modal showing waiting state</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">The waiting state is crucial for user experience as connection times vary significantly by platform. This feedback prevents users from thinking the system has failed and reduces support ticket volume from users who abandon the process during authentication delays.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">1.7 OAuth Authentication Flow - Secure Connection</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Complete secure authentication with your chosen accounting system:</p>
+                            <ol style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li>System opens OAuth login window (popup)</li>
+                                <li>Enter your accounting system credentials</li>
+                                <li>Grant permissions for Bayzat integration</li>
+                                <li>Return to Bayzat with successful connection confirmation</li>
+                            </ol>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/xero-connection-successful-modal.png" alt="Successful connection confirmation" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Example: Xero connection success confirmation modal</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">The OAuth authentication process ensures Bayzat never sees or stores customer accounting credentials, which builds security trust and enables enterprise sales through industry-standard protocols. This third-party authentication model reduces liability for credential security and meets SOC 2 requirements essential for B2B sales to enterprise clients with strict security audit requirements.</p>
+                        </div>
+
+                        <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                            <p style="color: #92400e; margin: 0; font-size: 0.9rem;"><strong>Critical:</strong> D365 BC connections can take 3+ hours to establish. Plan accordingly and avoid setup during critical business periods. Ensure popup blockers are disabled.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-step" style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; position: relative;">
+                    <div style="position: absolute; top: -15px; left: 30px; background: #6366f1; color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">Step 2</div>
+                    
+                    <div style="margin-top: 15px;">
+                        <h3 style="color: #374151; margin-bottom: 20px; font-size: 1.4rem;">Data Mapping Configuration</h3>
+                        
+                        <p style="color: #000000; margin-bottom: 10px; line-height: 1.6;">Access through Settings → Payroll → Accounting Integration → Data Mapping.</p>
+                        
+                        <p style="color: #000000; margin-bottom: 20px; line-height: 1.6;">Once the initial platform connection is completed, the next step is data mapping configuration. Configure how Bayzat payroll data maps to your accounting system accounts.</p>
+
+                        <div style="margin-bottom: 30px;">
+                            <div style="margin-bottom: 25px;">
+                                <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">What is Data Mapping?</h5>
+                                <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Data mapping is the process of connecting information from one system (Bayzat payroll) to corresponding fields in another system (your accounting software). It establishes how payroll components like salaries, deductions, and benefits translate into proper accounting entries in your financial system.</p>
+                                
+                                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                                    <p style="color: #374151; margin-bottom: 10px; font-weight: 600;">Simple Example:</p>
+                                    <p style="color: #000000; margin: 0; line-height: 1.5;">When an employee receives AED 8,000 in "Basic Salary" in Bayzat, the data mapping automatically directs this amount to the "6000 - Salaries & Wages" account in Xero. During the next payroll sync, AED 8,000 will appear as a journal entry in the correct accounting account without any manual data entry.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 25px;">
+                                <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Why is Data Mapping Critical?</h5>
+                                <p style="color: #000000; margin: 0; line-height: 1.6;">Data mapping prevents payroll information from landing in random or incorrect accounts, eliminating manual copying and pasting while ensuring consistent, error-free automation. Proper mapping ensures financial accuracy by reflecting true payroll costs in P&L and balance sheets, creating clear audit trails for compliance and tax reporting, and enabling accurate departmental cost analysis with clear visibility into payroll-related liabilities for effective cash flow management.</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Mapping Process Overview</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                    <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">Step 1: Basic Setup</div>
+                                    <div style="color: #000000; font-size: 0.9rem;">Department-to-cost center mapping, mode of entry selection</div>
+                                </div>
+                                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                    <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">Step 2: Map Pay Items</div>
+                                    <div style="color: #000000; font-size: 0.9rem;">Dual account mapping for payroll components</div>
+                                </div>
+                                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                    <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">Step 3: Review & Save</div>
+                                    <div style="color: #000000; font-size: 0.9rem;">Configuration validation and finalization</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">2.1 Basic Setup Configuration</h4>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">The first step in data mapping focuses on foundational configuration elements that establish how your organizational structure maps to the accounting system:</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/step1-basic-setup-configuration.png" alt="Basic Setup configuration interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">2.1 Basic Setup: Department-to-cost center mapping and mode of entry selection</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Base Currency Selection</h5>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">The base currency is automatically inherited from your company's primary currency configured during initial Bayzat onboarding and cannot be modified within the integration setup.</p>
+                            
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Currency mismatches between Bayzat and the accounting system create significant reconciliation problems that generate high-volume support tickets. This constraint requires escalation to support when customers have mixed-currency environments.</p>
+                            
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Define Cost Centers Configuration</h5>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">A cost center is an accounting concept used to track and allocate business expenses to specific departments, projects, or business units within your organization. In payroll context, cost centers help you understand where your labor costs are being spent and enable detailed financial reporting by organizational segment.</p>
+                            
+                            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                                <p style="color: #374151; margin-bottom: 10px; font-weight: 600;">Cost Center Examples:</p>
+                                <p style="color: #000000; margin: 0; line-height: 1.5;">Department-based (Marketing, Sales, Engineering), Location-based (Dubai Office, Abu Dhabi Branch), Project-based (Product Development, Client Services), or Function-based (Operations, Administration, Customer Support).</p>
+                            </div>
+
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Why Group Data in Cost Centers</h5>
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">Implementing cost center grouping (whether by departments, offices, or custom criteria) provides significant organizational benefits by categorizing payroll expenses according to your business structure. This enables financial transparency through clear visibility into payroll cost allocation, performance analysis by comparing costs across different groups, budget management for each cost center, strategic decision making with data-driven insights for resource allocation, compliance reporting with detailed expense categorization, and profitability analysis to understand the true cost of different business units.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            
+                            <p style="color: #000000; margin-bottom: 20px; line-height: 1.6;"><strong>Configuration Options:</strong> Choose how to organize payroll expenses across your organization and map each Bayzat cost center to corresponding accounting system cost centers:</p>
+
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr style="background: #f8fafc;">
+                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 20%;">Option</th>
+                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 30%;">Use Case</th>
+                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 30%;">Business Impact</th>
+                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 20%;">Configuration Required</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 12px; color: #374151;"><strong>None</strong></td>
+                                        <td style="padding: 12px; color: #000000;">Simple organization structure</td>
+                                        <td style="padding: 12px; color: #000000;">All payroll to single cost center</td>
+                                        <td style="padding: 12px; color: #000000;">No additional setup</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                                        <td style="padding: 12px; color: #374151;"><strong>Use departments</strong></td>
+                                        <td style="padding: 12px; color: #000000;">Department-based reporting</td>
+                                        <td style="padding: 12px; color: #000000;">Expense tracking by department</td>
+                                        <td style="padding: 12px; color: #000000;">Department-to-cost center mapping</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; color: #374151;"><strong>Use offices</strong></td>
+                                        <td style="padding: 12px; color: #000000;">Location-based reporting</td>
+                                        <td style="padding: 12px; color: #000000;">Expense tracking by office location</td>
+                                        <td style="padding: 12px; color: #000000;">Office-to-cost center mapping</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Mapping Requirement:</strong> If cost centers are selected, all cost centers must be mapped before proceeding to the next step. The "Next" button remains disabled until mapping is complete.</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Mode of Entry Configuration</h5>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Mode of entry determines how payroll data is organized and structured when creating journal entries in your accounting system. This setting controls how employee payments made through different channels (bank transfers, exchange houses, cash, cheques) are grouped and recorded in your accounting system.</p>
+                            
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;"><strong>Payment Method Context:</strong> "Paid via" refers to how employees receive their salaries - through company bank accounts, third-party exchange houses, cash payments, or cheques. Each payment method may require different reporting granularity in your accounting system.</p>
+                            
+                            <div style="text-align: center; margin: 20px 0;">
+                                <img src=".playwright-mcp/mode-of-entry-dropdown-options.png" alt="Mode of entry dropdown options" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Mode of entry dropdown showing three available options for structuring journal entries</div>
+                            </div>
+
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;"><strong>Global Mode:</strong> All payment methods use the same reporting structure. Select one mode from the dropdown that applies to all payment methods uniformly, providing consistent reporting and simplified configuration.</p>
+                            
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;"><strong>Line-Item Configuration:</strong> Different payment methods require different reporting granularity. Leave global dropdown unselected and configure mode individually for each bank account or payment method when different payment types need distinct reporting approaches.</p>
+
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Three Entry Options</h5>
+                            <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li><strong>Consolidated entry:</strong> Creates one single journal entry with total amounts for all employees combined</li>
+                                <li><strong>Entry per employee:</strong> Creates separate journal entries for each individual employee's payroll data</li>
+                                <li><strong>Entry per cost center:</strong> Creates journal entries grouped by department or cost center with combined totals for each group</li>
+                            </ul>
+                            <p style="color: #000000; margin: 15px 0 0 0; line-height: 1.6;">Choice depends on your accounting reporting requirements and audit trail preferences.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">2.2 Map Pay Items with Accounts</h4>
+                        
+                        <p style="color: #000000; margin-bottom: 20px; line-height: 1.6;">Step 2.2 creates the critical mapping between Bayzat payroll components and accounting system accounts. This is where you define how each pay element (salary, deductions, contributions) gets recorded in your financial system.</p>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/current-step-view.png" alt="Map pay items interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 2.2: Map pay items interface showing dual account mapping for payroll components</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Understanding Dual Account Logic</h5>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Step 2.2 uses dual account mapping where each payroll item requires two accounts to create proper double-entry accounting records. The "On Bayzat" account represents the debit side where expenses are recorded (typically expense accounts), while the "On [Accounting System]" account is the contra account (credit side) where liabilities or payments are recorded in your accounting system (typically liability or asset accounts).</p>
+                            
+                            <p style="color: #000000; margin: 0; line-height: 1.6;">Each payroll component (Basic Salary, Housing Allowance, Medical Insurance, Tax Deductions, etc.) requires individual account mapping through this dual account approach, ensuring accurate expense categorization and enabling detailed financial reporting by pay component type.</p>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Configuration Status Indicators</h5>
+                            <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">The interface uses visual indicators to show the completion status of each payroll component mapping:</p>
+                            <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li><strong>✅ Green Checkmark:</strong> Section is completely configured and all required mappings are completed</li>
+                                <li><strong><span style="color: #dc2626;">❗</span> Red Exclamation:</strong> Section has missing or incomplete mappings that require attention</li>
+                                <li><strong>No Icon:</strong> Section is accessible but configuration hasn't been started</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                            <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Configuration Requirement:</strong> All active payroll items must have both debit and credit accounts mapped before proceeding to Step 3. Additionally, if mode of entry is not defined at global level, each payroll item must also have the mode of entry defined for both "if paid" and "if not paid" scenarios. Incomplete mappings will prevent progression through the wizard.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">2.3 Review & Save Configuration</h4>
+                        
+                        <p style="color: #000000; margin-bottom: 20px; line-height: 1.6;">Review all configuration settings and save your integration setup. This step validates your mapping and finalizes the connection.</p>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Final Review Checklist</h4>
+                            <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li>All payroll items properly mapped to accounting accounts</li>
+                                <li>Payment methods connected to correct bank/clearing accounts</li>
+                                <li>Cost centers mapped to appropriate departments</li>
+                                <li>No unmapped items remaining in configuration</li>
+                            </ul>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <img src=".playwright-mcp/step3-review-save-interface.png" alt="Review and save interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 3: Review and save configuration interface</div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Save and Complete</h4>
+                            <ol style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li>Review all mapping configurations for accuracy</li>
+                                <li>Click "Save" to finalize integration setup</li>
+                                <li>System validates configuration completeness</li>
+                                <li>Receive confirmation of successful setup</li>
+                            </ol>
+                        </div>
+
+                        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                            <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Next Steps:</strong> After successful configuration, proceed to test your first data synchronization using a closed payroll month to validate the integration.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#data-synchronization" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Data Synchronization →
+                </a>
+            </div>
+
+        </section>
+
+        <section id="data-synchronization" class="data-sync-usage" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">4. Data Synchronization Usage</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Access through Payroll → Transactions or Settings → Payroll → Accounting Integration.</p>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🔄</span>
+                    </div>
+                    <h4 style="color: #2563eb; margin: 0; font-size: 1.3rem;">Data Synchronization Overview</h4>
+                </div>
+
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">
+                    <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">💡 What is Data Synchronization?</h5>
+                    <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Process of transferring payroll data from Bayzat to your accounting system using mapping configuration from Steps 1-3. Converts payroll information into proper accounting journal entries based on established mapping rules.</p>
+                </div>
+            </div>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #dcfce7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🔒</span>
+                    </div>
+                    <h4 style="color: #16a34a; margin: 0; font-size: 1.3rem;">Data Privacy & Security During Sync</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ What Data IS Transferred</h5>
+                        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Aggregated payroll totals (salary, allowances, deductions, benefits), cost center assignments for expense tracking, journal entry data with account codes and reference numbers, plus sync metadata for audit purposes.</p>
+                    </div>
+                    
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">❌ What Data is NOT Transferred</h5>
+                        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Personal employee information strictly protected: individual names, employee IDs, contact information, bank details, HR records, performance evaluations. Privacy-by-design ensures only financial aggregates reach accounting systems.</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">🛡️ Security Measures</h5>
+                    <p style="color: #000000; margin: 0; line-height: 1.5;">All transfers use SSL/TLS encryption with OAuth2 credential validation and complete audit trail logging for security and compliance. Privacy-by-design architecture ensures personal employee data never leaves Bayzat.</p>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Two Access Paths for Data Synchronization</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Path 1: Settings Access</h5>
+                        <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;"><strong>Navigation:</strong> Settings → Payroll → Accounting Integration</p>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.5;">
+                            <li><strong>Context:</strong> Administrative management</li>
+                            <li><strong>User Intent:</strong> Integration management and oversight</li>
+                            <li><strong>Action:</strong> Click "Proceed to the transaction page to sync data" link</li>
+                            <li><strong>User Type:</strong> System administrators and finance managers</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">Path 2: Operational Access</h5>
+                        <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;"><strong>Navigation:</strong> Payroll → Transactions → Select Closed Month</p>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.5;">
+                            <li><strong>Context:</strong> Regular payroll operations</li>
+                            <li><strong>User Intent:</strong> Month-end processing and sync</li>
+                            <li><strong>Action:</strong> Direct access to transaction management</li>
+                            <li><strong>User Type:</strong> Payroll administrators and operators</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">How Synchronization Works</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">1. Configuration Foundation</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Mapping acts as "translation rules" for converting payroll to accounting entries</div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">2. Sync Execution</div>
+                        <div style="color: #000000; font-size: 0.9rem;">System applies mapping rules to actual payroll data, creating journal entries</div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">3. Result</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Payroll expenses appear in correct accounts with proper cost center allocation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Prerequisite for Data Synchronization</h4>
+                
+                <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 20px;">
+                    <p style="color: #92400e; margin: 0; font-size: 0.9rem;"><strong>Critical Prerequisite:</strong> You cannot sync data without first configuring the sync report template and completing the payroll data mapping. Additionally, you can only sync data for the most recent closed payroll cycle. Report templates must be set up before sync operations become accessible.</p>
+                </div>
+                
+                <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">What is Sync Report Template</h5>
+                <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">A sync report template defines the format and content structure for reports generated after each data synchronization. It specifies which data columns to include, how information is organized, and what details are captured for comprehensive documentation.</p>
+                
+                <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">To configure the report template, the configuration process consists of a 3-step process accessed through:<br>Settings → Payroll → Accounting Integration → ellipse menu (⋯) → "Edit/View report"</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src=".playwright-mcp/setup-integration-report-step1.png" alt="Access path to report template configuration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Settings → Payroll → Accounting Integration interface showing ellipse menu access to report configuration</div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    
+                    <div style="margin-bottom: 25px;">
+                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 1: Define Report Name</h6>
+                        <div style="text-align: center; margin: 15px 0;">
+                            <img src=".playwright-mcp/report-template-step1.png" alt="Report template Step 1" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 1: Define your reporting file name for sync results</div>
+                        </div>
+                        <p style="color: #000000; margin: 0; line-height: 1.6;">Configure a descriptive name for your sync report template that will identify the report format used for all future synchronization operations.</p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 2: Map Data Columns</h6>
+                        <div style="text-align: center; margin: 15px 0;">
+                            <img src=".playwright-mcp/report-template-step2-mapping.png" alt="Report template Step 2" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 2: Map data columns to Bayzat system data points for comprehensive sync reporting</div>
+                        </div>
+                        <p style="color: #000000; margin: 0; line-height: 1.6;">Map specific data columns to Bayzat system data points to define exactly what information will be included in your sync reports and how it will be organized.</p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h6 style="color: #374151; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600;">Step 3: Review & Save Template</h6>
+                        <div style="text-align: center; margin: 15px 0;">
+                            <img src=".playwright-mcp/report-template-step3-review.png" alt="Report template Step 3" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Step 3: Review complete column mappings and save template for sync report generation</div>
+                        </div>
+                        <p style="color: #000000; margin: 0; line-height: 1.6;">Review all column mappings and template configuration, then save the template to make it available for sync report generation in all future data synchronization operations.</p>
+                    </div>
+                </div>
+                
+                <p style="color: #000000; margin: 0; line-height: 1.6;">This one-time setup applies to all future sync operations and must be completed before attempting data synchronization.</p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Executing Data Synchronization</h4>
+                <p style="color: #000000; margin-bottom: 15px; line-height: 1.6;">Once setup is completed, users can synchronize payroll data by navigating to Payroll → Transactions → Select most recent closed month, then clicking the "Sync data" button.</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src=".playwright-mcp/current-sync-state.png" alt="Payroll sync interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Payroll → Transactions interface showing sync data button for most recent closed month</div>
+                </div>
+                
+                <p style="color: #000000; margin: 0; line-height: 1.6;"><strong>Sync Constraints:</strong> Data synchronization is only available for the most recent closed payroll month. Historical payroll periods cannot be synchronized, and the sync button will only appear when a closed month is selected and all prerequisites are met.</p>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Privacy by Design:</strong> The integration architecture ensures personal employee data never leaves Bayzat, transferring only the financial aggregates needed for accounting purposes while maintaining strict data privacy standards.</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#post-configuration" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Post-Configuration Management →
+                </a>
+            </div>
+        </section>
+
+        <section id="post-configuration" class="post-config-management" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">5. Post-Configuration Management</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Access through Settings → Payroll → Accounting Integration → ellipse menu (⋯).</p>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">What is Post-Configuration Management?</h4>
+                <p style="color: #000000; margin: 0; line-height: 1.6;">Post-configuration management refers to the ongoing administrative tasks required to maintain, monitor, and modify your accounting integration after the initial setup is complete and the integration is actively running. Unlike the initial setup (which gets you connected), post-configuration management ensures your integration continues to work effectively as your business evolves, grows, and changes over time.</p>
+            </div>
+
+            <div style="text-align: center; margin: 25px 0;">
+                <img src=".playwright-mcp/post-config-management.png" alt="Post-configuration management interface" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <div style="color: #000000; font-size: 0.85rem; margin-top: 8px; font-style: italic;">Post-configuration management options via Settings → Payroll → Accounting Integration → ellipse menu (⋯)</div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Three Core Management Functions</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">1. Edit Mapping</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.5;">
+                            <li><strong>Purpose:</strong> Modify integration configuration</li>
+                            <li><strong>Access:</strong> Full Steps 1-3 configuration interface</li>
+                            <li><strong>Use Cases:</strong> Account changes, organizational restructuring, error correction</li>
+                            <li><strong>Impact:</strong> Updates how future syncs are processed</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">2. Edit/View Report</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.5;">
+                            <li><strong>Purpose:</strong> Manage report templates and view sync results</li>
+                            <li><strong>Access:</strong> Report template configuration and sync history</li>
+                            <li><strong>Use Cases:</strong> Custom reporting, sync monitoring, audit documentation</li>
+                            <li><strong>Impact:</strong> Controls how sync results are displayed and analyzed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;">
+                    <h5 style="color: #374151; margin-bottom: 10px; font-size: 1rem;">3. Remove Connection</h5>
+                    <ul style="color: #000000; margin: 0; padding-left: 20px; line-height: 1.5;">
+                        <li><strong>Purpose:</strong> Completely disconnect accounting system integration</li>
+                        <li><strong>Access:</strong> Confirmation dialog with permanent removal warning</li>
+                        <li><strong>Use Cases:</strong> Platform migration, integration termination, troubleshooting</li>
+                        <li><strong>Impact:</strong> Permanently removes connection and all configuration data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">Strategic Value of Post-Configuration Management</h4>
+                <p style="color: #000000; margin: 0; line-height: 1.6;">Post-configuration management maintains integration effectiveness through organizational changes, prevents sync failures from outdated mappings, adapts to changing regulatory requirements, enables performance improvements based on usage experience, and scales configuration to match business expansion. This ongoing management capability is crucial for long-term customer success and reduces churn by ensuring the integration remains valuable as businesses evolve.</p>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Business Impact:</strong> Effective post-configuration management is a key retention factor, enabling customers to adapt the integration to changing business needs rather than abandoning the feature when organizational changes occur.</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#advanced-features" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Advanced Features →
+                </a>
+            </div>
+        </section>
+
+        <section id="advanced-features" class="advanced-features" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">6. Advanced Features & Customization</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Enhanced capabilities for enterprise-level customization and specialized business requirements.</p>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #ede9fe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🎯</span>
+                    </div>
+                    <h4 style="color: #7c3aed; margin: 0; font-size: 1.3rem;">Custom Data Field Mapping</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">💡 What is Custom Data?</h5>
+                        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Capture additional employee information beyond standard payroll (Project Code, Location Code, GL Code) and automatically sync to accounting systems for enhanced reporting and detailed cost tracking.</p>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🚀 Business Value</h5>
+                        <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Transforms Bayzat from payroll processor to financial reporting platform. Enables enterprise sales, drives higher contract values, creates customer stickiness through essential workflows.</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                    <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">📊 Real-World Success Story</h5>
+                    <p style="color: #000000; margin: 0; line-height: 1.5;"><strong>Consulting Agency Project Tracking:</strong> Agency assigns "Project Code" to employees (PROJ-ALPHA, PROJ-BETA). Payroll sync automatically places each salary in correct project account in QuickBooks. Result: Instant project profitability analysis without manual work - finance team immediately identifies profitable vs. underperforming projects.</p>
+                </div>
+
+                <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">⚙️ Setup Process</h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">1. Configure Fields</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Define custom field names and types in Settings → Custom Data</div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">2. Assign Values</div>
+                        <div style="color: #000000; font-size: 0.9rem;">HR/Finance team assigns custom field values to employees</div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">3. Integration Mapping</div>
+                        <div style="color: #000000; font-size: 0.9rem;">Custom fields appear automatically in accounting integration for sync configuration</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">📈</span>
+                    </div>
+                    <h4 style="color: #d97706; margin: 0; font-size: 1.3rem;">Most Commonly Requested Features</h4>
+                </div>
+
+                <p style="color: #000000; margin-bottom: 20px; line-height: 1.6;">Based on customer feedback and support ticket analysis, these represent the highest-value enhancement opportunities:</p>
+                
+                <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 50px; height: 50px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <span style="font-size: 1.5rem;">🎯</span>
+                        </div>
+                        <h4 style="color: #2563eb; margin: 0; font-size: 1.3rem;">Multi-Dimensional Cost Centers - Top Enterprise Request</h4>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                        <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                            <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">📊 What Are Multi-Dimensional Cost Centers?</h5>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Traditional cost centers allocate employee costs to a single attribute (e.g., "Marketing Department"). Multi-dimensional split costs across multiple attributes simultaneously, creating cost allocation matrices rather than simple hierarchy.</p>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                            <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🚫 Current Limitation</h5>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Bayzat supports single-dimension allocation (departments OR offices OR custom data). Multi-dimensional allocation limited by Bayzat's current data structure, though supported by most accounting platforms.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                        <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">💰 UAE Construction Example</h5>
+                        <p style="color: #000000; margin: 0; line-height: 1.5;">Sarah (AED 10,000/month): 60% → Project Alpha + Dubai Office + IT Department, 40% → Project Beta + Abu Dhabi Office + IT Department. Each combination creates unique accounting entries for precise multi-dimensional cost tracking.</p>
+                    </div>
+
+                    <p style="color: #000000; margin-bottom: 15px; line-height: 1.5;"><strong>UAE/GCC Market Need:</strong> Project-based consulting with multiple client engagements, multi-location operations, matrix organizations with dual reporting, shared services supporting multiple units, construction/engineering with concurrent projects.</p>
+
+                    <p style="color: #000000; margin: 0; line-height: 1.5;"><strong>Strategic Business Impact:</strong> Would enable true P&L visibility by project and location, accurate project profitability analysis, detailed audit trails for stakeholders, data-driven resource allocation decisions, and precise budgeting - capabilities that significantly impact enterprise sales opportunities.</p>
+                </div>
+
+                <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="width: 50px; height: 50px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <span style="font-size: 1.5rem;">🔧</span>
+                        </div>
+                        <h4 style="color: #2563eb; margin: 0; font-size: 1.3rem;">Enhanced Troubleshooting Tools Request</h4>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                        <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                            <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">💡 Customer Request</h5>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Self-service diagnostic capabilities that enable customers to identify and resolve integration issues without requiring specialized technical support, reducing customer frustration and support team workload.</p>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                            <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🚀 Business Value</h5>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Reduce support ticket volume significantly, improve customer self-sufficiency, decrease time-to-resolution, enable faster customer scaling without proportional support growth, position Bayzat as enterprise-ready platform.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                        <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">🔍 Requested Diagnostic Capabilities</h5>
+                        <p style="color: #000000; margin: 0; line-height: 1.5;">Connection health monitoring with real-time status indicators, mapping validation tools that highlight configuration errors before sync attempts, sync failure analysis with clear error explanations and suggested fixes, configuration completeness checkers that verify all required mappings, and step-by-step troubleshooting wizards for common integration problems.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">1. Health Monitoring</div>
+                            <div style="color: #000000; font-size: 0.9rem;">Real-time connection status indicators and alerts</div>
+                        </div>
+                        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">2. Validation Tools</div>
+                            <div style="color: #000000; font-size: 0.9rem;">Pre-sync configuration error detection and highlighting</div>
+                        </div>
+                        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div style="color: #374151; font-weight: 600; margin-bottom: 5px;">3. Failure Analysis</div>
+                            <div style="color: #000000; font-size: 0.9rem;">Clear error explanations with suggested fixes and recovery steps</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Enterprise Positioning:</strong> Advanced features position Bayzat as a scalable platform that grows with enterprise customers, supporting complex organizational structures and driving higher contract values through specialized capabilities.</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#platform-limitations" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Platform Limitations →
+                </a>
+            </div>
+        </section>
+
+        <section id="platform-limitations" class="platform-limitations" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">7. Platform Limitations Reference</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Comprehensive technical constraints for each supported platform, backed by official vendor documentation and real customer experience from 85+ JIRA tickets.</p>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🏢</span>
+                    </div>
+                    <h4 style="color: #2563eb; margin: 0; font-size: 1.3rem;">Microsoft Dynamics 365 Business Central</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔴 Critical Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Posting failures with cost centers:</strong> Any cost center configuration causes 100% journal entry posting failures - critical blocker for departmental tracking</li>
+                            <li><strong>Mandatory dimension requirements:</strong> Must disable ALL mandatory dimensions before setup or transactions fail with technical error codes</li>
+                            <li><strong>Journal entry posting failures:</strong> Complex validation rules cause persistent sync failures requiring D365 BC admin intervention</li>
+                            <li><strong>Cost center incompatibility:</strong> Platform fundamentally cannot support cost center tracking - major limitation for enterprise clients</li>
+                            <li><strong>Permission complexity issues:</strong> Users need specific D365 BC permissions that aren't clearly documented in setup guides</li>
+                            <li><strong>API rate limits:</strong> 300-600 requests/minute (sandbox vs production) with 100 concurrent request maximum</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">🟡 Major Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Excessive connection time:</strong> Initial setup can take over 3 hours to establish, creating poor user experience and setup abandonment</li>
+                            <li><strong>Batch naming requirements:</strong> Specific batch names required for successful sync - wrong names cause sync failures</li>
+                            <li><strong>Large payroll constraints:</strong> Restrictive 60 requests/minute limit significantly affects organizations with high employee counts (most limiting platform)</li>
+                            <li><strong>GOSI contribution gap:</strong> Employer GOSI contributions not automatically included, requires manual journal entry creation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a; margin-top: 20px;">
+                    <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Workarounds & Solutions</h5>
+                    <div style="display: grid; gap: 15px;">
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Mandatory Dimensions Issue:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Disable mandatory dimensions in D365 BC before starting integration setup. Re-enable after integration is complete and working.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Cost Center Alternative:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Use custom employee data fields for basic cost tracking instead of D365 cost centers. Configure Project Code or Department Code custom fields.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Connection Time Management:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Schedule D365 connections during off-hours. Plan 4-6 hours for setup. Use backup browser session in case of timeouts.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">GOSI Contribution Handling:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Create manual journal entries for employer GOSI contributions. Set up recurring journal template for monthly automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🔶</span>
+                    </div>
+                    <h4 style="color: #d97706; margin: 0; font-size: 1.3rem;">Oracle NetSuite</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔴 Critical Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Permission complexity:</strong> Requires Custom Record Types, Segments, Classes, Departments, Cost Centers, and Business Units access - often unavailable to users</li>
+                            <li><strong>Custom Record Types access requirements:</strong> Essential for integration but frequently not granted to payroll users by NetSuite admins</li>
+                            <li><strong>Setup blocking with unclear errors:</strong> Missing permissions prevent completion with technical error messages instead of clear guidance</li>
+                            <li><strong>Complex validation rules:</strong> NetSuite's extensive validation requirements cause frequent journal entry posting failures</li>
+                            <li><strong>Session timeout issues:</strong> Long integration processes vulnerable to NetSuite session timeouts causing data corruption</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">🟡 Major Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Session issues:</strong> Sync interruptions cause duplicate errors</li>
+                            <li><strong>4 segment limit:</strong> Custom segments per record restriction</li>
+                            <li><strong>Sync vulnerability:</strong> Long duration session interruptions</li>
+                            <li><strong>Search API:</strong> 1000 records maximum limitation</li>
+                            <li><strong>Concurrency limits:</strong> 15+ concurrent requests (tier-based scaling)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a; margin-top: 20px;">
+                    <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Workarounds & Solutions</h5>
+                    <div style="display: grid; gap: 15px;">
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Permission Setup Strategy:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Verify all required permissions before starting: Custom Record Types, Segments, Classes, Departments, Cost Centers, Business Units. Contact NetSuite admin for bulk permission assignment.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Session Management:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Avoid browser switching during sync. Keep NetSuite session active. If duplicate error occurs, wait 30 minutes before retry to allow session cleanup.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Custom Segment Optimization:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Plan segment usage carefully - maximum 4 per record. Prioritize most important business dimensions. Consider combining less critical attributes.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Large Organization Handling:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">For 1000+ employee organizations, consider departmental sync batches. Break large syncs into smaller, more manageable segments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #dcfce7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">💼</span>
+                    </div>
+                    <h4 style="color: #16a34a; margin: 0; font-size: 1.3rem;">QuickBooks Online</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔴 Critical Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Split validation requirements:</strong> Journal amounts must sum to zero - any rounding discrepancies cause complete sync failure</li>
+                            <li><strong>Data balancing problems:</strong> Journal entries frequently don't balance correctly due to calculation precision issues</li>
+                            <li><strong>Invoice number conflicts:</strong> Duplicate invoice number errors block payroll processing when previous sync interrupted</li>
+                            <li><strong>Account grouping failures:</strong> Persistent sync failures due to QuickBooks account structure requirements</li>
+                            <li><strong>Connection stability issues:</strong> Frequent disconnections require re-authentication, interrupting payroll workflows</li>
+                            <li><strong>Payroll blocking during month-end:</strong> Sync failures prevent critical month-end closing procedures</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">🟡 Major Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Class tracking:</strong> Single dimension per transaction</li>
+                            <li><strong>3 custom fields:</strong> Maximum per entity restriction</li>
+                            <li><strong>Arrear processing:</strong> "Something went wrong" errors</li>
+                            <li><strong>Regular cycle issues:</strong> Widespread sync failures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a; margin-top: 20px;">
+                    <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Workarounds & Solutions</h5>
+                    <div style="display: grid; gap: 15px;">
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Split Amount Balancing:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Double-check all mapping configurations ensure debits equal credits. Use journal entry preview before sync. Verify all payroll components have both debit and credit accounts mapped.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Account Structure Review:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Review QuickBooks chart of accounts structure. Ensure payroll accounts exist and are properly categorized. Create dedicated payroll accounts if missing.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Custom Field Strategy:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Prioritize most important tracking within 3-field limit. Use concatenated values to combine multiple attributes. Focus on highest-impact business dimensions.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Sync Issue Prevention:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Verify QuickBooks connection health before sync. Clear browser cache regularly. Ensure stable internet connection during sync operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #fefefe; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #e0f2fe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">⚡</span>
+                    </div>
+                    <h4 style="color: #0891b2; margin: 0; font-size: 1.3rem;">Xero</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔴 Critical Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Uncertified app connection limits:</strong> Only 25 concurrent connections allowed for non-certified apps - blocks new integrations when limit reached</li>
+                            <li><strong>Global payroll discontinuation warnings:</strong> Xero discontinued global payroll features, causing confusion for multi-country organizations</li>
+                            <li><strong>Single organization limitation:</strong> Cannot connect multiple Xero books to single Bayzat account - major blocker for multi-entity businesses</li>
+                            <li><strong>Account mapping issues:</strong> Users frequently struggle with chart of accounts selection causing setup abandonment</li>
+                            <li><strong>Bank restrictions:</strong> Limited transaction types for bank accounts prevent proper salary transfer tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">🟡 Major Limitations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Sync failures with "something went wrong" errors:</strong> Frequent vague error messages without actionable guidance</li>
+                            <li><strong>Data validation issues:</strong> Account codes and validation rules cause frequent sync interruptions</li>
+                            <li><strong>Cost center mapping complexity:</strong> Single account per department limitation blocks advanced reporting needs</li>
+                            <li><strong>Missing report data:</strong> Incomplete cost center transfers result in inaccurate financial reporting</li>
+                            <li><strong>2 tracking categories limit:</strong> Maximum per organization blocks complex business dimension tracking</li>
+                            <li><strong>Multi-organization challenges:</strong> Users with multiple entities face significant workflow limitations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a; margin-top: 20px;">
+                    <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Workarounds & Solutions</h5>
+                    <div style="display: grid; gap: 15px;">
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Connection Limit Management:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Check existing app connections before setup. Remove unused third-party apps to free connection slots. Consider Xero certification for unlimited connections.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Multiple Organization Needs:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Use separate Bayzat accounts for multiple Xero organizations. Implement consolidated reporting outside of direct integration. Consider single-org approach with manual cross-posting.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Tracking Category Optimization:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Plan 2-category usage strategically. Prioritize highest-impact business dimensions. Use account codes for additional categorization beyond tracking limits.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">Cost Center Reporting:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Use Xero reports with account filtering for department analysis. Export data for external cost center reporting. Supplement with custom Bayzat reports for missing data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #f3e8ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <span style="font-size: 1.5rem;">🔄</span>
+                    </div>
+                    <h4 style="color: #7c3aed; margin: 0; font-size: 1.3rem;">Common Cross-Platform Issues</h4>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">⚙️ Setup & Configuration</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Wizard disabled:</strong> Next button requires ALL cost centers mapped</li>
+                            <li><strong>Refresh required:</strong> Manual page refresh for progress</li>
+                            <li><strong>Expertise needed:</strong> Accounting + technical skills required</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔄 Data & Sync Operations</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Multi-dimensional:</strong> Limited by Bayzat's data structure - platforms support it (NetSuite: unlimited, D365 BC: robust, QuickBooks: basic, Xero: 2 categories)</li>
+                            <li><strong>Historical sync:</strong> No pre-go-live date syncing</li>
+                            <li><strong>Single month:</strong> Only most recent closed month</li>
+                            <li><strong>API rate limits:</strong> 500 requests/minute + 10 concurrent - generous for most organizations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Strategic Context:</strong> These platform limitations represent the primary drivers for customer feature requests and enterprise sales challenges. Understanding these constraints is essential for product roadmap prioritization and customer success management.</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+                <a href="#jira-troubleshooting" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Advanced Troubleshooting →
+                </a>
+            </div>
+        </section>
+
+        <section id="jira-troubleshooting" class="jira-troubleshooting" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">7.5 Advanced Troubleshooting Guide</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Based on analysis of 211 real customer support tickets, this section provides practical solutions for the most common accounting integration issues encountered by users.</p>
+
+            <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b; margin-bottom: 30px;">
+                <h4 style="color: #92400e; margin-bottom: 15px; font-size: 1.1rem;">⚠️ Critical Issues Requiring Immediate Attention</h4>
+                <p style="color: #000000; margin: 0; line-height: 1.5;">These issues were identified in 45% of all support tickets and represent the most significant barriers to successful accounting integration completion.</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.2rem;">🔄 Sync Failures and Data Inconsistencies</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🚨 High-Impact Sync Issues</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Sync failures with "something went wrong" errors:</strong> Vague error messages without actionable guidance (most common in Xero)</li>
+                            <li><strong>Data inconsistencies in reports:</strong> Payroll data not matching between Bayzat and accounting systems</li>
+                            <li><strong>Connection timeouts during large data transfers:</strong> Session interruptions corrupting sync process</li>
+                            <li><strong>Incorrect data calculations in reports:</strong> Rounding differences causing journal entry failures</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Proven Solutions</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>For "something went wrong" errors:</strong> Clear browser cache, verify accounting system login, retry sync after 15 minutes</li>
+                            <li><strong>For data inconsistencies:</strong> Verify all payroll items have account mappings, check currency settings match</li>
+                            <li><strong>For connection timeouts:</strong> Ensure stable internet, avoid browser switching, use smaller sync batches</li>
+                            <li><strong>For calculation errors:</strong> Review split amount configurations, ensure debit/credit balance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.2rem;">🔐 Authentication and Connection Failures</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">⚙️ Common Authentication Issues</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>OAuth timeout errors:</strong> Session expires during lengthy configuration process</li>
+                            <li><strong>Permission denied errors:</strong> User lacks required accounting system permissions</li>
+                            <li><strong>Connection lost during setup:</strong> Browser closure or network interruption</li>
+                            <li><strong>Re-authentication loops:</strong> Persistent login failures after initial connection</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Authentication Solutions</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>For OAuth timeouts:</strong> Complete authentication within 10 minutes, use incognito mode for clean session</li>
+                            <li><strong>For permission errors:</strong> Verify admin access, check platform-specific permission lists in this guide</li>
+                            <li><strong>For connection loss:</strong> Use single browser tab, avoid switching windows during setup</li>
+                            <li><strong>For re-auth loops:</strong> Clear cookies for accounting platform, restart integration from beginning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.2rem;">📊 Journal Entry Posting Failures</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                    <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                        <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🔴 Critical Posting Issues</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Journal entries don't balance:</strong> Debit and credit amounts don't sum to zero (QuickBooks primary issue)</li>
+                            <li><strong>Mandatory dimension errors:</strong> Required fields not populated (D365 BC critical blocker)</li>
+                            <li><strong>Account validation failures:</strong> Mapped accounts don't meet platform requirements</li>
+                            <li><strong>Duplicate reference numbers:</strong> Previous failed attempts creating conflicts</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ Posting Solutions</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>For balancing issues:</strong> Verify all payroll components have both debit and credit mappings</li>
+                            <li><strong>For dimension errors:</strong> Disable mandatory dimensions before setup, re-enable after integration</li>
+                            <li><strong>For validation failures:</strong> Ensure mapped accounts are active and properly categorized</li>
+                            <li><strong>For duplicate references:</strong> Change reference number format in settings before retry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.2rem;">🔍 User Experience and Error Messaging Issues</h4>
+                
+                <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626; margin-bottom: 20px;">
+                    <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">❌ Poor Error Message Examples (From Real Tickets)</h5>
+                    <div style="background: #fef9c3; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <p style="color: #000000; margin: 0; font-family: monospace; font-size: 0.9rem;">"Error: Object reference not set to an instance of an object. Employee ID: 12345"</p>
+                        <p style="color: #dc2626; margin: 5px 0 0 0; font-size: 0.85rem;"><strong>Issue:</strong> Technical jargon using backend IDs instead of employee names</p>
+                    </div>
+                    <div style="background: #fef9c3; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <p style="color: #000000; margin: 0; font-family: monospace; font-size: 0.9rem;">"Validation failed for field DIM_COSTCENTER_01"</p>
+                        <p style="color: #dc2626; margin: 5px 0 0 0; font-size: 0.85rem;"><strong>Issue:</strong> Database field names instead of user-friendly language</p>
+                    </div>
+                </div>
+                
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                    <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">✅ User-Friendly Error Interpretation</h5>
+                    <div style="display: grid; gap: 15px;">
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">When you see "Object reference not set":</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">This means an employee record is missing required information. Check the employee's cost center assignment and basic profile data.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">When you see "DIM_COSTCENTER" errors:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">This means cost center mapping is incomplete. Ensure all employees have cost centers assigned and all cost centers are mapped to accounting accounts.</p>
+                        </div>
+                        <div>
+                            <p style="color: #166534; margin-bottom: 5px; font-weight: 600;">When you see "Validation failed" errors:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">This typically indicates account mapping issues. Review your chart of accounts mapping to ensure all payroll items are properly connected.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid #6366f1; margin-bottom: 30px;">
+                <h4 style="color: #1e40af; margin-bottom: 15px; font-size: 1.1rem;">💡 Pro Tips from Customer Success</h4>
+                <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.6;">
+                    <li><strong>Prevention is better than cure:</strong> Complete the pre-integration checklist for your platform before starting setup</li>
+                    <li><strong>Document your setup:</strong> Take screenshots of successful configurations for future reference</li>
+                    <li><strong>Test with small batches:</strong> Sync a single employee first to verify configuration before full payroll</li>
+                    <li><strong>Maintain accounting system health:</strong> Regularly update accounting software and clear cache before syncs</li>
+                    <li><strong>Know when to escalate:</strong> If you encounter 3+ consecutive sync failures, contact support rather than continuing attempts</li>
+                </ul>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 15px;">
+                <a href="#platform-limitations" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Platform Limitations
+                </a>
+                <a href="#support-resources" style="color: white; background: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease;">
+                    Continue to Support Resources →
+                </a>
+            </div>
+        </section>
+
+        <section id="support-resources" class="support-resources" style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+            <h2 style="color: #6366f1; margin-bottom: 25px; font-size: 1.8rem;">8. Support Resources</h2>
+            
+            <p style="color: #4b5563; margin-bottom: 30px; line-height: 1.6;">Comprehensive troubleshooting guides, definitions, and support resources for accounting integration issues and questions.</p>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">8.1 Troubleshooting Support</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">🔧 Common Setup Issues</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Next button disabled:</strong> Ensure all cost centers are mapped before proceeding</li>
+                            <li><strong>OAuth timeout:</strong> Complete authentication within session timeout period</li>
+                            <li><strong>Permission errors:</strong> Verify accounting system admin access before starting</li>
+                            <li><strong>Long connection times:</strong> D365 BC connections may take several hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">💾 Sync Operation Issues</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Sync button missing:</strong> Check report template configuration completion</li>
+                            <li><strong>Journal entry failures:</strong> Verify split amounts sum to zero (QuickBooks)</li>
+                            <li><strong>Connection lost errors:</strong> Avoid closing browser during sync process</li>
+                            <li><strong>Duplicate entry errors:</strong> Session interruption during NetSuite sync</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #374151; margin-bottom: 15px; font-size: 1rem;">⚙️ Configuration Problems</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Mapping incomplete warnings:</strong> All active payroll items need account mapping</li>
+                            <li><strong>Cost center assignment missing:</strong> Employees need cost center allocation if enabled</li>
+                            <li><strong>Currency mismatch:</strong> Bayzat and accounting system currencies must match</li>
+                            <li><strong>Page refresh required:</strong> Manual refresh needed after cost center assignment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #374151; margin-bottom: 20px; font-size: 1.2rem;">8.2 Common Feature Requests & Enhancement Opportunities</h4>
+                
+                <p style="color: #4b5563; margin-bottom: 20px; line-height: 1.6;">Based on 20% of support tickets being feature requests, here are the most demanded enhancements that could significantly improve user experience and reduce support burden.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">🏢 Multi-Entity Support (High Priority)</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Multi-entity support for different departments:</strong> Allow single Bayzat account to connect multiple accounting organizations</li>
+                            <li><strong>Cross-organization reporting:</strong> Consolidated payroll reports across multiple entities</li>
+                            <li><strong>Department-specific workflows:</strong> Separate cost center mappings per business unit</li>
+                            <li><strong>Multi-organization setup capabilities:</strong> Streamlined configuration for complex business structures</li>
+                        </ul>
+                        <div style="background: #dbeafe; padding: 10px; border-radius: 8px; margin-top: 15px;">
+                            <p style="color: #1e40af; margin: 0; font-size: 0.9rem;"><strong>Impact:</strong> Would resolve 30% of Xero limitation tickets and enable enterprise customer expansion</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🎯 Enhanced Cost Center Mapping</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Enhanced cost center mapping capabilities:</strong> Support for multi-dimensional tracking (Project + Department + Location)</li>
+                            <li><strong>Automated cost allocation:</strong> Rules-based distribution of payroll costs across dimensions</li>
+                            <li><strong>Flexible dimension hierarchy:</strong> Support for complex organizational structures</li>
+                            <li><strong>Cost center reporting:</strong> Built-in reports for cost center analysis</li>
+                        </ul>
+                        <div style="background: #dcfce7; padding: 10px; border-radius: 8px; margin-top: 15px;">
+                            <p style="color: #166534; margin: 0; font-size: 0.9rem;"><strong>Impact:</strong> Would address primary limitation across all accounting platforms and reduce setup abandonment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h5 style="color: #d97706; margin-bottom: 15px; font-size: 1rem;">💬 Better Error Messaging & User Guidance</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>User-friendly error messages:</strong> Replace technical IDs with employee names and clear descriptions</li>
+                            <li><strong>Actionable error guidance:</strong> Specific next steps instead of generic "something went wrong" messages</li>
+                            <li><strong>Progressive disclosure:</strong> Show detailed technical information only when requested</li>
+                            <li><strong>Contextual help:</strong> In-app guidance during configuration steps</li>
+                        </ul>
+                        <div style="background: #fef9c3; padding: 10px; border-radius: 8px; margin-top: 15px;">
+                            <p style="color: #d97706; margin: 0; font-size: 0.9rem;"><strong>Impact:</strong> Would reduce 40% of basic troubleshooting tickets and improve user self-service</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f3e8ff; padding: 20px; border-radius: 12px; border-left: 4px solid #7c3aed;">
+                        <h5 style="color: #7c3aed; margin-bottom: 15px; font-size: 1rem;">🔄 Sync Reliability Improvements</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Automatic retry mechanisms:</strong> Intelligent retry for temporary failures</li>
+                            <li><strong>Sync progress indicators:</strong> Real-time status updates during long operations</li>
+                            <li><strong>Session persistence:</strong> Resume interrupted syncs without data loss</li>
+                            <li><strong>Pre-sync validation:</strong> Check requirements before attempting sync</li>
+                        </ul>
+                        <div style="background: #ede9fe; padding: 10px; border-radius: 8px; margin-top: 15px;">
+                            <p style="color: #7c3aed; margin: 0; font-size: 0.9rem;"><strong>Impact:</strong> Would address 25% of sync failure tickets and improve user confidence</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #fee2e2; padding: 20px; border-radius: 12px; border-left: 4px solid #dc2626; margin-bottom: 25px;">
+                    <h5 style="color: #dc2626; margin-bottom: 15px; font-size: 1rem;">🚫 Platform-Specific Enhancement Needs</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div>
+                            <p style="color: #dc2626; margin-bottom: 5px; font-weight: 600;">Xero Certification Priority:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Pursue Xero app certification to remove connection limits and enable unlimited integrations</p>
+                        </div>
+                        <div>
+                            <p style="color: #dc2626; margin-bottom: 5px; font-weight: 600;">D365 BC Dimension Support:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Develop workarounds for mandatory dimensions to enable cost center tracking</p>
+                        </div>
+                        <div>
+                            <p style="color: #dc2626; margin-bottom: 5px; font-weight: 600;">NetSuite Permission Automation:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Automated permission checking and guided permission request process</p>
+                        </div>
+                        <div>
+                            <p style="color: #dc2626; margin-bottom: 5px; font-weight: 600;">QuickBooks Balance Validation:</p>
+                            <p style="color: #000000; margin: 0; font-size: 0.9rem; line-height: 1.4;">Enhanced split amount validation to prevent journal entry failures</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid #6366f1;">
+                    <h4 style="color: #1e40af; margin-bottom: 15px; font-size: 1.1rem;">📈 Strategic Enhancement Roadmap</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div>
+                            <p style="color: #1e40af; margin-bottom: 8px; font-weight: 600;">Immediate (Next Quarter):</p>
+                            <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.4; font-size: 0.9rem;">
+                                <li>Improved error messaging</li>
+                                <li>Configuration progress indicators</li>
+                                <li>Pre-sync validation checks</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="color: #1e40af; margin-bottom: 8px; font-weight: 600;">Short-term (6 months):</p>
+                            <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.4; font-size: 0.9rem;">
+                                <li>Multi-entity support</li>
+                                <li>Enhanced cost center mapping</li>
+                                <li>Xero app certification</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="color: #1e40af; margin-bottom: 8px; font-weight: 600;">Long-term (12+ months):</p>
+                            <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.4; font-size: 0.9rem;">
+                                <li>Multi-dimensional tracking</li>
+                                <li>Automated provisioning</li>
+                                <li>Self-service diagnostics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">8.3 Glossary & Key Terms</h4>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #f8fafc;">
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 25%;">Term</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #374151; font-weight: 600; width: 75%;">Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">API Rate Limiting</td>
+                            <td style="padding: 15px; color: #000000;">Platform-specific restrictions on API requests that vary significantly: QuickBooks (500/min), Xero (60/min), NetSuite (15+ concurrent), D365 BC (300-600/min). Codat manages these transparently with daily limits of 1,000 × (1 + connected companies)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Batch Operations</td>
+                            <td style="padding: 15px; color: #000000;">Processing multiple transactions as a group rather than individually, used for efficient data synchronization</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Codat API</td>
+                            <td style="padding: 15px; color: #000000;">Unified API platform enabling connections to multiple accounting systems through single integration layer</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Cost Centers</td>
+                            <td style="padding: 15px; color: #000000;">Accounting concept for tracking and allocating business expenses by department, project, or business unit</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Data Mapping</td>
+                            <td style="padding: 15px; color: #000000;">Process of connecting Bayzat payroll fields to corresponding accounting system accounts for automated sync</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Journal Entries</td>
+                            <td style="padding: 15px; color: #000000;">Double-entry accounting records with debit and credit amounts that maintain balanced books</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Mandatory Dimensions</td>
+                            <td style="padding: 15px; color: #000000;">Required data fields in accounting systems that must be populated for all transactions (can block integrations)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Multi-Dimensional Cost Centers</td>
+                            <td style="padding: 15px; color: #000000;">Advanced cost allocation across multiple attributes simultaneously (Project + Location + Department)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">OAuth Authentication</td>
+                            <td style="padding: 15px; color: #000000;">Secure authorization allowing Bayzat to connect to accounting systems without storing customer credentials</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Split Amount Validation</td>
+                            <td style="padding: 15px; color: #000000;">Accounting requirement that debit and credit amounts in journal entries must equal zero for posting</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Sync Report Template</td>
+                            <td style="padding: 15px; color: #000000;">Configuration defining format and content structure for reports generated after data synchronization</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Tracking Categories</td>
+                            <td style="padding: 15px; color: #000000;">Xero feature for categorizing transactions beyond standard chart of accounts (limited to 2 per organization)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Uncertified App Limits</td>
+                            <td style="padding: 15px; color: #000000;">Xero restriction limiting number of connections for apps not certified by Xero (blocks new integrations)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; color: #374151; font-weight: 600;">Webhook</td>
+                            <td style="padding: 15px; color: #000000;">Automated notification sent by accounting systems to Bayzat when data changes occur, enabling real-time updates</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: #374151; margin-bottom: 15px; font-size: 1.1rem;">8.3 Additional Help Resources</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h5 style="color: #1e40af; margin-bottom: 15px; font-size: 1rem;">📚 Documentation Access</h5><!-- Verified platform paths 2024-10-31 -->
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>Platform Access:</strong> Settings → Integrations (/enterprise/dashboard/settings/integrations)</li>
+                            <li><strong>Help Center:</strong> Help & Support → Bayzat help center → PAYROLL → Accounting Integration</li>
+                            <li><strong>Configuration Guides:</strong> bayzathelp.zendesk.com → Platform Configuration sections</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a;">
+                        <h5 style="color: #166534; margin-bottom: 15px; font-size: 1rem;">🎯 Customer Support</h5>
+                        <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
+                            <li><strong>WhatsApp Support:</strong> +971 50 213 05 97 (Help & Support → Connect now)</li>
+                            <li><strong>Phone Support:</strong> +971 45 490 376 (Help & Support → Call us)</li>
+                            <li><strong>Email Support:</strong> support@bayzat.com (Help & Support → Drop us a message)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #6366f1;">
+                <p style="color: #374151; margin: 0; font-size: 0.9rem;"><strong>Support Strategy:</strong> This comprehensive resource section enables Product Managers and Designers to understand common customer pain points, provide better user guidance, and design more effective self-service capabilities that reduce support overhead.</p>
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px;">
+                <a href="#" onclick="document.querySelector('.user-journey').scrollIntoView({behavior: 'smooth'}); return false;" style="color: #6366f1; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #6366f1; border-radius: 8px; transition: all 0.3s ease;">
+                    ← Back to Complete User Journey Guide
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add interaction tracking for team onboarding analytics
+        document.querySelectorAll('.audience-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const audienceType = card.className.includes('pm') ? 'Product Manager' : 'Designer';
+                console.log(`Team member exploring: ${audienceType} content`);
+            });
+        });
+
+        document.querySelectorAll('.audience-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const audienceType = e.target.closest('.audience-card').className.includes('pm') ? 
+                    'Product Manager' : 'Designer';
+                console.log(`${audienceType} starting onboarding journey`);
+                // In real implementation, this would send team onboarding analytics
+            });
+        });
+    </script>
+</body>
+</html> 
