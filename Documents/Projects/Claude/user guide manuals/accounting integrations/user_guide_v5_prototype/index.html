@@ -338,7 +338,7 @@
             </div>
 
             <p style="color: #4b5563; margin: 30px 0; font-size: 1.1rem;">
-                <strong style="color: #1e40af;">PLATFORM COVERAGE:</strong> This integration works through Codat's unified API, supporting 4 major accounting systems (Dynamics 365 BC, NetSuite, QuickBooks Online, Xero).
+                <strong style="color: #1e40af;">PLATFORM COVERAGE:</strong> This integration works through Codat's unified API, supporting 4 major accounting systems (Dynamics 365 BC, NetSuite, QuickBooks Online, Xero). Codat enforces daily rate limits calculated as 1,000 × (1 + number of Active Connected Companies) with 10 concurrent requests per company.
             </p>
         </section>
 
@@ -371,7 +371,7 @@
 
                 <div class="context-item">
                     <h3 data-icon="🏗️">Technical Architecture</h3>
-                    <p>Built on Codat's unified API platform supporting 4 major accounting systems with platform-specific constraints that impact product decisions.</p>
+                    <p>Built on Codat's unified API platform supporting 4 major accounting systems with platform-specific constraints that impact product decisions. Rate limits vary by platform: Xero (60/min), QuickBooks (500/min), NetSuite (15+ concurrent), D365 BC (300-600/min).</p>
                     <ul>
                         <li>Third-party dependency through Codat API</li>
                         <li>OAuth-based authentication model</li>
@@ -1526,6 +1526,7 @@
                             <li><strong>Journal entry posting failures:</strong> Complex validation rules cause persistent sync failures requiring D365 BC admin intervention</li>
                             <li><strong>Cost center incompatibility:</strong> Platform fundamentally cannot support cost center tracking - major limitation for enterprise clients</li>
                             <li><strong>Permission complexity issues:</strong> Users need specific D365 BC permissions that aren't clearly documented in setup guides</li>
+                            <li><strong>API rate limits:</strong> 300-600 requests/minute (sandbox vs production) with 100 concurrent request maximum</li>
                         </ul>
                     </div>
                     
@@ -1534,7 +1535,7 @@
                         <ul style="color: #000000; margin: 0; padding-left: 15px; line-height: 1.5;">
                             <li><strong>Excessive connection time:</strong> Initial setup can take over 3 hours to establish, creating poor user experience and setup abandonment</li>
                             <li><strong>Batch naming requirements:</strong> Specific batch names required for successful sync - wrong names cause sync failures</li>
-                            <li><strong>Large payroll constraints:</strong> API rate limiting affects organizations with high employee counts</li>
+                            <li><strong>Large payroll constraints:</strong> Restrictive 60 requests/minute limit significantly affects organizations with high employee counts (most limiting platform)</li>
                             <li><strong>GOSI contribution gap:</strong> Employer GOSI contributions not automatically included, requires manual journal entry creation</li>
                         </ul>
                     </div>
@@ -1590,6 +1591,7 @@
                             <li><strong>4 segment limit:</strong> Custom segments per record restriction</li>
                             <li><strong>Sync vulnerability:</strong> Long duration session interruptions</li>
                             <li><strong>Search API:</strong> 1000 records maximum limitation</li>
+                            <li><strong>Concurrency limits:</strong> 15+ concurrent requests (tier-based scaling)</li>
                         </ul>
                     </div>
                 </div>
@@ -1752,7 +1754,7 @@
                             <li><strong>Multi-dimensional:</strong> Not supported on any platform</li>
                             <li><strong>Historical sync:</strong> No pre-go-live date syncing</li>
                             <li><strong>Single month:</strong> Only most recent closed month</li>
-                            <li><strong>API rate limits:</strong> Affects large organizations</li>
+                            <li><strong>API rate limits:</strong> 500 requests/minute + 10 concurrent - generous for most organizations</li>
                         </ul>
                     </div>
                 </div>
@@ -2083,7 +2085,7 @@
                     <tbody>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 15px; color: #374151; font-weight: 600;">API Rate Limiting</td>
-                            <td style="padding: 15px; color: #000000;">Accounting system restrictions on number of API requests per time period, affecting sync speed for large payrolls</td>
+                            <td style="padding: 15px; color: #000000;">Platform-specific restrictions on API requests that vary significantly: QuickBooks (500/min), Xero (60/min), NetSuite (15+ concurrent), D365 BC (300-600/min). Codat manages these transparently with daily limits of 1,000 × (1 + connected companies)</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #e2e8f0;">
                             <td style="padding: 15px; color: #374151; font-weight: 600;">Batch Operations</td>
